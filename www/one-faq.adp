@@ -1,4 +1,4 @@
-<master src="master">
+<master>
 <property name="context">@context@</property>
 <property name="title">@faq_name@</property>
 
