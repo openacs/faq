@@ -1,5 +1,6 @@
 ad_page_contract { 
     Displays a form for creating a new faq or edit an existing faq. 
+    @author Rocael Hernandez (roc@viaro.net) 
     @author Gerardo Morales Cadoret (gmorales@galileo.edu) 
     @creation-date 2003-11-26 
 } {  

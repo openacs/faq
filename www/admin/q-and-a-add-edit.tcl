@@ -1,8 +1,10 @@
 ad_page_contract { 
      
     Adds or Edit a new Q&A to a FAQ 
+    @author Rocael Hernandez (roc@viaro.net) 
     @author Gerardo Morales Cadoret (gmorales@galileo.edu) 
     @creation-date 2003-11-26 
+
 } {
     faq_id:naturalnum,notnull
     entry_id:optional

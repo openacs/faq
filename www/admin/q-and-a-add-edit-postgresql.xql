@@ -10,12 +10,12 @@
              	:faq_id,
              	:question,
              	:answer,
- 							:sort_key,
-							'faq_q_and_a',
-							now(),
+	 	:sort_key,
+		'faq_q_and_a',
+		now(),
              	:user_id,
              	:creation_ip,
-							:faq_id
+		:faq_id
             );
       </querytext>
 </fullquery>
