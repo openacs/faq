@@ -11,7 +11,8 @@ ad_page_contract {
 }
 
 # We need to rethink the q-and-a permissioning.
- ad_require_permission [ad_conn package_id] faq_delete_faq
+
+permission::require_permission -object_id [ad_conn package_id] -privilege faq_delete_faq
 
 db_1row get_faq_id "select faq_id from faq_q_and_as where entry_id=:entry_id"
 

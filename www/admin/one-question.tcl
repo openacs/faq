@@ -18,8 +18,7 @@ set package_id [ad_conn package_id]
 
 set user_id [ad_verify_and_get_user_id]
 
-ad_require_permission $package_id faq_admin_faq
-
+permission::require_permission -object_id $package_id -privilege faq_admin_faq
 
 db_1row q_and_a_info "select question, answer, a.faq_id, f.faq_name  
       from faq_q_and_as a, faqs f 

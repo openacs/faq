@@ -14,7 +14,7 @@
         <li>
           <a href="one-faq?faq_id=@faqs.faq_id@">@faqs.faq_name@</a>
             ( 
-            <a href="faq-edit?faq_id=@faqs.faq_id@">#faq.edit#</a> |
+            <a href="faq-add-edit?faq_id=@faqs.faq_id@">#faq.edit#</a> |
             <if @faqs.disabled_p@ true>
               <a href="@faqs.enable_url@">enable</a>
             </if>
@@ -31,5 +31,6 @@
  </ul>
 </else>
 
-<a href="faq-new">#faq.Create_a_new_FAQ#</a>
+<a href="faq-add-edit">#faq.Create_a_new_FAQ#</a>
+
 
