@@ -5,6 +5,7 @@ ad_page_contract {
     @creation-date 2003-11-26 
 } {  
     faq_id:optional 
+    return_url:optional
 } -properties { 
     context:onevalue 
     faq_id:onevalue 
@@ -32,23 +33,28 @@ if { ![ad_form_new_p -key faq_id]} {
     permission::require_permission -object_id [ad_conn package_id] -privilege faq_create_faq 
 } 
 
-ad_form -name faq_add_edit -export { } -form {
+ad_form -name faq_add_edit -form {
 
         faq_id:key
-	{faq_name:text(text) {label "FAQ Name"} {html { size 20 }}}
+	{faq_name:text(text) {label "FAQ Name"} {html { size 50 }}}
 	{separate_p:text(select) {label "Category"} { options {{No f} {Yes t}} } }
 
     } -select_query {
 	select faq_name,separate_p from faqs where faq_id = :faq_id
     } -new_data {
-	db_exec_plsql create_faq { *SQL* }
+	set faq_id [db_exec_plsql create_faq {}]
     } -edit_data {
-db_dml faq_edit "update faqs  
-                  set faq_name = :faq_name, 
-                  separate_p = :separate_p 
-                  where faq_id = :faq_id" 
+        db_dml faq_edit {
+            update faqs  
+            set    faq_name = :faq_name, 
+                   separate_p = :separate_p 
+            where  faq_id = :faq_id
+        } 
     } -after_submit {
-        ad_returnredirect "/faq/admin"
+        if { ![exists_and_not_null return_url] } {
+            set return_url [export_vars -base one-faq { faq_id }] 
+        }
+        ad_returnredirect $return_url
         ad_script_abort
     }
 

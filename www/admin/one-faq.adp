@@ -31,8 +31,8 @@
   </multiple>
  </ol>
 </else>
-<ul>
-  <li><a href="q-and-a-add-edit?faq_id=@faq_id@ ">#faq.Create_New_QA#</a>
-<li><a href="index">#faq.View_All_FAQs#</a>
-</ul>
+
+<a href="q-and-a-add-edit?faq_id=@faq_id@" class="action">#faq.Create_New_QA#</a>
+<a href="." class="action">#faq.View_All_FAQs#</a>
+
 
