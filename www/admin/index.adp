@@ -7,14 +7,27 @@
 </if>
 
 <else>
- <ul>
   <multiple name=faqs>
-   <li><a href="one-faq?faq_id=@faqs.faq_id@">@faqs.faq_name@</a>
-	( 
-	<a href="faq-edit?faq_id=@faqs.faq_id@">edit</a> |
-	<a href="faq-delete?faq_id=@faqs.faq_id@">delete</a> 
-	)
-    </li>
+    <if @faqs.disabled_p@ true><h4>Disabled FAQs</h4></if>
+    <else><h4>Available FAQs</h4></else>
+    <ul>
+      <group column="disabled_p">
+        <li>
+          <a href="one-faq?faq_id=@faqs.faq_id@">@faqs.faq_name@</a>
+            ( 
+            <a href="faq-edit?faq_id=@faqs.faq_id@">edit</a> |
+            <if @faqs.disabled_p@ true>
+              <a href="@faqs.enable_url@">enable</a>
+            </if>
+            <else>
+              <a href="@faqs.disable_url@">disable</a>
+            </else>
+            |
+            <a href="faq-delete?faq_id=@faqs.faq_id@">delete</a> 
+            )
+        </li>
+      </group>
+    </ul>
   </multiple>
  </ul>
 </else>
