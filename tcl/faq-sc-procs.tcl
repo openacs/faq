@@ -28,7 +28,7 @@ ad_proc -private faq::fts::datasource { faq_id } {
                 content $content \
                 keywords {} \
                 storage_type text \
-                mime_type text/plain ]
+                mime text/plain ]
 }
 
 ad_proc -private faq::fts::url { faq_id } {
@@ -55,9 +55,9 @@ ad_proc -private faq_qanda::fts::datasource { entry_id } {
     @creation_date 2004-04-01
 } {
     set title [db_string name {
-        select f.faq_name from faqs 
+        select f.faq_name from faqs f
         where faq_id = (select faq_id from faq_q_and_as where entry_id = :entry_id)
-    } -default "FAQ $faq_id"]
+    } -default "FAQ $entry_id"]
 
     if {[db_0or1row get {select question, answer from faq_q_and_as where entry_id = :entry_id}]} { 
         append title ": $question"
@@ -71,7 +71,7 @@ ad_proc -private faq_qanda::fts::datasource { entry_id } {
                 content $content \
                 keywords {} \
                 storage_type text \
-                mime_type text/plain ]
+                mime text/plain ]
 }
 
 ad_proc -private faq_qanda::fts::url { entry_id } {
