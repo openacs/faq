@@ -77,7 +77,7 @@ as
                 v_entry_id faq_q_and_as.entry_id%TYPE;
         	v_package_id acs_objects.package_id%TYPE;
    	begin
-        select package_id into v_package_id from acs_objects where object_id = p_faq_id;
+        select package_id into v_package_id from acs_objects where object_id = new_q_and_a.faq_id;
 
         v_entry_id := acs_object.new (
 		object_id => entry_id,
