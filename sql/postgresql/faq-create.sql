@@ -75,7 +75,7 @@ create table faq_q_and_as (
 	sort_key  integer not null
 );
 
-create 	function faq__new_q_and_a (integer,integer,varchar,varchar,integer,varchar,timestamp,integer,varchar,integer
+create 	function faq__new_q_and_a (integer,integer,varchar,varchar,integer,varchar,timestamptz,integer,varchar,integer
     	) returns integer as
 '
 declare
@@ -121,7 +121,7 @@ begin
 end;' language 'plpgsql';
 
 
-create function faq__new_faq (integer, varchar, boolean,varchar,timestamp,integer,varchar,integer )
+create function faq__new_faq (integer, varchar, boolean,varchar,timestamptz,integer,varchar,integer )
 returns integer as '
 declare
 	p_faq_id				alias for $1;

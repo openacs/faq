@@ -25,12 +25,15 @@ set user_id [ad_verify_and_get_user_id]
 
 
 
-db_multirow faqs faq_select {
-    select faq_id, faq_name
+db_multirow -extend { disable_url enable_url } faqs faq_select {
+    select faq_id, faq_name, disabled_p
       from acs_objects o, faqs f
       where object_id = faq_id
         and context_id = :package_id
-    order by faq_name
+    order by disabled_p, faq_name
+} {
+    set disable_url "faq-disable?[export_vars { faq_id }]"
+    set enable_url "faq-enable?[export_vars { faq_id }]"
 }
 
 ad_return_template
