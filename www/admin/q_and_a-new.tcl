@@ -28,11 +28,11 @@ ad_require_permission [ad_conn package_id] faq_create_faq
 
 db_1row get_name "select faq_name from faqs where faq_id=:faq_id"
 
-set page_title "Add Q&A for $faq_name"
-set context [list [list "one-faq?faq_id=$faq_id" "$faq_name"] "Create new Q&A"]
-set title "Create new Q&A"
+set page_title [_ faq.Add_QA_for_faq_name]
+set context [list [list "one-faq?faq_id=$faq_id" "$faq_name"] [_ faq.Create_new_QA]]
+set title [_ faq.Create_new_QA]
 set target "q_and_a-new-2"
-set submit_label "Create Q&A"
+set submit_label [_ faq.Create_QA]
 set question ""
 set answer ""
 set insert_p "f"

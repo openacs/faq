@@ -7,19 +7,19 @@
  <blockquote>
   <table>
    <tr>
-    <th align="right">Name:</th>
+    <th align="right">#faq.Name#</th>
     <td><input size="50" name="faq_name" value="@faq_name@"></td>
    </tr>
    <tr>
-    <th align="right">Q&A On Separate Pages</th>
+    <th align="right">#faq.QA_On_Separate_Pages#</th>
     <td><select name=separate_p>
 	<if @separate_p@ eq "t">
-	<option value="t" selected>Yes</option>
-	<option value="f">No</option>
+	<option value="t" selected>#faq.Yes#</option>
+	<option value="f">#faq.No#</option>
 	</if>
 	<else>
-	<option value="t">Yes</option>
-	<option value="f" selected>No</option>
+	<option value="t">#faq.Yes#</option>
+	<option value="f" selected>#faq.No#</option>
 	</else>
 	</select>
 	
@@ -32,3 +32,4 @@
   </table>
  </blockquote>
 </form>
+

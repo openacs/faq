@@ -19,7 +19,7 @@ set package_id [ad_conn package_id]
 ad_require_permission $package_id faq_modify_faq
 
 set action "q_and_a-edit-2"
-set submit_label "Update This Q&A"
+set submit_label [_ faq.Update_This_QA]
 
 set user_id [ad_verify_and_get_user_id]
 

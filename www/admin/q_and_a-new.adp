@@ -15,20 +15,20 @@
   <table>
   
    <tr valign="top">
-    <th align="right"><br>Question</td>
+    <th align="right"><br>#faq.Question#</td>
     <td><textarea name="question" rows="3" cols="50" wrap>@question_q@</textarea></td>
    </tr>
    <tr>
   <tr valign="top">
-    <th align="right"><br>Answer</td>
+    <th align="right"><br>#faq.Answer#</td>
     <td><textarea name="answer" rows="10" cols="50" wrap>@answer_q@</textarea></td>
    </tr>
-   <tr>   <th align="right">Text type?</th>
+   <tr>   <th align="right">#faq.Text_type#</th>
     <td>
      <select name="mime_type">
-      <option value="text/plain; format=flowed" selected>Plain</option>
-      <option value="text/plain">Preformatted</option>
-      <option value="text/html">HTML</option>
+      <option value="text/plain; format=flowed" selected>#faq.Plain#</option>
+      <option value="text/plain">#faq.Preformatted#</option>
+      <option value="text/html">#faq.HTML#</option>
      </select>
     </td>
    </tr>
@@ -38,3 +38,4 @@
   </table>
  </blockquote>
 </form>
+

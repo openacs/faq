@@ -3,7 +3,7 @@
 <property name="title">@faq_name@</property>
 
 <if @one_question:rowcount@ eq 0>
-  <i>There are no questions available.</i>
+  <i>#faq.lt_no_questions#</i>
   <p>
 </if>
 <else>
@@ -29,9 +29,9 @@
 <multiple name="one_question">
     <li>
       <a name=@one_question.entry_id@></a>
-      <b>Q:</b> <i>@one_question.question@</i>
+      <b>#faq.Q#</b> <i>@one_question.question@</i>
       <p>
-      <b>A:</b> @one_question.answer@
+      <b>#faq.A#</b> @one_question.answer@
       <p>
     </li>
 </multiple>
@@ -39,3 +39,4 @@
 </if>
 
 </else>
+
