@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="faq" package_version="4.6" locale="no_NO" charset="ISO-8859-1">
 
-  <msg key="A">A:</msg>
+  <msg key="A">Sv:</msg>
   <msg key="Add_QA_for_faq_name">Legg inn Spørsmål/Svar (FAQ) for %faq_name% </msg>
   <msg key="administer">administrer</msg>
   <msg key="Answer">Svar (A)</msg>
@@ -34,7 +34,7 @@
   <msg key="Plain">Enkel</msg>
   <msg key="Preformatted">Preformatert</msg>
   <msg key="preview">oversikt</msg>
-  <msg key="Q">Q:</msg>
+  <msg key="Q">Sp:</msg>
   <msg key="QA_On_Separate_Pages">Spørsmål/svar på adskilte sider?</msg>
   <msg key="QA_on_Separate_Pages">Spørsmål/svar på adskilte sider?</msg>
   <msg key="Question">Spørsmål (Q)</msg>

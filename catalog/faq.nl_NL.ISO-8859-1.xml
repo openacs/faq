@@ -20,11 +20,11 @@
   <msg key="Edit_an_FAQ">Een veelgestelde vraag bewerken</msg>
   <msg key="FAQ_Admin">Veelgestelde vragen (faq) beheren</msg>
   <msg key="faq_name_Admin">%faq_name% beheren</msg>
-  <msg key="FAQs">Veelgestelde vragen (faqs)</msg>
+  <msg key="FAQs">Veelgestelde vragen (faq)</msg>
   <msg key="HTML">HTML</msg>
   <msg key="insert_after">invoegen na</msg>
-  <msg key="lt_Are_you_sure_you_want">Weet u zeker dat u deze Veelgestelde Vraag wilt verwijderen?</msg>
-  <msg key="lt_Are_you_sure_you_want_1">Weet u zeker dat u deze vraag wilt verwijderen?</msg>
+  <msg key="lt_Are_you_sure_you_want">Deze veelgestelde vraag echt verwijderen?</msg>
+  <msg key="lt_Are_you_sure_you_want_1">Deze vraag echt verwijderen?</msg>
   <msg key="lt_no_FAQs">Er zijn geen veelgestelde vragen beschikbaar.</msg>
   <msg key="lt_no_questions">Er zijn geen vragen beschikbaar.</msg>
   <msg key="Name">Naam:</msg>
@@ -43,6 +43,6 @@
   <msg key="Title">Titel:</msg>
   <msg key="Update_FAQ">Veelgestelde vraag bijwerken</msg>
   <msg key="Update_This_QA">Deze Vraag&amp;Antwoord bijwerken</msg>
-  <msg key="View_All_FAQs">Bekijk alle veelgestelde vragen (faqs)</msg>
+  <msg key="View_All_FAQs">Bekijk alle veelgestelde vragen (faq)</msg>
   <msg key="Yes">Ja</msg>
 </message_catalog>
