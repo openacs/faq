@@ -27,6 +27,7 @@
    <tr>
     <th></th>
     <td><input type="submit" value="@submit_label@"></td>
+   </tr>
   </table>
  </blockquote>
 </form>

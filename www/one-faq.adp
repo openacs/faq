@@ -12,12 +12,12 @@
 <multiple name="one_question">
 <if @separate_p@ true>
     <li>
-      <a href="one-question?entry_id=@one_question.entry_id@">@one_question.question@</a>
+      <a href="one-question?entry_id=@one_question.entry_id@">@one_question.question;noquote@</a>
     </li>
 </if>
 <if @separate_p@ false>
     <li>
-      <a href="#@one_question.entry_id@">@one_question.question@</a>
+      <a href="#@one_question.entry_id@">@one_question.question;noquote@</a>
     </li>
 </if>
 </multiple>
@@ -29,9 +29,9 @@
 <multiple name="one_question">
     <li>
       <a name=@one_question.entry_id@></a>
-      <b>#faq.Q#</b> <i>@one_question.question@</i>
+      <b>#faq.Q#</b> <i>@one_question.question;noquote@</i>
       <p>
-      <b>#faq.A#</b> @one_question.answer@
+      <b>#faq.A#</b> @one_question.answer;noquote@
       <p>
     </li>
 </multiple>
