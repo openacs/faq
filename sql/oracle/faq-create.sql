@@ -23,7 +23,8 @@ create table faqs (
 		faq_name  varchar (250)
 		          constraint faqs_faq_name_nn
 			  not null,
-		separate_p char(1) default 'f' check(separate_p in ('f','t'))
+		separate_p char(1) default 'f' check(separate_p in ('f','t')), 
+		disabled_p char(1) default 'f' check(disabled_p in ('f','t'))
 );
 
 
