@@ -23,7 +23,7 @@ permission::require_permission -object_id $package_id -privilege faq_admin_faq
 
 set context {}
 
-set user_id [ad_verify_and_get_user_id]
+set user_id [ad_conn user_id]
 
 template::list::create \
     -name faqs \
