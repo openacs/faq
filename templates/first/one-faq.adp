@@ -9,7 +9,7 @@
 <else>
 <table>
  <tr valign=top>
- <td width=30%>
+ <td width="30%">
  <ol>
   <multiple name=one_question>
    <if @separate_p@ eq "t">
