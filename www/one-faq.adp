@@ -10,12 +10,12 @@
 
   <ol>
 <multiple name="one_question">
-<if @separate_p@ eq "t">
+<if @separate_p@ true>
     <li>
       <a href="one-question?entry_id=@one_question.entry_id@">@one_question.question@</a>
     </li>
 </if>
-<if @separate_p@ eq "f">
+<if @separate_p@ false>
     <li>
       <a href="#@one_question.entry_id@">@one_question.question@</a>
     </li>
@@ -23,7 +23,7 @@
 </multiple>
   </ol>
 
-<if @separate_p@ eq "f">
+<if @separate_p@ false>
   <hr>
   <ol>
 <multiple name="one_question">

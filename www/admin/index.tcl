@@ -69,7 +69,7 @@ db_multirow -extend { edit_url manage_url delete_url disable_url enable_url } fa
       from acs_objects o, faqs f
       where object_id = faq_id
         and context_id = :package_id
-    order by disabled_p, faq_name
+    order by lower(faq_name), faq_name
 } {
     set edit_url [export_vars -base faq-add-edit { faq_id }]
     set manage_url [export_vars -base one-faq { faq_id }]

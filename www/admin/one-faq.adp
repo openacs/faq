@@ -2,8 +2,8 @@
 <property name="context">@context;noquote@</property>
 <property name="title">#faq.faq_name_Admin#</property>
 
-<b>#faq.Title#</b> @faq_name@ (<a href=faq-add-edit?faq_id=@faq_id@>#faq.edit#</a>)
-<p>
+<include src="/packages/faq/lib/faq-add-edit" &="faq_id" mode="display">
+
 <if @faq_q_and_as:rowcount@ eq 0>
  <i>#faq.lt_no_questions#</i><p>
 </if>
