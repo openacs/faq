@@ -1,0 +1,20 @@
+<master src="master">
+<property name="context_bar">@context_bar@</property>
+<property name="title">FAQs</property>
+
+<if @faqs:rowcount@ eq 0>
+ <i>There are no faqs available.</i><p>
+</if>
+
+<else>
+ <ul>
+  <multiple name=faqs>
+   <li><a href="one-faq?faq_id=@faqs.faq_id@">@faqs.faq_name@</a>
+   </li>
+  </multiple>
+ </ul>
+</else>
+
+
+
+
