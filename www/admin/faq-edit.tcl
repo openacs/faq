@@ -19,7 +19,7 @@ ad_page_contract {
 
 ad_require_permission [ad_conn package_id] faq_modify_faq
 
-set context {[_ faq.Edit_an_FAQ]}
+set context [list [_ faq.Edit_an_FAQ]]
 set title [_ faq.Edit_an_FAQ]
 set action "faq-edit-2"
 set submit_label [_ faq.Update_FAQ]
