@@ -3,8 +3,8 @@
 
   <msg key="A">J:</msg>
   <msg key="Add_QA_for_faq_name">Tambah Soal-Jawab untuk %faq_name%</msg>
-  <msg key="administer">menyelia</msg>
-  <msg key="Answer">Jawab</msg>
+  <msg key="administer">tadbir</msg>
+  <msg key="Answer">Jawapan</msg>
   <msg key="Back_to_FAQs">Kembali ke senarai FAQ</msg>
   <msg key="Create_a_new_FAQ">Hasilkan FAQ baru</msg>
   <msg key="Create_an_FAQ">Hasilkan satu FAQ</msg>
@@ -12,10 +12,10 @@
   <msg key="Create_New_QA">Hasilkan Soal-Jawab Baru</msg>
   <msg key="Create_new_QA">Hasilkan Soal-Jawab baru</msg>
   <msg key="Create_QA">Hasilkan Soal-Jawab</msg>
-  <msg key="Delete">Buang</msg>
-  <msg key="delete">buang</msg>
+  <msg key="Delete">Padam</msg>
+  <msg key="delete">padam</msg>
   <msg key="Delete_This_QA">buang Soal-Jawab ini</msg>
-  <msg key="Edit">Ubah</msg>
+  <msg key="Edit">Edit</msg>
   <msg key="edit">ubah</msg>
   <msg key="Edit_an_FAQ">Ubah satu FAQ</msg>
   <msg key="FAQ_Admin">Penyeliaan FAQ</msg>
