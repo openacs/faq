@@ -9,6 +9,6 @@
 
 <li><a href=configure?<%=[export_url_vars return_url]%>>#faq.Configure#</a>
 <if @use_categories_p@>
-   <li><a href="@category_map_url@" class="action_link">#categories.Site_wide_categories#</a>
+   <li><a href="@category_map_url@" class="action_link">#faq.Site_wide_categories#</a>
 </if>
 </ul>
