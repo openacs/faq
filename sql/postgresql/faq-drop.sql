@@ -8,6 +8,7 @@ drop function faq__delete_q_and_a (integer);
 drop function faq__new_faq (integer, varchar, boolean,varchar,timestamp,integer,varchar,integer );
 drop function faq__delete_faq (integer);
 drop function faq__name (integer);
+drop function faq__clone (integer,integer);
 
 --drop permissions
 delete from acs_permissions where object_id in (select entry_id from faq_q_and_as);
