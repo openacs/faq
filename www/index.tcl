@@ -24,6 +24,13 @@ set user_id [ad_verify_and_get_user_id]
  
 ad_require_permission $package_id faq_view_faq
 
+set admin_p 0
+
+if {[ad_permission_p -user_id $user_id $package_id faq_admin_faq]} {
+    set admin_p 1
+}
+
+
 db_multirow faqs faq_select {
     select faq_id, faq_name
       from acs_objects o, faqs f
