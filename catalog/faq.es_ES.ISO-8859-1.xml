@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="faq" package_version="4.6" locale="es_ES" charset="ISO-8859-1">
+<message_catalog package_key="faq" package_version="4.7" locale="es_ES" charset="ISO-8859-1">
 
   <msg key="A">A:</msg>
   <msg key="Add_QA_for_faq_name">Añadir Pregunta y Respuesta a %faq_name%</msg>
@@ -18,7 +18,7 @@
   <msg key="Edit">Editar</msg>
   <msg key="edit">editar</msg>
   <msg key="Edit_an_FAQ">Editar Preguntas más Frecuentes</msg>
-  <msg key="FAQ_Admin">Administración de Preguntas más Frecuentes?</msg>
+  <msg key="FAQ_Admin">¿Administración de Preguntas más Frecuentes?</msg>
   <msg key="faq_name_Admin">Administrar %faq_name%</msg>
   <msg key="FAQs">Preguntas más Frecuentes</msg>
   <msg key="HTML">HTML</msg>
