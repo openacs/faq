@@ -8,7 +8,7 @@
 
 
 <if @faqs:rowcount@ eq 0>
- <i>There are no faqs available.</i><p>
+ <i>There are no FAQs available.</i><p>
 </if>
 
 <else>
