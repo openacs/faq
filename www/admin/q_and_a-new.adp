@@ -1,6 +1,6 @@
 <master src="master">
 <property name="title">@page_title@</property>
-<property name="context_bar">@context_bar@</property>
+<property name="context">@context@</property>
 
 <form action="@target@">
  <input type="hidden" name="insert_p" value="@insert_p@">

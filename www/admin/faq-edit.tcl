@@ -9,7 +9,7 @@ ad_page_contract {
 } {
     faq_id:naturalnum
 } -properties {
-    context_bar:onevalue
+    context:onevalue
     faq_id:onevalue
     title:onevalue
     faq_name:onevalue
@@ -19,7 +19,7 @@ ad_page_contract {
 
 ad_require_permission [ad_conn package_id] faq_modify_faq
 
-set context_bar {"Edit an FAQ"}
+set context {"Edit an FAQ"}
 set title "Edit an FAQ"
 set action "faq-edit-2"
 set submit_label "Update FAQ"

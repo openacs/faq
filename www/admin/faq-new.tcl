@@ -9,7 +9,7 @@ ad_page_contract {
     @creation-date 2000-10-24
 } {
 } -properties {
-    context_bar:onevalue
+    context:onevalue
     faq_id:onevalue
     title:onevalue
     action:onevalue
@@ -20,7 +20,7 @@ ad_page_contract {
 
 ad_require_permission [ad_conn package_id] faq_create_faq
 
-set context_bar {"Create an FAQ"}
+set context {"Create an FAQ"}
 set title "Create an FAQ"
 set action "faq-new-2"
 set submit_label "Create FAQ"

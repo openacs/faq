@@ -10,7 +10,7 @@ ad_page_contract {
    
 } {
 } -properties {
-  context_bar:onevalue
+  context:onevalue
   package_id:onevalue
   user_id:onevalue
 }
@@ -19,8 +19,7 @@ set package_id [ad_conn package_id]
 
 ad_require_permission $package_id faq_admin_faq
 
-
-set context_bar {All}
+set context {}
 
 set user_id [ad_verify_and_get_user_id]
 

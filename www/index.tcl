@@ -10,7 +10,7 @@ ad_page_contract {
    
 } {
 } -properties {
-  context_bar:onevalue
+  context:onevalue
   package_id:onevalue
   user_id:onevalue
   faqs:multirow
@@ -18,7 +18,8 @@ ad_page_contract {
 
 set package_id [ad_conn package_id]
 
-set context_bar {All}
+set context {}
+
 
 set user_id [ad_verify_and_get_user_id]
  

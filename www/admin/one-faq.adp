@@ -1,5 +1,5 @@
 <master src="master">
-<property name="context_bar">@context_bar@</property>
+<property name="context">@context@</property>
 <property name="title">@faq_name@ Admin</property>
 
 <if @faq_q_and_as:rowcount@ eq 0>

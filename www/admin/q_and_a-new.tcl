@@ -13,7 +13,7 @@ ad_page_contract {
     faq_id:naturalnum,notnull
 
 }  -properties {
-    context_bar:onevalue
+    context:onevalue
     entry_id:onevalue
     title:onevalue
     action:onevalue
@@ -27,7 +27,7 @@ ad_require_permission [ad_conn package_id] faq_create_faq
 db_1row get_name "select faq_name from faqs where faq_id=:faq_id"
 
 set page_title "Add Q&A for $faq_name"
-set context_bar [list [list "one-faq?faq_id=$faq_id" "$faq_name"] "Create new Q&A"]
+set context [list [list "one-faq?faq_id=$faq_id" "$faq_name"] "Create new Q&A"]
 set title "Create new Q&A"
 set target "q_and_a-new-2"
 set submit_label "Create Q&A"

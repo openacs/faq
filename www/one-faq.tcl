@@ -20,7 +20,7 @@ ad_require_permission $package_id faq_view_faq
 
 db_1row faq_info "select faq_name, separate_p from faqs where faq_id=:faq_id"
 
-set context_bar [list $faq_name]
+set context [list $faq_name]
 
 db_multirow one_question q_and_a_info "select entry_id, faq_id, question, answer, sort_key 
 from faq_q_and_as 
