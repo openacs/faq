@@ -11,7 +11,6 @@ ad_page_contract {
     faq_id:integer,notnull,trim
     question:html,notnull,trim
     answer:html,notnull,trim
-    mime_type:notnull
     entry_id:naturalnum,optional
     insert_p:optional
  
