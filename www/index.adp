@@ -3,7 +3,7 @@
 <property name="title">FAQs</property>
 
 <if @admin_p@ eq 1>
-<P>[<a href="./admin">adminsiter</a>]</P>
+<P>[<a href="./admin">administer</a>]</P>
 </if>
 
 
