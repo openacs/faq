@@ -1,6 +1,6 @@
 <master src="master">
 <property name="context_bar">@context_bar@</property>
-<property name="title">$faq_name</property>
+<property name="title">@faq_name@</property>
 
 <if @one_question:rowcount@ eq 0>
  <i>There are no questions available.</i><p>
