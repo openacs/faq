@@ -41,8 +41,6 @@ if { [info exists entry_id]} {
     set insert_p "t"
 }
 
-set mime_type ""
-
 set question_q [ad_quotehtml $question]
 set answer_q [ad_quotehtml $answer]
 

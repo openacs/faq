@@ -24,15 +24,6 @@
     <th align="right"><br>#faq.Answer#</td>
     <td><textarea name="answer" rows="10" cols="50" wrap>@answer_q@</textarea></td>
    </tr>
-   <tr>   <th align="right">#faq.Text_type#</th>
-    <td>
-     <select name="mime_type">
-      <option value="text/plain; format=flowed" selected>#faq.Plain#</option>
-      <option value="text/plain">#faq.Preformatted#</option>
-      <option value="text/html">#faq.HTML#</option>
-     </select>
-    </td>
-   </tr>
    <tr>
     <th></th>
     <td><input type="submit" value="@submit_label@"></td>
