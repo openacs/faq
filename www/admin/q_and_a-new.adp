@@ -1,8 +1,9 @@
 <master>
 <property name="title">@page_title;noquote@</property>
 <property name="context">@context;noquote@</property>
+<property name="focus">question.question</property>
 
-<form action="@target@">
+<form action="@target@" name="question">
  <input type="hidden" name="insert_p" value="@insert_p@">
  <input type="hidden" name="faq_id" value="@faq_id@">
 

@@ -1,8 +1,9 @@
 <master></master>
 <property name="context">@context;noquote@</property>
 <property name="title">@title;noquote@</property>
+<property name="focus">faq.faq_name</property>
   
-<form action="@action@">
+<form action="@action@" name="faq">
   <input type="hidden" name="faq_id" value="@faq_id@">
   <blockquote>
     <table>
