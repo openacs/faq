@@ -2,6 +2,11 @@
 <property name="context_bar">@context_bar@</property>
 <property name="title">FAQs</property>
 
+<if @admin_p@ eq 1>
+<P>[<a href="./admin">adminsiter</a>]</P>
+</if>
+
+
 <if @faqs:rowcount@ eq 0>
  <i>There are no faqs available.</i><p>
 </if>
