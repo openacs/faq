@@ -40,6 +40,7 @@ set creation_ip [ad_conn host]
 
 # Are categories used?
 set use_categories_p [parameter::get -parameter "EnableCategoriesP" -default 0]
+set category_container [parameter::get -parameter "CategoryContainer"]
 set package_id [ad_conn package_id]
 
 set select_sql_query "select question, answer,faq_name,qa.faq_id
