@@ -32,7 +32,7 @@
  </ol>
 </else>
 
-<a href="q-and-a-add-edit?faq_id=@faq_id@" class="action">#faq.Create_New_QA#</a>
-<a href="." class="action">#faq.View_All_FAQs#</a>
-
-
+<ul class="action-links">
+  <li><a href="q-and-a-add-edit?faq_id=@faq_id@">#faq.Create_New_QA#</a></li>
+  <li><a href=".">#faq.View_All_FAQs#</a></li>
+</ul>

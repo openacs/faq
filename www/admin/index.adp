@@ -4,6 +4,8 @@
 
 <listtemplate name="faqs"></listtemplate>
 
-<a href="faq-add-edit" class="action">#faq.Create_a_new_FAQ#</a>
+<ul class="action-links">
+  <li><a href="faq-add-edit">#faq.Create_a_new_FAQ#</a></lI>
+</ul>
 
 
