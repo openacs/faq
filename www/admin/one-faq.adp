@@ -2,6 +2,8 @@
 <property name="context">@context@</property>
 <property name="title">@faq_name@ Admin</property>
 
+<b>Title:</b> @faq_name@ (<a href=faq-edit?faq_id=@faq_id@>edit</a>)
+<p>
 <if @faq_q_and_as:rowcount@ eq 0>
  <i>There are no questions available.</i><p>
 </if>
@@ -29,9 +31,7 @@
   </multiple>
  </ol>
 </else>
-
-  <a href="q_and_a-new?<%=[export_url_vars faq_id]%>">Create New Q&A</a>
-
-<p>
-<a href="index">Back to FAQs</a>
-
+<ul>
+  <li><a href="q_and_a-new?<%=[export_url_vars faq_id]%>">Create New Q&A</a>
+<li><a href="index">View All FAQs</a>
+</ul>

@@ -2,7 +2,7 @@
 <property name="context">@context@</property>
 <property name="title">One Question</property>
 
-<form action="@action@" >
+<form action="@action@" method=post>
 <input type=hidden name=entry_id value=@entry_id@>
  <table>
   <tr>

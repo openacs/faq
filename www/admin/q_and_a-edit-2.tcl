@@ -21,5 +21,9 @@ db_dml q_and_a_edit "update faq_q_and_as
                   answer = :answer
                   where entry_id = :entry_id"
 
-ad_returnredirect "."
+set faq_id [db_string select_faq_id "select faq_id from 
+                         faq_q_and_as 
+                         where entry_id = :entry_id"]
+
+ad_returnredirect "one-faq?faq_id=$faq_id"
 
