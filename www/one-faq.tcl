@@ -19,7 +19,10 @@ set user_id [ad_conn user_id]
 
 ad_require_permission $package_id faq_view_faq
 
-db_1row faq_info "select faq_name, separate_p from faqs where faq_id=:faq_id"
+if {![db_0or1row faq_info "select faq_name, separate_p from faqs where faq_id=:faq_id"]} {
+    ns_returnnotfound
+    ad_script_abort
+}
 
 set context [list $faq_name]
 
