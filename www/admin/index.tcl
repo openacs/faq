@@ -82,6 +82,7 @@ db_multirow -extend { edit_url manage_url delete_url disable_url enable_url } fa
 
 # for categories
 set use_categories_p [parameter::get -parameter "EnableCategoriesP"]
+set category_container [parameter::get -parameter "CategoryContainer"]
 set category_map_url [export_vars -base "[site_node::get_package_url -package_key categories]cadmin/one-object" { { object_id $package_id } }]
 
 set return_url [ns_conn url]
