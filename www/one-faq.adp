@@ -4,6 +4,7 @@
       @notification_chunk;noquote@ 
 </p>
 <property name="title">@faq_name;noquote@</property>
+<property name="displayed_object_id">@faq_id;noquote@</property>
 
 <table width="70%" border="0">
 <tr><td align="left" valign="top">
