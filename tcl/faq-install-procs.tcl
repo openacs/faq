@@ -12,12 +12,14 @@ ad_proc -private faq::install::package_install {} {
     package install callback
 } {
     faq::sc::register_implementations
+    faq::apm_callback::package_install
 }
 
 ad_proc -private faq::install::package_uninstall {} { 
     package uninstall callback
 } {
     faq::sc::unregister_implementations
+    faq::apm_callback::package_uninstall
 }
 
 ad_proc -private faq::install::package_upgrade {
@@ -34,6 +36,7 @@ ad_proc -private faq::install::package_upgrade {
                 # need to install the faq callbacks
                 faq::sc::register_faq_fts_impl
                 faq::sc::register_faq_q_and_a_fts_impl
+                faq::apm_callback::package_install
             }
         }
 }

@@ -14,10 +14,13 @@
         <release-date>2003-11-10</release-date>
         <vendor url="http://ybos.net">Ybos Corporation</vendor>
         <description format="text/html">Handles frequently asked questions Q&amp;A presentation.  Can be one Q&amp;A per page or all presented flat.  Straightforward application with room for improvement.</description>
+        <maturity>0</maturity>
+
         <provides url="faq" version="5.2.0d2"/>
         <requires url="acs-kernel" version="5.2.0d3"/>
+        <requires url="notifications" version="5.0.0b4"/>
 
-       <callbacks>
+        <callbacks>
             <callback type="after-install"  proc="faq::install::package_install"/>
             <callback type="before-uninstall"  proc="faq::install::package_uninstall"/>
             <callback type="before-upgrade"  proc="faq::install::package_upgrade"/>

@@ -93,6 +93,7 @@ db_dml q_and_a_edit "update faq_q_and_as
                   answer = :answer 
                   where entry_id = :entry_id"
 } -after_submit {
+   faq::notification_delivery::do_notification $question $answer $entry_id $faq_id $user_id 
    ad_returnredirect "one-faq?faq_id=$faq_id"
    ad_script_abort
 }

@@ -1,7 +1,9 @@
 <master>
 <property name="context">@context;noquote@</property>
 <property name="title">#faq.FAQs#</property>
-
+<p>
+      @notification_chunk;noquote@ 
+</p>
 <if @admin_p@ eq 1>
   <p>
     <a href="./admin" class="button">#faq.administer#</a>

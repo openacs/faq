@@ -1,7 +1,9 @@
 <master>
 <property name="context">@context;noquote@</property>
+<p>
+      @notification_chunk;noquote@ 
+</p>
 <property name="title">@faq_name;noquote@</property>
-<property name="displayed_object_id">@faq_id;noquote@</property>
 
 <if @one_question:rowcount@ eq 0>
   <i>#faq.lt_no_questions#</i>

@@ -27,4 +27,11 @@ from faq_q_and_as
 where faq_id = :faq_id
 order by sort_key"
 
+set notification_chunk [notification::display::request_widget \
+                        -type one_faq_qa_notif \
+                        -object_id $faq_id \
+                        -pretty_name $faq_name \
+                        -url [ad_conn url]?faq_id=$faq_id \
+                        ]
+
 ad_return_template
