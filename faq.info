@@ -13,6 +13,7 @@
         <owner url="mailto:mazloumi@uni-mannheim.de">Nima Mazloumi</owner>
         <summary>Manage simple and categorized Question and Answer style FAQs with WYSIWYG and notification functionalities.</summary>
         <release-date>2004-08-12</release-date>
+        <maturity>2</maturity>
         <vendor url="http://ybos.net">Ybos Corporation</vendor>
         <description format="text/html">Handles frequently asked questions Q&amp;A presentation.  Can be one Q&amp;A per page or all presented flat.  Straightforward application with room for improvement. Support for notification as well as WYSIQYG Editor and Categories - both optional. Category trees are displayed flat. No multiple filters.</description>
 
