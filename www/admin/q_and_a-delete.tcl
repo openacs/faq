@@ -24,6 +24,7 @@ db_transaction {
 	        );
 	end;
     }
+    db_dml delete_named_object "delete from acs_named_objects where object_id = :entry_id"
 }
 
 ad_returnredirect "one-faq?faq_id=$faq_id"

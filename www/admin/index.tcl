@@ -3,9 +3,11 @@
 ad_page_contract {
 
     Admin for FAQs on this site
+    Categories for FAQ-Package added
 
     @author Jennie Housman (jennie@ybos.net)
     @author Elizabeth Wirth (wirth@ybos.net)
+    @author Nima Mazloumi (nima.mazloumi@gmx.de)
     @creation-date 2000-10-24
    
 } {
@@ -77,5 +79,11 @@ db_multirow -extend { edit_url manage_url delete_url disable_url enable_url } fa
     set disable_url [export_vars -base faq-disable { faq_id }]
     set enable_url [export_vars -base faq-enable { faq_id }]
 }
+
+# for categories
+set use_categories_p [parameter::get -parameter "EnableCategoriesP"]
+set category_map_url [export_vars -base "[site_node::get_package_url -package_key categories]cadmin/one-object" { { object_id $package_id } }]
+
+set return_url [ns_conn url]
 
 ad_return_template

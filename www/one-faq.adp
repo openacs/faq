@@ -5,12 +5,13 @@
 </p>
 <property name="title">@faq_name;noquote@</property>
 
+<table width="70%" border="0">
+<tr><td align="left" valign="top">
 <if @one_question:rowcount@ eq 0>
   <i>#faq.lt_no_questions#</i>
   <p>
 </if>
 <else>
-
   <ol>
 <multiple name="one_question">
 <if @separate_p@ true>
@@ -42,4 +43,15 @@
 </if>
 
 </else>
-
+</td><td align="right" valign="top">
+<if @use_categories_p@>
+ <multiple name="categories">
+           <h2>@categories.tree_name@</h2>
+           <group column="tree_id">
+             <a href="@package_url@cat@categories.category_id@?faq_id=@faq_id@&category_id=@categories.category_id@">@categories.category_name@</a><br>
+           </group>
+         </multiple>
+<br><a href="@package_url@one-faq?faq_id=@faq_id@">#faq.All_QA#</a>
+</if>
+</td></tr>
+</table>
