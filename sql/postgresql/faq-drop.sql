@@ -3,9 +3,9 @@
 --openacs port @samir.symphinity.com
 
 --drop functions
-drop function faq__new_q_and_a (integer,integer,varchar,varchar,integer,varchar,timestamp,integer,varchar,integer);
+drop function faq__new_q_and_a (integer,integer,varchar,varchar,integer,varchar,timestamptz,integer,varchar,integer);
 drop function faq__delete_q_and_a (integer);
-drop function faq__new_faq (integer, varchar, boolean,varchar,timestamp,integer,varchar,integer );
+drop function faq__new_faq (integer, varchar, boolean,varchar,timestamptz,integer,varchar,integer );
 drop function faq__delete_faq (integer);
 drop function faq__name (integer);
 drop function faq__clone (integer,integer);
