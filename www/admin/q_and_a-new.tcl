@@ -39,5 +39,7 @@ if { [info exists entry_id]} {
     set insert_p "t"
 }
 
+set mime_type "foo"
+
 ad_return_template 
 

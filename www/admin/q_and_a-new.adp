@@ -26,9 +26,9 @@
    <tr>   <th align="right">Text type?</th>
     <td>
      <select name="mime_type">
-      <option value="text/plain; format=flowed" <if @mime_type@ nil or @mime_type@ eq "text/plain; format=flowed">selected</if>>Plain</option>
-      <option value="text/plain" <if @mime_type@ not nil and @mime_type@ eq "text/plain">selected</if>>Preformatted</option>
-      <option value="text/html" <if @mime_type@ not nil and @mime_type@ eq "text/html">selected</if>>HTML</option>
+      <option value="text/plain; format=flowed" selected>Plain</option>
+      <option value="text/plain">Preformatted</option>
+      <option value="text/html">HTML</option>
      </select>
     </td>
    </tr>
