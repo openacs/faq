@@ -25,4 +25,4 @@ db_transaction {
     }
 }
 
-ad_returnredirect "one-faq.tcl?faq_id=$faq_id"
+ad_returnredirect "one-faq?faq_id=$faq_id"
