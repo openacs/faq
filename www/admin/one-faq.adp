@@ -12,7 +12,7 @@
  <ol>
   <multiple name=faq_q_and_as>
    <li>
-	@faq_q_and_as.question@ 
+	@faq_q_and_as.question;noquote@ 
 	(	
 	 <a href="q-and-a-add-edit?entry_id=@faq_q_and_as.entry_id@&faq_id=@faq_id@">#faq.edit#</a> |
 	 <a href="one-question?entry_id=@faq_q_and_as.entry_id@">#faq.preview#</a> |

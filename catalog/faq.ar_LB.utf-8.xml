@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<message_catalog package_key="faq" package_version="4.6" locale="AR_LB" charset="utf-8">
+<message_catalog package_key="faq" package_version="4.6" locale="ar_LB" charset="utf-8">
 
   <msg key="A">ج:</msg>
   <msg key="Add_QA_for_faq_name">أضفْ س&amp;ج لي %faq_name%</msg>
   <msg key="administer">أدرْ</msg>
   <msg key="Answer">الإجابة</msg>
   <msg key="Back_to_FAQs">عُدْ إلى الأسئلة المكرَّرةِ</msg>
-  <msg key="Create_a_new_FAQ">إخلقْ أسئلة مكرَّرةَ جديدةَ</msg>
-  <msg key="Create_an_FAQ">إخلقْ سؤالاً مكرَّراً</msg>
-  <msg key="Create_FAQ">إخلقْ سؤال مكرَّر</msg>
-  <msg key="Create_New_QA">إخلقْ س&amp;ج جديدةَ</msg>
-  <msg key="Create_new_QA">إخلقْ س&amp;ج جديدةَ</msg>
-  <msg key="Create_QA">إخلقْ س&amp;ج</msg>
+  <msg key="Create_a_new_FAQ">انشئ أسئلة مكرَّرةَ جديدةَ</msg>
+  <msg key="Create_an_FAQ">انشئ سؤالاً مكرَّراً</msg>
+  <msg key="Create_FAQ">انشئ سؤال مكرَّر</msg>
+  <msg key="Create_New_QA">انشئ س&amp;ج جديدةَ</msg>
+  <msg key="Create_new_QA">انشئ س&amp;ج جديدةَ</msg>
+  <msg key="Create_QA">انشئ  س&amp;ج</msg>
   <msg key="Delete">إحذفْ</msg>
   <msg key="delete">إحذفْ</msg>
   <msg key="Delete_This_QA">إحذفْ هذا س&amp;ج</msg>

@@ -44,8 +44,8 @@ ad_form -name new_quest_answ -export {faq_id creation_ip} -form {
 
     entry_id:key
     {prev_entry_id:text(hidden) {value $prev_entry_id}}
-    {question:text(textarea) {label "Question"} {html {rows 10 cols 40 wrap soft }}}
-    {answer:text(textarea) {label "Answer"} {html {rows 10 cols 40 wrap soft }} }
+    {question:text(textarea) {label "Question"} {html {rows 10 cols 40 wrap soft }} {help_text {Question text in html}}}
+    {answer:text(textarea) {label "Answer"} {html {rows 10 cols 40 wrap soft }} {help_text {Answer text in html}}}
 
 } -select_query {
 

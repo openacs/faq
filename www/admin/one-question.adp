@@ -2,9 +2,9 @@
 <property name="context">@context;noquote@</property>
 <property name="title">#faq.One_Question#</property>
 
-<b>#faq.Q#</b> @question@
+<b>#faq.Q#</b> @question;noquote@
 <P>
-<b>#faq.A#</b> @answer@
+<b>#faq.A#</b> @answer;noquote@
 <p>
 <a href="@edit_url@">#faq.Edit#</a> 
 | 
