@@ -96,6 +96,13 @@ as
 		  entry_id in faq_q_and_as.entry_id%TYPE
         );
 
+
+	procedure clone (
+          old_package_id    in apm_packages.package_id%TYPE,
+          new_package_id    in apm_packages.package_id%TYPE
+        );
+
+
 end faq;
 /
 show errors
@@ -206,6 +213,45 @@ as
 		acs_object.delete(faq_id);
 
      	end delete_faq;
+
+
+	procedure clone (
+          old_package_id    in apm_packages.package_id%TYPE   default null,
+          new_package_id    in apm_packages.package_id%TYPE   default null
+        )
+        is
+            v_faq_id faqs.faq_id%TYPE;
+            v_entry_id faq_q_and_as.entry_id%TYPE;
+        begin
+            -- get all the faqs belonging to the old package,
+            -- and create new faqs for the new package
+            for one_faq in (select * 
+                            from acs_objects o, faqs f
+                            where o.object_id = f.faq_id
+                            and o.context_id = faq.clone.old_package_id)
+            loop
+            
+                -- faq is "scoped" by using the acs_objects.context_id
+                v_faq_id := faq.new_faq (
+                    faq_name     => one_faq.faq_name,      
+                    separate_p   => one_faq.separate_p,
+                    context_id   => faq.clone.new_package_id                    
+               );                                      
+               
+               for entry in (select * from faq_q_and_as f
+                                   where faq_id = one_faq.faq_id)
+               loop
+                   -- now (surprise!) copy all the entries of this faq
+                   v_entry_id :=  faq.new_q_and_a (
+                       context_id => entry.faq_id,
+                       faq_id=> v_faq_id,
+                       question => entry.question,
+                       answer => entry.answer,
+                       sort_key => entry.sort_key
+                   );
+               end loop;
+           end loop;
+        end clone;
 
 
 end faq;
