@@ -99,8 +99,8 @@ as
 
 
 	procedure clone (
-          old_package_id    in apm_packages.package_id%TYPE,
-          new_package_id    in apm_packages.package_id%TYPE
+          old_package_id    in apm_packages.package_id%TYPE default NULL,
+          new_package_id    in apm_packages.package_id%TYPE default NULL
         );
 
 
@@ -153,7 +153,7 @@ as
     	is		
    	begin
 		delete from faq_q_and_as where entry_id =  faq.delete_q_and_a.entry_id;
-		acs_object.delete(entry_id);
+		acs_object.del(entry_id);
    	end delete_q_and_a;
 
 
@@ -211,7 +211,7 @@ as
 	 end;
   
 		delete from faqs where faq_id=faq.delete_faq.faq_id;
-		acs_object.delete(faq_id);
+		acs_object.del(faq_id);
 
      	end delete_faq;
 
