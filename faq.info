@@ -13,9 +13,9 @@
         <owner url="mailto:mazloumi@uni-mannheim.de">Nima Mazloumi</owner>
         <summary>Manage simple and categorized Question and Answer style FAQs with WYSIWYG and notification functionalities.</summary>
         <release-date>2004-08-12</release-date>
-        <maturity>2</maturity>
         <vendor url="http://ybos.net">Ybos Corporation</vendor>
         <description format="text/html">Handles frequently asked questions Q&amp;A presentation.  Can be one Q&amp;A per page or all presented flat.  Straightforward application with room for improvement. Support for notification as well as WYSIQYG Editor and Categories - both optional. Category trees are displayed flat. No multiple filters.</description>
+        <maturity>2</maturity>
 
         <provides url="faq" version="5.2.0d4"/>
         <requires url="acs-kernel" version="5.2.0d3"/>
@@ -23,6 +23,9 @@
         <requires url="notifications" version="5.0.0b4"/>
 
         <callbacks>
+            <callback type="after-install"  proc="faq::install::package_install"/>
+            <callback type="before-uninstall"  proc="faq::install::package_uninstall"/>
+            <callback type="before-upgrade"  proc="faq::install::package_upgrade"/>
         </callbacks>
         <parameters>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="CategoryContainer"  default="package_id" description="Should the category container for the faqs be &quot;subsite_id&quot; or &quot;package_id&quot;."/>
