@@ -22,6 +22,7 @@
 <if @separate_p@ false>
     <li>
       <a href="#@one_question.entry_id@">@one_question.question;noquote@</a>
+      <a href="categories/categorize?object_id=@one_question.entry_id@">Categorize</a>
     </li>
 </if>
 </multiple>

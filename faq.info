@@ -7,7 +7,7 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
     
-    <version name="5.2.0d3" url="http://openacs.org/repository/download/apm/faq-5.2.0d3.apm">
+    <version name="5.2.0d4" url="http://openacs.org/repository/download/apm/faq-5.2.0d4.apm">
         <owner url="mailto:wirth@ybos.net">Elizabeth Wirth</owner>
         <owner url="mailto:jennie@ybos.net">Jennie Kim Housman</owner>
         <owner url="mailto:mazloumi@uni-mannheim.de">Nima Mazloumi</owner>
@@ -17,7 +17,7 @@
         <vendor url="http://ybos.net">Ybos Corporation</vendor>
         <description format="text/html">Handles frequently asked questions Q&amp;A presentation.  Can be one Q&amp;A per page or all presented flat.  Straightforward application with room for improvement. Support for notification as well as WYSIQYG Editor and Categories - both optional. Category trees are displayed flat. No multiple filters.</description>
 
-        <provides url="faq" version="5.2.0d3"/>
+        <provides url="faq" version="5.2.0d4"/>
         <requires url="acs-kernel" version="5.2.0d3"/>
         <requires url="categories" version="1.0d3"/>
         <requires url="notifications" version="5.0.0b4"/>
@@ -25,6 +25,7 @@
         <callbacks>
         </callbacks>
         <parameters>
+            <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="CategoryContainer"  default="package_id" description="Should the category container for the faqs be &quot;subsite_id&quot; or &quot;package_id&quot;."/>
             <parameter datatype="number"  min_n_values="1"  max_n_values="1"  name="EnableCategoriesP"  default="0" description="Should categories be enabled? Default is 0 (false)."/>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="UseWysiwygP"  default="t" description="Should we allow users to use a WYSIWYG editor to make their entries? Defaults to f (false)."/>
         </parameters>
