@@ -18,7 +18,6 @@ ad_page_contract {
     answer:onevalue 
     answer_q:onevalue 
 } 
- 
 db_1row get_name "select faq_name from faqs where faq_id=:faq_id" 
  
 if { ![ad_form_new_p -key entry_id]} {
@@ -35,7 +34,7 @@ if { ![ad_form_new_p -key entry_id]} {
 
 
 set question "" 
-set answer "" 
+set answer [template::util::richtext::create "" "text/html"]
 set insert_p "f" 
 set question_q [ad_quotehtml $question] 
 set answer_q [ad_quotehtml $answer] 
@@ -70,7 +69,10 @@ if { $use_categories_p == 1 } {
     #extend the form to support categories
     category::ad_form::add_widgets -form_name new_quest_answ -container_object_id $package_id -categorized_object_id [value_if_exists entry_id]
     
-    ad_form -extend -name new_quest_answ -select_query $select_sql_query -on_submit {
+    ad_form -extend -name new_quest_answ -edit_request { 
+        db_1row q $select_sql_query
+        set answer [template::util::richtext::create $answer "text/html"]
+        } -on_submit {
         set category_ids [category::ad_form::get_categories -container_object_id $package_id]
         set answer [ template::util::richtext::get_property contents $answer]
     } -on_request {
@@ -107,11 +109,13 @@ if { $use_categories_p == 1 } {
         ad_script_abort
     }
 } else {
-    ad_form -extend -name new_quest_answ -select_query $select_sql_query -on_submit {
-	set answer [ template::util::richtext::get_property contents $answer]
+    ad_form -extend -name new_quest_answ -edit_request {
+    db_1row q $select_sql_query
+    set answer [template::util::richtext::create $answer "text/html"]
+    } -on_submit {
+    set answer [ template::util::richtext::get_property contents $answer]
     } -on_request {
-	set htmlarea_p $use_wysiwyg_p
-	set answer [template::util::richtext::create $answer "text/html"]
+    set htmlarea_p $use_wysiwyg_p
     } -new_data {
 
         set page_title [_ faq.Add_QA_for_faq_name]
