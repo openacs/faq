@@ -2,11 +2,11 @@
 <message_catalog package_key="faq" package_version="4.6" locale="sv_SE" charset="ISO-8859-1">
 
   <msg key="A">Svar:</msg>
-  <msg key="Add_QA_for_faq_name">Lägg till Frågor och Svar i %faq_name%</msg>
+  <msg key="Add_QA_for_faq_name">Lägg till frågor och svar i %faq_name%</msg>
   <msg key="administer">administrera</msg>
   <msg key="Answer">Svar</msg>
-  <msg key="Back_to_FAQs">Tillbaks till FAQ</msg>
-  <msg key="Create_a_new_FAQ">Skapa ny FAQ</msg>
+  <msg key="Back_to_FAQs">Tillbaka till FAQ</msg>
+  <msg key="Create_a_new_FAQ">Skapa en ny FAQ</msg>
   <msg key="Create_an_FAQ">Skapa en FAQ</msg>
   <msg key="Create_FAQ">Skapa FAQ</msg>
   <msg key="Create_New_QA">Skapa ny fråga/svar</msg>
@@ -17,7 +17,7 @@
   <msg key="Delete_This_QA">Ta bort denna fråga/svar</msg>
   <msg key="Edit">Redigera</msg>
   <msg key="edit">redigera</msg>
-  <msg key="Edit_an_FAQ">Eedigera en FAQ</msg>
+  <msg key="Edit_an_FAQ">Redigera en FAQ</msg>
   <msg key="FAQ_Admin">Administration av FAQ</msg>
   <msg key="faq_name_Admin">%faq_name% Admin</msg>
   <msg key="FAQs">FAQer</msg>
