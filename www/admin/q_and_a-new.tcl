@@ -19,7 +19,9 @@ ad_page_contract {
     action:onevalue
     submit_label:onevalue
     question:onevalue
+    question_q:onevalue
     answer:onevalue
+    answer_q:onevalue
 }
 
 ad_require_permission [ad_conn package_id] faq_create_faq
@@ -40,6 +42,9 @@ if { [info exists entry_id]} {
 }
 
 set mime_type ""
+
+set question_q [ad_quotehtml $question]
+set answer_q [ad_quotehtml $answer]
 
 ad_return_template 
 

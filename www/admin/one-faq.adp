@@ -32,6 +32,6 @@
  </ol>
 </else>
 <ul>
-  <li><a href="q_and_a-new?<%=[export_url_vars faq_id]%>">Create New Q&A</a>
+  <li><a href="@new_faq_url@">Create New Q&A</a>
 <li><a href="index">View All FAQs</a>
 </ul>

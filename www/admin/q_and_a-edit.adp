@@ -23,7 +23,7 @@
   </tr>
   <tr>
    <td>&nbsp;</td>
-   <td> <a href=q_and_a-delete?<%=[export_url_vars entry_id faq_id]%>>Delete This Q&A</a></td>
+   <td> <a href="@delete_url@">Delete This Q&A</a></td>
   </tr>
  </table>
 </form>

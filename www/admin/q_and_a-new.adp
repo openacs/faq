@@ -16,12 +16,12 @@
   
    <tr valign="top">
     <th align="right"><br>Question</td>
-    <td><textarea name="question" rows="3" cols="50" wrap><%= [ad_quotehtml $question] %></textarea></td>
+    <td><textarea name="question" rows="3" cols="50" wrap>@question_q@</textarea></td>
    </tr>
    <tr>
   <tr valign="top">
     <th align="right"><br>Answer</td>
-    <td><textarea name="answer" rows="10" cols="50" wrap><%= [ad_quotehtml $answer] %></textarea></td>
+    <td><textarea name="answer" rows="10" cols="50" wrap>@answer_q@</textarea></td>
    </tr>
    <tr>   <th align="right">Text type?</th>
     <td>

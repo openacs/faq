@@ -27,4 +27,9 @@ db_1row q_and_a_info "select question, answer, a.faq_id, f.faq_name
       and a.faq_id = f.faq_id"
 
 set context [list [list "one-faq?faq_id=$faq_id" "$faq_name"] "One Q&A"]
+
+set edit_url "q_and_a-edit?[export_vars { entry_id faq_id }]"
+set delete_url "q_and_a-delete?[export_vars { entry_id faq_id }]"
+set create_url "q_and_a-new?[export_vars { faq_id } ]"
+
 ad_return_template
