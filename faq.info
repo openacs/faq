@@ -7,7 +7,7 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
     
-    <version name="4.7.1" url="http://openacs.org/repository/download/apm/faq-4.7.1.apm">
+    <version name="4.7.2" url="http://openacs.org/repository/download/apm/faq-4.7.1.apm">
         <owner url="mailto:jennie@ybos.net">Jennie Kim Housman</owner>
         <owner url="mailto:wirth@ybos.net">Elizabeth Wirth</owner>
         <summary>Manage simple Question and Answer style FAQs</summary>
