@@ -52,9 +52,11 @@ ad_form -name new_quest_answ -method GET -export {faq_id creation_ip} -form {
     {entry_id:key}
     {prev_entry_id:text(hidden) {value $prev_entry_id}}
     {question:richtext
+        {html {rows 15 cols 50} }
         {label "[_ faq.Question]"} 
         {help_text {[_ faq.Question_text_in_html]}}}
     {answer:richtext
+        {html {rows 15 cols 50} }
         {label "[_ faq.Answer]"}
         {help_text {[_ faq.Answer_text_in_html]}}}
 }
