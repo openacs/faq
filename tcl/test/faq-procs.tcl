@@ -2,7 +2,6 @@ ad_library {
     Automated tests.
     @author Mounir Lallali
     @creation-date 14 June 2005
-
 }
 
 aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_new_faq {
@@ -14,7 +13,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_new_faq {
 		# Create new Faq
 		set faq_name [ad_generate_random_string]
 		set response [faq::twt::new $faq_name] 
-		aa_display_result -response $response -explanation {for creating a New Faq}
+		aa_display_result -response $response -explanation {Webtest for the creation of a new Faq}
         }            	
 
 }
@@ -29,7 +28,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_faq {
 		set faq_name [ad_generate_random_string]
 	        faq::twt::new $faq_name
 		set response [faq::twt::delete $faq_name]
-		aa_display_result -response $response -explanation {for deleting a Faq}
+		aa_display_result -response $response -explanation {Webtest for deleting a Faq}
 
         }
 }
@@ -46,7 +45,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_one_faq
 		set new_faq_name [ad_generate_random_string]
 		faq::twt::new $faq_name 
 		set response [faq::twt::edit_one $faq_name $new_faq_name]
-		aa_display_result -response $response -explanation {for editing a Faq - First Scenario}
+		aa_display_result -response $response -explanation {Webtest for editing a Faq - First Scenario}
         }          	
 }	
 
@@ -61,7 +60,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_two_faq
 		set new_faq_name [ad_generate_random_string]
 		faq::twt::new $faq_name
 		set response [faq::twt::edit_two $faq_name $new_faq_name]
-		aa_display_result -response $response -explanation {for editing a Faq - Second Scenario}
+		aa_display_result -response $response -explanation {Webtest for editing a Faq - Second Scenario}
         }            	
 }
 
@@ -76,7 +75,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_disable_faq 
 		faq::twt::new $faq_name
 		set option "disable"		
 		set response [faq::twt::disable_enable $faq_name $option]
-		aa_display_result -response $response -explanation {for disabling a Faq}
+		aa_display_result -response $response -explanation { Webtest for disabling a Faq}
         }            	
 }
 
@@ -93,7 +92,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_enable_faq {
 		faq::twt::disable_enable $faq_name $option
 		set option "enable"
 	        set response [faq::twt::disable_enable $faq_name $option]
-		aa_display_result -response $response -explanation {for enabling a Faq}
+		aa_display_result -response $response -explanation {Webtest for enabling a Faq}
         }           	
 }
 
@@ -109,7 +108,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_new_Q_A_faq 
 
 		faq::twt::new $faq_name
 	        set response [faq::twt::new_Q_A $faq_name $question $answer]
-	        aa_display_result -response $response -explanation {for creating a New Question in a Faq}
+	        aa_display_result -response $response -explanation {Webtest for creating a New Question in a Faq}
         }           	
 }
 
@@ -126,7 +125,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_Q_A_f
 		faq::twt::new $faq_name  
  		faq::twt::new_Q_A $faq_name $question $answer
 	        set response [faq::twt::delete_Q_A $faq_name $answer] 
-	        aa_display_result -response $response -explanation {for deleting a Question in a Faq}
+	        aa_display_result -response $response -explanation {Webtest for deleting a Question in a Faq}
         }            	
 
 
@@ -147,7 +146,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_Q_A_faq
 		faq::twt::new $faq_name 
  		faq::twt::new_Q_A $faq_name $question $answer		
 	        set response [faq::twt::edit_Q_A $faq_name $new_question $new_answer]
-	        aa_display_result -response $response -explanation {for editing a Question in a Faq}
+	        aa_display_result -response $response -explanation {Webtest for editing a Question in a Faq}
         }           	
 }
 
@@ -164,7 +163,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_insert_after
 		faq::twt::new $faq_name
  		faq::twt::new_Q_A $faq_name $question $answer		
 	        set response [faq::twt::insert_after_Q_A $faq_name]   
-	        aa_display_result -response $response -explanation {for inserting a Question after a nother in a Faq}
+	        aa_display_result -response $response -explanation {Webtest for inserting a Question after a nother in a Faq}
         }            	
 }
 
@@ -180,7 +179,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_preview_Q_A_
 		faq::twt::new $faq_name 
  		faq::twt::new_Q_A $faq_name $question $answer		
 	        set response [faq::twt::preview_Q_A $faq_name]
-	        aa_display_result -response $response -explanation {for previewing a Question in a Faq}
+	        aa_display_result -response $response -explanation {Webtest for previewing a Question in a Faq}
 	}           	
 }
 
@@ -200,6 +199,6 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_swap_with_ne
  		faq::twt::new_Q_A $faq_name $question_1 $answer_1	
 		faq::twt::new_Q_A $faq_name $question_2 $answer_2	
 	        set response [faq::twt::swap_with_next_Q_A $faq_name]
-	        aa_display_result -response $response -explanation {for swaping a question with a next in a Faq}
+	        aa_display_result -response $response -explanation {Webtest for swaping a question with a next in a Faq}
         }
 }
