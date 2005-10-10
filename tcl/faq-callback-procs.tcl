@@ -11,8 +11,26 @@ ad_proc -public -callback datamanager::move_faq -impl datamanager {
     Move a faq to another class or community
 } {
 
+db_1row get_faqs_package {}
+
+db_dml update_faqs_q_and_a {}
 db_dml update_faqs {}
 }
+
+
+ad_proc -public -callback datamanager::delete_faq -impl datamanager {
+     -object_id:required
+     -selected_community:required
+} {
+    Move a faq to the trash
+} {
+set trash_id [datamanager::get_trash_id]
+set trash_package_id [datamanager::get_trash_package_id]    
+    
+db_dml del_update_faqs_q_and_a {}
+db_dml del_update_faqs {}
+}
+
 
 ad_proc -public -callback datamanager::copy_faq -impl datamanager {
      -object_id:required
