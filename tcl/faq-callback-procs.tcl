@@ -11,10 +11,14 @@ ad_proc -public -callback datamanager::move_faq -impl datamanager {
     Move a faq to another class or community
 } {
 
-db_1row get_faqs_package {}
-
-db_dml update_faqs_q_and_a {}
-db_dml update_faqs {}
+    db_1row get_faqs_package {}
+    
+    db_transaction {
+        db_dml update_faqs_q_and_a {}
+        db_dml update_faqs {}
+    } on_error {
+        ad_return_error "Database error" "A database error occured:<pre>$errmsg</pre>"
+    }
 }
 
 
@@ -26,9 +30,12 @@ ad_proc -public -callback datamanager::delete_faq -impl datamanager {
 } {
 set trash_id [datamanager::get_trash_id]
 set trash_package_id [datamanager::get_trash_package_id]    
-    
-db_dml del_update_faqs_q_and_a {}
-db_dml del_update_faqs {}
+    db_transaction {
+        db_dml del_update_faqs_q_and_a {}
+        db_dml del_update_faqs {}
+    } on_error {
+        ad_return_error "Database error" "A database error occured:<pre>$errmsg</pre>"
+    }
 }
 
 
