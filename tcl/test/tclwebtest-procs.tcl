@@ -11,11 +11,6 @@ namespace eval faq::twt {
 ad_proc new { faq_name } {
 
         set response 0
-	tclwebtest::cookies clear
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
-	
 	# The Faq page url
 	set faq_page_url [aa_get_first_url -package_key faq]	 
 	::twt::do_request $faq_page_url 
@@ -43,18 +38,13 @@ ad_proc new { faq_name } {
 	} else {
 		aa_error "faq::twt::new failed, bad response url : $response_url"
 	}
-	twt::user::logout
+
 	return $response
 }
 
 ad_proc delete { faq_name} {
 
         set response 0
-	tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
 
 	# The Faq page url
 	set faq_page_url [aa_get_first_url -package_key faq]	 
@@ -77,18 +67,13 @@ ad_proc delete { faq_name} {
 	} else {
 		aa_error "faq::twt::delete failed, bad response url : $response_url"
 	}
-	twt::user::logout
+
 	return $response
 }
 
 ad_proc edit_one { faq_name faq_new_name} {
 
         set response 0
-	tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
 
 	db_1row faq_id "select faq_id from faqs where faq_name=:faq_name"
 	 
@@ -118,18 +103,13 @@ ad_proc edit_one { faq_name faq_new_name} {
 	} else {
 		aa_error "faq::twt::edit_one failed, bad response url : $response_url"
 	}
-	twt::user::logout
+
 	return $response
 }
 
 ad_proc edit_two { faq_name faq_new_name} {
 
 	set response 0
-        tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
 
 	# Edit the FAQ and request the FAQ Admin page
 	# The Faq page url
@@ -162,7 +142,7 @@ ad_proc edit_two { faq_name faq_new_name} {
 	} else {
 		aa_error "faq::twt::edit_two failed, bad response url : $response_url"
 	}
-	twt::user::logout
+
 	return $response 
 }
 
@@ -171,11 +151,6 @@ ad_proc disable_enable {faq_name option} {
 	# Option : disable or enable
 
         set response 0
-	tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
 	
 	db_1row faq_id "select faq_id from faqs where faq_name=:faq_name"
 
@@ -200,18 +175,13 @@ ad_proc disable_enable {faq_name option} {
 	} else {
 		aa_error "faq::twt::$option failed. Bad  response url : $response_url "
 	}
-	twt::user::logout
+
 	return $response
 }
 
 ad_proc new_Q_A { faq_name question answer} {
 
         set response 0 
-	tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
 
 	db_1row faq_id "select faq_id from faqs where faq_name=:faq_name"
 		
@@ -244,18 +214,13 @@ ad_proc new_Q_A { faq_name question answer} {
 	} else {
 		aa_error "faq::twt::new_Q_A failed. Bad  response url : $response_url"
 	}
-	twt::user::logout
+
 	return $response
 }
 
 ad_proc edit_Q_A { faq_name new_question new_answer } {
  
         set response 0 
-	tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
 
 	db_1row faq_id "select faq_id from faqs where faq_name=:faq_name"
 		
@@ -287,18 +252,13 @@ ad_proc edit_Q_A { faq_name new_question new_answer } {
 	} else {
 		aa_error "faq::twt::edit_Q_A failed. Bad  response url : $response_url"
 	}
-	twt::user::logout
+
 	return $response
 }
 
 ad_proc preview_Q_A { faq_name } {
 
 	set response 0
-        tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
 
 	db_1row faq_id "select faq_id from faqs where faq_name=:faq_name"
 		
@@ -325,18 +285,13 @@ ad_proc preview_Q_A { faq_name } {
 	} else {
 		aa_error "faq::twt::preview_Q_A failed. Bad  response url : $response_url"
 	}	
-	twt::user::logout
+
 	return $response
 }
 
 ad_proc delete_Q_A { faq_name question } {
 
 	set response 0
-        tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
 
 	db_1row faq_id "select faq_id from faqs where faq_name=:faq_name"
 		
@@ -360,18 +315,13 @@ ad_proc delete_Q_A { faq_name question } {
 	} else {
 		aa_error "faq::twt::delete_Q_A failed. Bad  response url : $response_url"
 	}	
-	twt::user::logout
+
 	return $response
 }
 
 ad_proc insert_after_Q_A { faq_name } {
 
 	set response 0
-        tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
 
 	db_1row faq_id "select faq_id from faqs where faq_name=:faq_name"
 		
@@ -407,17 +357,13 @@ ad_proc insert_after_Q_A { faq_name } {
 	} else {
 		aa_error "faq::twt::insert_after_Q_A failed. Bad  response url : $response_url"
 	}	
-	twt::user::logout
+
 	return $response
 }
 
 ad_proc swap_with_next_Q_A { faq_name } {
 
-	tclwebtest::cookies clear
-
-	# Login user
-	array set user_info [twt::user::create -admin]
-	twt::user::login $user_info(email) $user_info(password)
+        set response 0
 
 	db_1row faq_id "select faq_id from faqs where faq_name=:faq_name"
 		
@@ -438,7 +384,7 @@ ad_proc swap_with_next_Q_A { faq_name } {
 	} else {
 		aa_error "faq::twt::insert_after_Q_A failed. Bad  response url : $response_url"
 	}
-	twt::user::logout
+
 	return $response
 }
 	
