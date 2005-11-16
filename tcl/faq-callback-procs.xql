@@ -18,15 +18,6 @@
 </fullquery>
 
 
-<fullquery name="callback::datamanager::move_faq::impl::datamanager.get_faqs_package">
-<querytext>
-SELECT package_id as new_package_id 
-FROM dotlrn_community_applets
-WHERE community_id = :selected_community and applet_id = (select applet_id from dotlrn_applets where applet_key = 'dotlrn_faq')
-</querytext>
-</fullquery>
-
-
 <fullquery name="callback::datamanager::delete_faq::impl::datamanager.del_update_faqs">
 <querytext>
     UPDATE acs_objects
@@ -86,10 +77,5 @@ WHERE community_id = :selected_community and applet_id = (select applet_id from 
       </querytext>
 </fullquery>
 
-<fullquery name="callback::datamanager::copy_faq::impl::datamanager.create_faq">      
-      <querytext>
-	  select faq__new_faq (:faq_id, :faq_name,:separate_p,'faq', now(), :user_id,:creation_ip,:package_id);
-      </querytext>
-</fullquery>
 
 </queryset>
