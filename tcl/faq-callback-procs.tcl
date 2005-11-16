@@ -47,29 +47,14 @@ ad_proc -public -callback datamanager::copy_faq -impl datamanager {
 } {
 
 #get data about the faq
-   db_1row get_faq_package_id {}
+   set package_id [faq::get_package_id -community_id $selected_community]
    db_1row get_faq_name {}
 
    set user_id [ad_conn user_id]
    set creation_ip [ad_conn host]
-   set faq_id [db_nextval acs_object_id_seq]
+   set faq_id [faq::faq_new -package_id $package_id -faq_name $faq_name -separate_p $separate_p]
  
-   
-#then, the faq is copied
-    db_transaction {
-        db_exec_plsql create_faq {
-        begin
-          :1 := faq.new_faq (
-                faq_id => :faq_id,
-                    faq_name => :faq_name,
-                separate_p => :separate_p,
-                creation_user => :user_id,
-                        creation_ip => :creation_ip,
-                    context_id => :package_id
-                );
-        end;
-        }
-    }
+
 
 #get list of Q&A (ids)
    set q_a_list [db_list_of_lists get_q_a_list {}]      
@@ -100,7 +85,8 @@ ad_proc -public -callback datamanager::copy_faq -impl datamanager {
                 end;
             }
         }
-    }    
+    }   
+   return $faq_id
 }
 
 #Callbacks for application-track
