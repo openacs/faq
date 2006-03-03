@@ -8,20 +8,6 @@
         </querytext>
     </fullquery>
 
-    <fullquery name="faq::get_package_id.get_faqs_package">
-        <querytext>
-            SELECT package_id
-            FROM dotlrn_community_applets
-            WHERE community_id = :community_id and applet_id = (select applet_id from dotlrn_applets where applet_key = 'dotlrn_faq')
-        </querytext>
-    </fullquery>
-
-    <fullquery name="faq::faq_new.create_faq">      
-      <querytext>
-	  select faq__new_faq (:faq_id, :faq_name,:separate_p,'faq', now(), :user_id,:creation_ip,:package_id);
-      </querytext>
-</fullquery>
-
 </queryset>
 
 
