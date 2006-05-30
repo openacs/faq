@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="faq" package_version="4.7" locale="pt_BR" charset="ISO-8859-1">
+<message_catalog package_key="faq" package_version="5.2.0d4" locale="pt_BR" charset="ISO-8859-1">
 
   <msg key="A">R:</msg>
-  <msg key="Add_QA_for_faq_name">Adicione uma Pergunta e uma Resposta (P&amp;A) para %faq_name%</msg>
+  <msg key="Add_QA_for_faq_name">Adicione uma Pergunta e uma Resposta (P&amp;R) para %faq_name%</msg>
   <msg key="administer">administrar</msg>
   <msg key="Answer">Resposta</msg>
   <msg key="Back_to_FAQs">Voltar para FAQs</msg>
