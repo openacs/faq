@@ -23,13 +23,14 @@
         <requires url="notifications" version="5.0.0b4"/>
 
         <callbacks>
-            <callback type="after-install"  proc="faq::install::package_install"/>
-            <callback type="before-uninstall"  proc="faq::install::package_uninstall"/>
             <callback type="before-upgrade"  proc="faq::install::package_upgrade"/>
+            <callback type="before-uninstall"  proc="faq::install::package_uninstall"/>
+            <callback type="after-install"  proc="faq::install::package_install"/>
         </callbacks>
         <parameters>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="CategoryContainer"  default="package_id" description="Should the category container for the faqs be &quot;subsite_id&quot; or &quot;package_id&quot;."/>
             <parameter datatype="number"  min_n_values="1"  max_n_values="1"  name="EnableCategoriesP"  default="0" description="Should categories be enabled? Default is 0 (false)."/>
+            <parameter datatype="number"  min_n_values="1"  max_n_values="1"  name="GeneralCommentsP"  default="1" description="Attach comments to FAQ (value = 1). Prevent comments (value = 0)."/>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="UseWysiwygP"  default="t" description="Should we allow users to use a WYSIWYG editor to make their entries? Defaults to f (false)."/>
         </parameters>
 
