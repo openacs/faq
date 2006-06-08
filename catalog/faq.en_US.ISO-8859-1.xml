@@ -31,6 +31,7 @@
   <msg key="insert_after">insert after</msg>
   <msg key="lt_Are_you_sure_you_want">Are you sure you want to delete this faq?</msg>
   <msg key="lt_Are_you_sure_you_want_1">Are you sure you want to delete this question?</msg>
+  <msg key="lt_Comments_on_this_faq">Comments on this FAQ:</msg>
   <msg key="lt_no_FAQs">There are no FAQs available.</msg>
   <msg key="lt_no_questions">There are no questions available.</msg>
   <msg key="Name">Name:</msg>
