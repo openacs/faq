@@ -89,4 +89,14 @@ set notification_chunk [notification::display::request_widget \
                         -url [ad_conn url]?faq_id=$faq_id \
                         ]
 
+set return_url "[ad_conn url]?faq_id=$faq_id"
+
+if { [apm_package_installed_p "general-comments"] && [ad_parameter "GeneralCommentsP" -package_id [ad_conn package_id]] } {
+    set gc_link [general_comments_create_link $faq_id $return_url]
+    set gc_comments [general_comments_get_comments $faq_id $return_url]
+} else {
+    set gc_link ""
+    set gc_comments ""
+}
+
 ad_return_template

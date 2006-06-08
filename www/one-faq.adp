@@ -59,3 +59,14 @@
 </if>
 </td></tr>
 </table>
+
+<if @gc_comments@ not nil>
+  <p>#faq.lt_Comments_on_this_faq#
+    <ul>
+      @gc_comments;noquote@
+    </ul>
+  </p>
+</if>
+<if @gc_link@ not nil>
+  <p>@gc_link;noquote@</p>
+</if>
