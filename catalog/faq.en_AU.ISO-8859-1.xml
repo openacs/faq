@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="faq" package_version="5.2.0d4" locale="en_US" charset="ISO-8859-1">
+<message_catalog package_key="faq" package_version="5.2.0d4" locale="en_AU" charset="ISO-8859-1">
 
   <msg key="A">A:</msg>
   <msg key="Add_QA_for_faq_name">Add Q&amp;A for %faq_name%</msg>
   <msg key="administer">administer</msg>
-  <msg key="All_QA">All Q&amp;A</msg>
   <msg key="Answer">Answer</msg>
-  <msg key="Answer_text_in_html">Answer text in html</msg>
   <msg key="Back_to_FAQs">Back to FAQs</msg>
-  <msg key="Change_settings">Change settings</msg>
-  <msg key="Configure">Configure</msg>
   <msg key="Create_a_new_FAQ">Create a new FAQ</msg>
   <msg key="Create_an_FAQ">Create an FAQ</msg>
   <msg key="Create_FAQ">Create FAQ</msg>
@@ -22,8 +18,6 @@
   <msg key="Edit">Edit</msg>
   <msg key="edit">edit</msg>
   <msg key="Edit_an_FAQ">Edit an FAQ</msg>
-  <msg key="Enable_Categories">Enable Categories</msg>
-  <msg key="Enable_WYSIWYG">Enable WYSIWYG</msg>
   <msg key="FAQ_Admin">FAQ Admin</msg>
   <msg key="faq_name_Admin">%faq_name% Admin</msg>
   <msg key="FAQs">FAQs</msg>
@@ -31,7 +25,6 @@
   <msg key="insert_after">insert after</msg>
   <msg key="lt_Are_you_sure_you_want">Are you sure you want to delete this faq?</msg>
   <msg key="lt_Are_you_sure_you_want_1">Are you sure you want to delete this question?</msg>
-  <msg key="lt_Comments_on_this_faq">Comments on this FAQ:</msg>
   <msg key="lt_no_FAQs">There are no FAQs available.</msg>
   <msg key="lt_no_questions">There are no questions available.</msg>
   <msg key="Name">Name:</msg>
@@ -45,9 +38,6 @@
   <msg key="QA_On_Separate_Pages">Q&amp;A On Separate Pages?</msg>
   <msg key="QA_on_Separate_Pages">Q&amp;A on Separate Pages?</msg>
   <msg key="Question">Question</msg>
-  <msg key="Question_text_in_html">Question text in html</msg>
-  <msg key="Set_Category_Mode">Set Category Mode</msg>
-  <msg key="Site_wide_categories">Site wide categories</msg>
   <msg key="swap_with_next">swap with next</msg>
   <msg key="Text_type">Text type?</msg>
   <msg key="Title">Title:</msg>

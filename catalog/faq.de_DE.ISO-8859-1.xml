@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="faq" package_version="4.7" locale="de_DE" charset="ISO-8859-1">
+<message_catalog package_key="faq" package_version="5.2.0d4" locale="de_DE" charset="ISO-8859-1">
 
   <msg key="A">A:</msg>
   <msg key="Add_QA_for_faq_name">Neuen F&amp;A-Eintrag zu %faq_name% hinzufügen</msg>
   <msg key="administer">Verwalten</msg>
+  <msg key="All_QA">Alle F&amp;amp;As</msg>
   <msg key="Answer">Antwort</msg>
   <msg key="Back_to_FAQs">Zurück zu FAQs</msg>
+  <msg key="Configure">Konfigurieren</msg>
   <msg key="Create_a_new_FAQ">Neues FAQ erstellen</msg>
   <msg key="Create_an_FAQ">Neues FAQ erstellen</msg>
   <msg key="Create_FAQ">FAQ erstellen</msg>
@@ -18,6 +20,8 @@
   <msg key="Edit">Bearbeiten</msg>
   <msg key="edit">Bearbeiten</msg>
   <msg key="Edit_an_FAQ">Ein FAQ bearbeiten</msg>
+  <msg key="Enable_Categories">Kategorien aktivieren </msg>
+  <msg key="Enable_WYSIWYG">WYSIWYG aktivieren</msg>
   <msg key="FAQ_Admin">FAQs verwalten</msg>
   <msg key="faq_name_Admin">%faq_name% verwalten</msg>
   <msg key="FAQs">FAQs</msg>
