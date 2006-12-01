@@ -31,6 +31,7 @@
   <msg key="insert_after">Insertar </msg>
   <msg key="lt_Are_you_sure_you_want">¿Está seguro de borrar Preguntas más Frecuentes?</msg>
   <msg key="lt_Are_you_sure_you_want_1">¿Está seguro de borrar esta pregunta?</msg>
+  <msg key="lt_Comments_on_this_faq">Comentarios sobre esta FAQ:</msg>
   <msg key="lt_no_FAQs">No hay Preguntas más Frecuentes disponibles.</msg>
   <msg key="lt_no_questions">No hay preguntas disponibles</msg>
   <msg key="Name">Nombre:</msg>
