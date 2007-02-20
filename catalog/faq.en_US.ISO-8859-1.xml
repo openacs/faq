@@ -40,6 +40,7 @@
   <msg key="One_Question">One Question</msg>
   <msg key="Plain">Plain</msg>
   <msg key="Preformatted">Preformatted</msg>
+  <msg key="pretty_name">FAQ</msg>
   <msg key="preview">preview</msg>
   <msg key="Q">Q:</msg>
   <msg key="QA_On_Separate_Pages">Q&amp;A On Separate Pages?</msg>
