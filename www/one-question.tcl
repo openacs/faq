@@ -18,10 +18,7 @@ ad_require_permission $package_id faq_view_faq
 
 set user_id [ad_conn user_id]
 
-db_1row q_and_a_info "select question, answer,faq_name, f.faq_id 
-                       from faq_q_and_as qa, faqs f
-                       where entry_id = :entry_id
-                         and qa.faq_id = f.faq_id"
+db_1row question_info ""
 
 set context [list [list "one-faq?faq_id=$faq_id" $faq_name] [_ faq.One_Question]]
 

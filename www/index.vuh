@@ -6,6 +6,6 @@ if {[regexp {^/+cat/+([^/]+)/*} $url \
           # As the categories package currently doesn't have short names we
           # are using IDs. We don't check whether this is a valid integer here
           # because index.tcl will take care of that.
-          rp_form_put sw_category_id $sw_category_id
+          rp_form_put category_id $sw_category_id
 }
 rp_internal_redirect "/packages/faq/www/one-faq"

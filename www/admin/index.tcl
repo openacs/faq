@@ -12,15 +12,16 @@ ad_page_contract {
    
 } {
 } -properties {
-  context:onevalue
-  package_id:onevalue
-  user_id:onevalue
+    context:onevalue
+    package_id:onevalue
+    user_id:onevalue
 }
 
 set package_id [ad_conn package_id]
 
 permission::require_permission -object_id $package_id -privilege faq_admin_faq
 
+set title "#faq.FAQ_Admin#"
 set context {}
 
 set user_id [ad_conn user_id]
@@ -31,7 +32,7 @@ template::list::create \
         edit {
             link_url_col edit_url
             display_template {
-                <img src="/resources/acs-subsite/Edit16.gif" border="0">
+                <img src="/resources/acs-subsite/Edit16.gif" border="0" alt="Edit">
             }
             sub_class narrow
         }
@@ -40,8 +41,8 @@ template::list::create \
             link_url_col manage_url
         }
         num_q_and_as {
-            label "\# Q&A's"
-            html { align right }
+            label "# Questions"
+            html { align center }
         }
         disabled_p {
             label "Enabled"
@@ -58,7 +59,7 @@ template::list::create \
         delete {
             link_url_col delete_url
             display_template {
-                <img src="/resources/acs-subsite/Delete16.gif" border="0">
+                <img src="/resources/acs-subsite/Delete16.gif" border="0" alt="Delete">
             }
             sub_class narrow
         }
