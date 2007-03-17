@@ -30,25 +30,11 @@ set context [list $faq_name]
 set use_categories_p [parameter::get -parameter "EnableCategoriesP" -default 0]
 
 if { $use_categories_p == 1 && [exists_and_not_null category_id] } {
-
-    set select_sql_query "select entry_id, faq_id, question, answer, sort_key
-from faq_q_and_as qa, category_object_map com, acs_named_objects nam
-where faq_id = :faq_id and
-com.object_id = qa.entry_id and
-nam.package_id = :package_id and
-com.object_id = nam.object_id and 
-com.category_id = :category_id
-order by sort_key"
-
+    db_multirow one_question categorized_faq "" {}
 } else {
-
-    set select_sql_query "select entry_id, faq_id, question, answer, sort_key
-from faq_q_and_as
-where faq_id = :faq_id
-order by sort_key"
+    db_multirow one_question uncategorized_faq "" {}
 }
 
-db_multirow one_question q_and_a_info $select_sql_query
 
 # Site-Wide Categories
 if { $use_categories_p == 1} {
@@ -64,19 +50,14 @@ if { $use_categories_p == 1} {
 	append context_base_url /cat/$category_id
 	lappend context [list $context_base_url $category_name]
 	set type "all"
-    }
     
-    # Cut the URL off the last item in the context bar
-    if { [llength $context] > 0 } {
-        set context [lreplace $context end end [lindex [lindex $context end] end]]
-    }
-    
-    db_multirow -unclobber -extend { category_name tree_name } categories categories {
-	select c.category_id as category_id, c.tree_id
-	from   categories c, category_tree_map ctm
-	where  ctm.tree_id = c.tree_id
-	and    ctm.object_id = :package_id
-    } {
+	# Cut the URL off the last item in the context bar
+	if { [llength $context] > 0 } {
+	    set context [lreplace $context end end [lindex [lindex $context end] end]]
+	}
+	
+    }    
+    db_multirow -unclobber -extend { category_name tree_name } categories faq_categories "" {
 	set category_name [category::get_name $category_id]
 	set tree_name [category_tree::get_name $tree_id]
     }
