@@ -46,17 +46,11 @@ if { $use_categories_p == 1} {
           Category with ID $category_id doesn't exist"
             return
 	}
-	# Show Category in context bar
-	append context_base_url /cat/$category_id
-	lappend context [list $context_base_url $category_name]
-	set type "all"
-    
-	# Cut the URL off the last item in the context bar
-	if { [llength $context] > 0 } {
-	    set context [lreplace $context end end [lindex [lindex $context end] end]]
-	}
-	
+
+	# Replace last element of context (the FAQ name) with link to that FAQ and current category name
+	set context [lreplace $context end end [list "one-faq?faq_id=$faq_id" $faq_name] $category_name]
     }    
+
     db_multirow -unclobber -extend { category_name tree_name } categories faq_categories "" {
 	set category_name [category::get_name $category_id]
 	set tree_name [category_tree::get_name $tree_id]

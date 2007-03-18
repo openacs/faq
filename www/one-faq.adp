@@ -27,7 +27,7 @@
     <li>
       <a href="#@one_question.entry_id@" title="#faq.Jump_to_Answer#">@one_question.question;noquote@</a>
 <if @use_categories_p@>
-      <a href="categories/categorize?object_id=@one_question.entry_id@" title="#faq.Categorize_Q#">Categorize</a>
+      <a href="categories/categorize?object_id=@one_question.entry_id@&amp;faq_id=@faq_id@" title="#faq.Categorize_Q#">Categorize</a>
 </if>
     </li>
 </if>
@@ -56,7 +56,7 @@
   <multiple name="categories">
            <h2>@categories.tree_name@</h2>
            <group column="tree_id">
-             <a href="@package_url@cat@categories.category_id@?faq_id=@faq_id@&category_id=@categories.category_id@" title="#faq.View_in_Category# @categories.category_name@">@categories.category_name@</a><br>
+             <a href="@package_url@cat@categories.category_id@?faq_id=@faq_id@&amp;category_id=@categories.category_id@" title="#faq.View_in_Category# @categories.category_name@">@categories.category_name@</a><br>
            </group>
   </multiple>
 <br><a href="@package_url@one-faq?faq_id=@faq_id@" title="#faq.All_QA#">#faq.All_QA#</a>
