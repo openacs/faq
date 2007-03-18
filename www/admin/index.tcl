@@ -30,50 +30,48 @@ template::list::create \
     -name faqs \
     -elements {
         edit {
-            link_url_col edit_url
             display_template {
-                <img src="/resources/acs-subsite/Edit16.gif" border="0" alt="Edit">
+		<a href="@faqs.edit_url@" title="#faq.Edit_FAQ# @faqs.faq_name@">
+                <img src="/resources/acs-subsite/Edit16.gif" border="0" alt="#faq.Edit#"></a>
             }
             sub_class narrow
         }
         faq_name {
             label "Name"
-            link_url_col manage_url
+	    display_template {
+		<a href="@faqs.manage_url@" title="#faq.Name# @faqs.faq_name;noquote@">
+		@faqs.faq_name;noquote@</a>
+	    }
         }
         num_q_and_as {
-            label "# Questions"
+            label "# Q&amp;A"
             html { align center }
         }
         disabled_p {
             label "Enabled"
             display_template {
                 <if @faqs.disabled_p@ false>
-                  <a href="@faqs.disable_url@" title="Disable this FAQ"><img src="/resources/acs-subsite/checkboxchecked.gif" height="13" width="13" border="0" style="background-color: white;" alt="Disable"></a>
+                  <a href="@faqs.disable_url@" title="#faq.Disable_FAQ# @faqs.faq_name@">
+		  <img src="/resources/acs-subsite/checkboxchecked.gif" height="13" width="13" border="0" style="background-color: white;" alt="#faq.Disable#"></a>
                 </if>
                 <else>
-                  <a href="@faqs.enable_url@" title="Enable this FAQ"><img src="/resources/acs-subsite/checkbox.gif" height="13" width="13" border="0" style="background-color: white;" alt="Enable"></a>
+                  <a href="@faqs.enable_url@" title="#faq.Enable_FAQ# @faqs.faq_name@">
+		  <img src="/resources/acs-subsite/checkbox.gif" height="13" width="13" border="0" style="background-color: white;" alt="#faq.Enable#"></a>
                 </else>
             }
             html { align center }
         }
         delete {
-            link_url_col delete_url
             display_template {
-                <img src="/resources/acs-subsite/Delete16.gif" border="0" alt="Delete">
+		<a href="@faqs.delete_url@" title="#faq.Delete_FAQ# @faqs.faq_name@">
+                <img src="/resources/acs-subsite/Delete16.gif" border="0" alt="#faq.Delete#"></a>
             }
             sub_class narrow
         }
     }
 
 
-db_multirow -extend { edit_url manage_url delete_url disable_url enable_url } faqs faq_select {
-    select faq_id, faq_name, disabled_p, 
-    (select count(*) from faq_q_and_as where faq_id = f.faq_id) as num_q_and_as
-      from acs_objects o, faqs f
-      where object_id = faq_id
-        and context_id = :package_id
-    order by lower(faq_name), faq_name
-} {
+db_multirow -extend { edit_url manage_url delete_url disable_url enable_url } faqs faq_select {} {
     set edit_url [export_vars -base faq-add-edit { faq_id }]
     set manage_url [export_vars -base one-faq { faq_id }]
     set delete_url [export_vars -base faq-delete { faq_id }]
