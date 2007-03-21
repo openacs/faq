@@ -2,12 +2,12 @@
 <property name="context">@context;noquote@</property>
 <property name="title">#faq.FAQs#</property>
 
-<h1>@faq_name;noquote@</h1>
+<h1>@faq_info.faq_name;noquote@</h1>
 
 <p>
       @notification_chunk;noquote@ 
 </p>
-<property name="title">@faq_name;noquote@</property>
+<property name="title">@faq_info.faq_name;noquote@</property>
 <property name="displayed_object_id">@faq_id;noquote@</property>
 
 <table width="70%" border="0">
@@ -18,12 +18,12 @@
 <else>
   <ol>
 <multiple name="one_question">
-<if @separate_p@ true>
+<if @faq_info.separate_p@ true>
     <li>
       <a href="one-question?entry_id=@one_question.entry_id@" title="#faq.View_QA#">@one_question.question;noquote@</a>
     </li>
 </if>
-<if @separate_p@ false>
+<if @faq_info.separate_p@ false>
     <li>
       <a href="#@one_question.entry_id@" title="#faq.Jump_to_Answer#">@one_question.question;noquote@</a>
 <if @use_categories_p@>
@@ -34,7 +34,7 @@
 </multiple>
   </ol>
 
-<if @separate_p@ false>
+<if @faq_info.separate_p@ false>
   <hr>
   <ol>
 <multiple name="one_question">
