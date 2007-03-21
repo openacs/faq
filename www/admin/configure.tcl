@@ -31,6 +31,6 @@ ad_form -name categories_mode -form {
     parameter::set_value  -parameter "EnableCategoriesP" -value $cat_enabled_p
     parameter::set_value  -parameter "UseWysiwygP" -value $wysiwyg_enabled_p
     if {![empty_string_p $return_url]} {
-        ns_returnredirect $return_url
+        ad_returnredirect $return_url
     }
 }
