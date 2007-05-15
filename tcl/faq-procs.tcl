@@ -7,6 +7,21 @@ ad_library {
     @Modifyed by Gerardo Morales <gmorales@galileo.edu>
 }
 
+namespace eval faq {
+
+    ad_proc -public get_instance_info {
+	-arrayname:required  
+	-faq_id:required 
+    } {
+	returns the name of the FAQ and whether to display 
+	questions and their answers all on the listing page 
+	or on separate pages 
+    } {
+	upvar $arrayname faq_info
+	db_0or1row get_info "" -column_array faq_info
+    }
+
+}
 
 namespace eval faq::notification {
 

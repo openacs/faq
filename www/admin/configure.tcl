@@ -18,11 +18,11 @@ set use_wysiwyg_p [parameter::get -parameter "UseWysiwygP"]
 ad_form -name categories_mode -form {
     {cat_enabled_p:text(radio)
         {label "#faq.Enable_Categories#"}
-        {options {{Yes 1} {No 0}}}
+        {options {{[_ faq.Yes] 1} {[_ faq.No] 0}}}
 	{value $use_categories_p}}
     {wysiwyg_enabled_p:text(radio)
 	{label "#faq.Enable_WYSIWYG#"}
-	{options {{Yes t} {No f}}}
+	{options {{[_ faq.Yes] t} {[_ faq.No] f}}}
 	{value $use_wysiwyg_p}
     }
     {return_url:text(hidden) {value $return_url}}
@@ -31,6 +31,6 @@ ad_form -name categories_mode -form {
     parameter::set_value  -parameter "EnableCategoriesP" -value $cat_enabled_p
     parameter::set_value  -parameter "UseWysiwygP" -value $wysiwyg_enabled_p
     if {![empty_string_p $return_url]} {
-        ns_returnredirect $return_url
+        ad_returnredirect $return_url
     }
 }
