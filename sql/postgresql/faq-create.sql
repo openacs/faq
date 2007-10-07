@@ -142,9 +142,4 @@ drop function inline_2 ();
 
 
 \i faq-package-create.sql
-
-
-
-
-
-
+\i faq-sc-create.sql
