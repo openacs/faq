@@ -1,4 +1,4 @@
-<master></master>
+<master>
 <property name="context">@context;noquote@</property>
 <property name="title">@title;noquote@</property>
 <property name="focus">faq.faq_name</property>
@@ -6,7 +6,7 @@
 <h1>Create an FAQ:</h1>
   
 <form action="@action@" name="faq" class="margin-form">
-  <input type="hidden" name="faq_id" value="@faq_id@">
+  <div><input type="hidden" name="faq_id" value="@faq_id@"></div>
   <fieldset>
     <div class="form-item-wrapper">
       <div class="form-label">
