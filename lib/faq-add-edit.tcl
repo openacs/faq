@@ -3,7 +3,7 @@ if { ![exists_and_not_null mode] } {
     set mode "edit"
 }
 
-ad_form -name faq_add_edit -mode $mode -action "[ad_conn package_url]admin/faq-add-edit" -form {
+ad_form -name faq_add_edit -mode $mode -action "faq-add-edit" -form {
     faq_id:key
     {faq_name:text(text) {label "#faq.Name#"} {html { size 50 }}}
     {separate_p:text(select) {label "#faq.QA_on_Separate_Pages#"} { options {{[_ faq.No] f} {[_ faq.Yes] t}} } }
