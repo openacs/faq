@@ -30,7 +30,7 @@ begin
 		p_creation_user,
 		p_creation_ip,
 		p_context_id,
-                ''t'',
+                't',
                 p_question,
                 v_package_id
   );
@@ -40,35 +40,53 @@ begin
 		(v_entry_id, p_faq_id, p_question, p_answer, p_sort_key);
   return v_entry_id;
 
-end;' language 'plpgsql';
+END;
+$$ LANGUAGE plpgsql;
 
-create or replace function faq__delete_q_and_a (integer)
-returns integer as '
-declare
-	p_entry_id	alias for $1;
-begin
+
+
+-- added
+select define_function_args('faq__delete_q_and_a','entry_id');
+
+--
+-- procedure faq__delete_q_and_a/1
+--
+CREATE OR REPLACE FUNCTION faq__delete_q_and_a(
+   p_entry_id integer
+) RETURNS integer AS $$
+DECLARE
+BEGIN
 	delete from faq_q_and_as where entry_id =  p_entry_id;
-	raise NOTICE ''Deleting FAQ_Q_and_A...'';
+	raise NOTICE 'Deleting FAQ_Q_and_A...';
 	PERFORM acs_object__delete(p_entry_id);
 
 	return 0;
 
-end;' language 'plpgsql';
+END;
+$$ LANGUAGE plpgsql;
 
 
-create or replace function faq__new_faq (integer, varchar, boolean,varchar,timestamptz,integer,varchar,integer )
-returns integer as '
-declare
-	p_faq_id				alias for $1;
-	p_faq_name 			alias for $2;
-	p_separate_p		alias for $3;
-	p_object_type 	alias for $4;
-	p_creation_date	alias for $5;
-	p_creation_user alias for $6;
-	p_creation_ip		alias for $7;
-	p_context_id 		alias for $8;
+
+
+-- added
+select define_function_args('faq__new_faq','faq_id,faq_name,separate_p,object_type,creation_date,creation_user,creation_ip,context_id');
+
+--
+-- procedure faq__new_faq/8
+--
+CREATE OR REPLACE FUNCTION faq__new_faq(
+   p_faq_id integer,
+   p_faq_name varchar,
+   p_separate_p boolean,
+   p_object_type varchar,
+   p_creation_date timestamptz,
+   p_creation_user integer,
+   p_creation_ip varchar,
+   p_context_id integer
+) RETURNS integer AS $$
+DECLARE
 	v_faq_id 				faqs.faq_id%TYPE;
-begin
+BEGIN
 
 	v_faq_id := acs_object__new (
 		p_faq_id,
@@ -77,7 +95,7 @@ begin
 		p_creation_user,
 		p_creation_ip,
 		p_context_id,
-                ''t'',
+                't',
                 p_faq_name,
                 p_context_id );
 
@@ -88,15 +106,24 @@ begin
 
 return v_faq_id;
 
-end;' language 'plpgsql';
+END;
+$$ LANGUAGE plpgsql;
 
 
-create or replace function faq__delete_faq (integer)
-returns integer as '
-declare
-	p_faq_id 	alias for $1;
+
+
+-- added
+select define_function_args('faq__delete_faq','faq_id');
+
+--
+-- procedure faq__delete_faq/1
+--
+CREATE OR REPLACE FUNCTION faq__delete_faq(
+   p_faq_id integer
+) RETURNS integer AS $$
+DECLARE
 	del_rec record;
-begin
+BEGIN
 	   	-- Because q_and_as are objects, we need to
     	-- loop through a list of them, and call an explicit
     	-- delete function for each one. (i.e. each
@@ -113,32 +140,51 @@ begin
 
 	return 0;
 
-end;' language 'plpgsql';
+END;
+$$ LANGUAGE plpgsql;
 
-create or replace function faq__name(integer)
-returns varchar as '
-declare 
-    p_faq_id      alias for $1;
+
+
+-- added
+select define_function_args('faq__name','faq_id');
+
+--
+-- procedure faq__name/1
+--
+CREATE OR REPLACE FUNCTION faq__name(
+   p_faq_id integer
+) RETURNS varchar AS $$
+DECLARE 
     v_faq_name    faqs.faq_name%TYPE;
-begin
+BEGIN
 	select faq_name  into v_faq_name
 		from faqs
 		where faq_id = p_faq_id;
 
     return v_faq_name;
-end;
-' language 'plpgsql';
+END;
 
-create or replace function faq__clone (integer,integer)
-returns integer as '
-declare
- p_new_package_id  	alias for $1;   --default null,
- p_old_package_id 	alias for $2;   --default null
+$$ LANGUAGE plpgsql;
+
+
+
+-- added
+select define_function_args('faq__clone','new_package_id,old_package_id');
+
+--
+-- procedure faq__clone/2
+--
+CREATE OR REPLACE FUNCTION faq__clone(
+   p_new_package_id integer, --default null,
+   p_old_package_id integer  --default null
+
+) RETURNS integer AS $$
+DECLARE
  v_faq_id 		faqs.faq_id%TYPE;
  one_faq		record;
  entry			record;
 
-begin
+BEGIN
             -- get all the faqs belonging to the old package,
             -- and create new faqs for the new package
             for one_faq in select *
@@ -166,6 +212,7 @@ begin
                end loop;
            end loop;
  return 0;
- end;
-' language 'plpgsql';
+ END;
+
+$$ LANGUAGE plpgsql;
 

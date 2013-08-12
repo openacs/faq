@@ -4,24 +4,24 @@
 -- 
 -- @cvs-id $Id$
 --
-create function inline_0 ()
-returns integer as '
-begin
+CREATE OR REPLACE FUNCTION inline_0 () RETURNS integer AS $$
+BEGIN
     PERFORM acs_object_type__create_type (
-	''faq'',			-- object_type
-	''FAQ'',			-- pretty_name
-	''FAQs'',			-- pretty_plural
-	''acs_object'',		-- supertype
-	''FAQS'',			-- table_name
-	''FAQ_ID'',		-- id_column
+	'faq',			-- object_type
+	'FAQ',			-- pretty_name
+	'FAQs',			-- pretty_plural
+	'acs_object',		-- supertype
+	'FAQS',			-- table_name
+	'FAQ_ID',		-- id_column
 	null,				-- package_name
-	''f'',				-- abstract_p
+	'f',				-- abstract_p
 	null,				-- type_extension_table
-	''faq__name''		-- name_method
+	'faq__name'		-- name_method
 	);
 
   return 0;
-end;' language 'plpgsql';
+END;
+$$ LANGUAGE plpgsql;
 
 select inline_0 ();
 drop function inline_0 ();
@@ -39,24 +39,24 @@ create table faqs (
 );
 
 
-create function inline_1 ()
-returns integer as '
-begin
+CREATE OR REPLACE FUNCTION inline_1 () RETURNS integer AS $$
+BEGIN
     PERFORM acs_object_type__create_type (
-	''faq_q_and_a'',			-- object_type
-	''FAQ_Q_and_A'',			-- pretty_name
-	''FAQ_Q_and_As'',			-- pretty_plural
-	''acs_object'',		-- supertype
-	''FAQ_Q_AND_AS'',			-- table_name
-	''ENTRY_ID'',		-- id_column
+	'faq_q_and_a',			-- object_type
+	'FAQ_Q_and_A',			-- pretty_name
+	'FAQ_Q_and_As',			-- pretty_plural
+	'acs_object',		-- supertype
+	'FAQ_Q_AND_AS',			-- table_name
+	'ENTRY_ID',		-- id_column
 	null,				-- package_name
-	''f'',				-- abstract_p
+	'f',				-- abstract_p
 	null,				-- type_extension_table
 	null		-- name_method
 	);
 
   return 0;
-end;' language 'plpgsql';
+END;
+$$ LANGUAGE plpgsql;
 
 select inline_1 ();
 
@@ -110,30 +110,37 @@ create table faq_q_and_as (
  select acs_privilege__add_child('admin','faq_admin_faq');
 
 
-create function inline_2 ()
-returns integer as '
-declare
+
+
+--
+-- procedure inline_2/0
+--
+CREATE OR REPLACE FUNCTION inline_2(
+
+) RETURNS integer AS $$
+DECLARE
 	default_context 	acs_objects.object_id%TYPE;
 	registered_users 	acs_objects.object_id%TYPE;
 	the_public 				acs_objects.object_id%TYPE;
-begin
+BEGIN
 
-  default_context = acs__magic_object_id(''default_context'');
-  registered_users = acs__magic_object_id(''registered_users'');
-  the_public = acs__magic_object_id(''the_public'');
+  default_context = acs__magic_object_id('default_context');
+  registered_users = acs__magic_object_id('registered_users');
+  the_public = acs__magic_object_id('the_public');
 
   -- give the public the power to view faqs by default
 
-  PERFORM acs_permission__grant_permission (default_context, the_public, ''faq_view_faq'');
+  PERFORM acs_permission__grant_permission (default_context, the_public, 'faq_view_faq');
 
 
   -- give the public the power to view q_and_as by default
 
-  PERFORM acs_permission__grant_permission ( default_context,the_public, ''faq_view_q_and_a'');
+  PERFORM acs_permission__grant_permission ( default_context,the_public, 'faq_view_q_and_a');
 
   return 0;
 
-end;' language 'plpgsql';
+END;
+$$ LANGUAGE plpgsql;
 
 
 select inline_2 ();
