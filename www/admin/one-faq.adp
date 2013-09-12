@@ -1,6 +1,6 @@
 <master>
 <property name="context">@context;noquote@</property>
-<property name="title">@title;noquote@</property>
+<property name="doc(title)">@title;noquote@</property>
 
 <h1>@title;noquote@</h1>
 <include src="/packages/faq/lib/faq-add-edit" &="faq_id" mode="display">

@@ -1,6 +1,6 @@
 <master>
 <property name="context">@context;noquote@</property>
-<property name="title">@title;noquote@</property>
+<property name="doc(title)">@title;noquote@</property>
 <property name="focus">faq.faq_name</property>
 
 <h1>Create an FAQ:</h1>

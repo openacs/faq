@@ -1,6 +1,6 @@
 <master>
 <property name="context">@context;noquote@</property>
-<property name="title">#faq.One_Question#</property>
+<property name="doc(title)">#faq.One_Question#</property>
 <property name="displayed_object_id">@entry_id;noquote@</property>
 
 <h1>@faq_name;noquote@</h1>
