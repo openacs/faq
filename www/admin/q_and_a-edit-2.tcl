@@ -13,7 +13,7 @@ ad_page_contract {
     
 } 
 
-ad_require_permission [ad_conn package_id] faq_modify_faq
+permission::require_permission -object_id [ad_conn package_id] -privilege faq_modify_faq
 # Don't forget to do the permissioning
 
 db_dml q_and_a_edit "update faq_q_and_as

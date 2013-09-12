@@ -24,7 +24,7 @@ ad_page_contract {
     answer_q:onevalue
 }
 
-ad_require_permission [ad_conn package_id] faq_create_faq
+permission::require_permission -object_id [ad_conn package_id] -privilege faq_create_faq
 
 db_1row get_name "select faq_name from faqs where faq_id=:faq_id"
 

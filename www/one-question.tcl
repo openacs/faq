@@ -14,7 +14,7 @@ ad_page_contract {
 
 set package_id [ad_conn package_id]
 
-ad_require_permission $package_id faq_view_faq
+permission::require_permission -object_id $package_id -privilege faq_view_faq
 
 set user_id [ad_conn user_id]
 

@@ -51,5 +51,5 @@ db_transaction {
 
 db_release_unused_handles
 
-ad_returnredirect "one-faq?[export_url_vars faq_id]" 
+ad_returnredirect "one-faq?[export_vars -url {faq_id}]" 
 

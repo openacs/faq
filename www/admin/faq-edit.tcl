@@ -17,7 +17,7 @@ ad_page_contract {
 }
 
 
-ad_require_permission [ad_conn package_id] faq_modify_faq
+permission::require_permission -object_id [ad_conn package_id] -privilege faq_modify_faq
 
 set context [list [_ faq.Edit_an_FAQ]]
 set title [_ faq.Edit_an_FAQ]

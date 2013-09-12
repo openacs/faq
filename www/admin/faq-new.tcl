@@ -18,7 +18,7 @@ ad_page_contract {
   
 }
 
-ad_require_permission [ad_conn package_id] faq_create_faq
+permission::require_permission -object_id [ad_conn package_id] -privilege faq_create_faq
 
 set context [list [_ faq.Create_an_FAQ]]
 set title [_ faq.Create_an_FAQ]

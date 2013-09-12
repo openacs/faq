@@ -12,7 +12,7 @@ ad_page_contract {
     separate_p:
 } 
 
-ad_require_permission [ad_conn package_id] faq_modify_faq
+permission::require_permission -object_id [ad_conn package_id] -privilege faq_modify_faq
 
 db_dml faq_edit "update faqs 
                   set faq_name = :faq_name,

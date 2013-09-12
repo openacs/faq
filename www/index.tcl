@@ -23,7 +23,7 @@ set context {}
 
 set user_id [ad_conn user_id]
  
-ad_require_permission $package_id faq_view_faq
+permission::require_permission -object_id $package_id -privilege faq_view_faq
 
 set admin_p 0
 
@@ -35,7 +35,7 @@ set notification_chunk [notification::display::request_widget \
                         -url [ad_conn url] \
                         ]
 
-if {[ad_permission_p -user_id $user_id $package_id faq_admin_faq]} {
+if {[permission::permission_p -party_id $user_id -object_id $package_id -privilege faq_admin_faq]} {
     set admin_p 1
 }
 

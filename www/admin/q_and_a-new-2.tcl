@@ -18,7 +18,7 @@ ad_page_contract {
 
 set package_id [ad_conn package_id]
 
-ad_require_permission $package_id faq_create_faq
+permission::require_permission -object_id $package_id -privilege faq_create_faq
 
 set user_id [ad_conn user_id]
 set creation_ip [ad_conn host]
@@ -74,4 +74,4 @@ db_transaction {
     }
 }
 
-ad_returnredirect "one-faq?[export_url_vars faq_id]"
+ad_returnredirect "one-faq?[export_vars -url {faq_id}]"
