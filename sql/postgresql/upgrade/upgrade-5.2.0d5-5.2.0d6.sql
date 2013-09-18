@@ -8,4 +8,4 @@ UPDATE acs_objects o1 SET package_id = o2.package_id
 FROM acs_objects o2, faq_q_and_as f
 WHERE f.entry_id = o1.object_id
 AND   f.faq_id = o2.object_id
-AND   o1.package_id is null 
+AND   o1.package_id is null;
