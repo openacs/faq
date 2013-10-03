@@ -23,7 +23,7 @@ permission::require_permission -object_id $package_id -privilege faq_create_faq
 set user_id [ad_conn user_id]
 set creation_ip [ad_conn host]
 
-if {$insert_p == "t" } {
+if {$insert_p eq "t" } {
 
   
 
@@ -43,7 +43,7 @@ if {$insert_p == "t" } {
 
     db_dml faq_update $sql_update_q_and_as
     
-    set sort_key [expr $old_sort_key + 1]
+    set sort_key [expr {$old_sort_key + 1}]
     
     set entry_id [db_nextval acs_object_id_seq]
     }

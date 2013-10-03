@@ -21,7 +21,7 @@ permission::require_permission -object_id $package_id -privilege faq_view_faq
 
 faq::get_instance_info -arrayname faq_info -faq_id $faq_id
 
-if { [empty_string_p $faq_info(faq_name)] } {
+if { $faq_info(faq_name) eq "" } {
     ns_returnnotfound
     ad_script_abort
 }
@@ -31,7 +31,7 @@ set context [list $faq_info(faq_name)]
 # Use Categories?
 set use_categories_p [parameter::get -parameter "EnableCategoriesP" -default 0]
 
-if { $use_categories_p == 1 && [exists_and_not_null category_id] } {
+if { $use_categories_p == 1 && $category_id ne "" } {
     db_multirow one_question categorized_faq "" {}
 } else {
     db_multirow one_question uncategorized_faq "" {}
@@ -41,9 +41,9 @@ if { $use_categories_p == 1 && [exists_and_not_null category_id] } {
 # Site-Wide Categories
 if { $use_categories_p == 1} {
     set package_url [ad_conn package_url]      
-    if { ![empty_string_p $category_id] } {
+    if { $category_id ne "" } {
 	set category_name [category::get_name $category_id]
-	if { [empty_string_p $category_name] } {
+	if { $category_name eq "" } {
 	    ad_return_exception_page 404 "No such category" "Site-wide \
           Category with ID $category_id doesn't exist"
             return
