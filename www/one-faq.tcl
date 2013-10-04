@@ -21,7 +21,7 @@ permission::require_permission -object_id $package_id -privilege faq_view_faq
 
 faq::get_instance_info -arrayname faq_info -faq_id $faq_id
 
-if { $faq_info(faq_name) eq "" } {
+if { ![info exists faq_info(faq_name)] } {
     ns_returnnotfound
     ad_script_abort
 }
