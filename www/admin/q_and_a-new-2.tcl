@@ -23,7 +23,7 @@ permission::require_permission -object_id $package_id -privilege faq_create_faq
 set user_id [ad_conn user_id]
 set creation_ip [ad_conn host]
 
-if {$insert_p eq "t" } {
+if {$insert_p == "t" } {
 
   
 
