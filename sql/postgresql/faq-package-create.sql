@@ -5,22 +5,22 @@
 -- @cvs-id $Id$
 --
 
-create or replace function faq__new_q_and_a (integer,integer,varchar,varchar,integer,varchar,timestamptz,integer,varchar,integer) returns integer as
-'
-declare
-	p_entry_id   		alias for $1;				-- default null,
-	p_faq_id     		alias for $2;
-	p_question   		alias for $3;
-	p_answer     		alias for $4;
-	p_sort_key   		alias for $5;
-	p_object_type 	alias for $6;     		-- default faq_q_and_a
-	p_creation_date alias for $7;  --in acs_objects.creation_date%TYPE   default sysdate,
-	p_creation_user alias for $8;	 --in acs_objects.creation_user%TYPE   default null,
-	p_creation_ip    	alias for $9;		-- in acs_objects.creation_ip%TYPE     default null,
-	p_context_id     	alias for $10; 	--in acs_objects.context_id%TYPE      default null
+CREATE OR REPLACE FUNCTION faq__new_q_and_a (
+       p_entry_id integer, 		-- default null,
+       p_faq_id integer,
+       p_question varchar,
+       p_answer varchar,
+       p_sort_key integer,
+       p_object_type varchar,		-- default faq_q_and_a
+       p_creation_date timestamptz,	-- in acs_objects.creation_date%TYPE	default sysdate,
+       p_creation_user integer,		-- in acs_objects.creation_user%TYPE   default null,
+       p_creation_ip varchar, 		-- in acs_objects.creation_ip%TYPE     default null,
+       p_context_id integer		-- in acs_objects.context_id%TYPE      default null
+) RETURNS integer AS $$
+DECLARE
 	v_entry_id 			faq_q_and_as.entry_id%TYPE;
 	v_package_id 			acs_objects.package_id%TYPE;
-begin
+BEGIN
         select package_id into v_package_id from acs_objects where object_id = p_faq_id;
 
 	v_entry_id := acs_object__new (
@@ -33,13 +33,13 @@ begin
                 't',
                 p_question,
                 v_package_id
-  );
+  		);
 	insert into faq_q_and_as
 		(entry_id, faq_id, question, answer, sort_key)
 	values
 		(v_entry_id, p_faq_id, p_question, p_answer, p_sort_key);
-  return v_entry_id;
 
+  return v_entry_id;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -61,7 +61,6 @@ BEGIN
 	PERFORM acs_object__delete(p_entry_id);
 
 	return 0;
-
 END;
 $$ LANGUAGE plpgsql;
 
