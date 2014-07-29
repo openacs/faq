@@ -7,7 +7,7 @@ ad_page_contract {
     @creation-date 2000-10-24
  
 } {
-    {category_id:integer,optional {}}
+    {category_id:naturalnum,optional {}}
     faq_id:naturalnum,notnull
 }
 
