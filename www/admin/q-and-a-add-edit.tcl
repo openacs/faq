@@ -8,7 +8,7 @@ ad_page_contract {
 
 } {
     faq_id:naturalnum,notnull
-    entry_id:optional
+    entry_id:naturalnum,optional
     {prev_entry_id 0}
 }  -properties { 
     context:onevalue 
