@@ -8,7 +8,7 @@ ad_page_contract {
     @creation-date 2000-10-25
 
 } {
-    faq_id:integer,notnull,trim
+    faq_id:naturalnum,notnull,trim
     question:html,notnull,trim
     answer:html,notnull,trim
     entry_id:naturalnum,optional
