@@ -9,7 +9,7 @@ ad_page_contract {
 } {
     faq_id:naturalnum,notnull
     entry_id:naturalnum,optional
-    {prev_entry_id 0}
+    {prev_entry_id:naturalnum,notnull 0}
 }  -properties { 
     context:onevalue 
     title:onevalue 
