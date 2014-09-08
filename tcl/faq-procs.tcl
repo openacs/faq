@@ -4,7 +4,7 @@ ad_library {
 
     @creation-date 2004-03-31
     @author Ben Adida <ben@openforce.biz>
-    @Modifyed by Gerardo Morales <gmorales@galileo.edu>
+    @author by Gerardo Morales <gmorales@galileo.edu>
 }
 
 namespace eval faq {
