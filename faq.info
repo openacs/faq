@@ -7,7 +7,7 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
     
-    <version name="5.8.1b1" url="http://openacs.org/repository/download/apm/faq-5.8.1b1.apm">
+    <version name="5.8.1b2" url="http://openacs.org/repository/download/apm/faq-5.8.1b2.apm">
         <owner url="mailto:mazloumi@uni-mannheim.de">Nima Mazloumi</owner>
         <owner url="mailto:jennie@ybos.net">Jennie Kim Housman</owner>
         <owner url="mailto:wirth@ybos.net">Elizabeth Wirth</owner>
@@ -18,10 +18,10 @@
         <maturity>2</maturity>
         <package_instance_name>#faq.FAQs#</package_instance_name>
 
-        <provides url="faq" version="5.8.1b1"/>
-        <requires url="acs-kernel" version="5.8.1b1"/>
+        <provides url="faq" version="5.8.1b2"/>
+        <requires url="acs-kernel" version="5.8.1b2"/>
         <requires url="categories" version="1.1.2d3"/>
-        <requires url="notifications" version="5.8.1b1"/>
+        <requires url="notifications" version="5.8.1b2"/>
 
         <callbacks>
             <callback type="after-install"  proc="faq::install::package_install"/>
