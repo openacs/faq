@@ -11,7 +11,7 @@ ad_page_contract {
     @param faq_name  The short name of the faq
 
 } {
-    faq_id:integer,notnull
+    faq_id:naturalnum,notnull
     faq_name:notnull,trim
     separate_p:notnull
 }

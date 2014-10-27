@@ -2,7 +2,7 @@ ad_library {
 
     Faq Library - Reply Handling
     @creation-date 2004-04-02
-    @Author Gerardo Morales <gmorales@galileo.edu>
+    @author Gerardo Morales <gmorales@galileo.edu>
 }
 
 

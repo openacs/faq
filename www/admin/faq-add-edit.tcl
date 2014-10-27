@@ -5,7 +5,7 @@ ad_page_contract {
     @author Gerardo Morales Cadoret (gmorales@galileo.edu) 
     @creation-date 2003-11-26 
 } {  
-    faq_id:optional 
+    faq_id:naturalnum,optional 
     return_url:optional
 } -properties { 
     context:onevalue 

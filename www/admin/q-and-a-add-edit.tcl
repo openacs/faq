@@ -8,8 +8,8 @@ ad_page_contract {
 
 } {
     faq_id:naturalnum,notnull
-    entry_id:optional
-    {prev_entry_id 0}
+    entry_id:naturalnum,optional
+    {prev_entry_id:naturalnum,notnull 0}
 }  -properties { 
     context:onevalue 
     title:onevalue 
@@ -87,11 +87,11 @@ if { $use_categories_p == 1 } {
 	db_transaction {
 	    set old_sort_key [db_string faq_sortkey_get "select sort_key from faq_q_and_as where entry_id = :last_entry_id" -default 0]
 
-	    if ![string equal $old_sort_key 0] {
+	    if {$old_sort_key ne "0" } {
 		set sql_update_q_and_as "update faq_q_and_as set sort_key = sort_key + 1 where sort_key > :old_sort_key"
 
 		db_dml faq_update $sql_update_q_and_as
-		set sort_key [expr $old_sort_key + 1]
+		set sort_key [expr {$old_sort_key + 1}]
 	    } else {
 		set sort_key $entry_id
 	    }
@@ -128,11 +128,11 @@ if { $use_categories_p == 1 } {
 
             set old_sort_key [db_string faq_sortkey_get "select sort_key from faq_q_and_as where entry_id = :last_entry_id" -default 0]
 
-            if ![string equal $old_sort_key 0] {
+            if {$old_sort_key ne "0" } {
                 set sql_update_q_and_as "update faq_q_and_as set sort_key = sort_key + 1 where sort_key > :old_sort_key"
 
                 db_dml faq_update $sql_update_q_and_as
-                set sort_key [expr $old_sort_key + 1]
+                set sort_key [expr {$old_sort_key + 1}]
             } else {
                 set sort_key $entry_id
             }

@@ -1,8 +1,8 @@
 ad_library {
 
     Procedures to do a new impl and aliases in the acs-sc.
-    @creation date 2004-04-06
-    @autor Gerardo Morales Cadoret (gmorales@galileo.edu)
+    @creation-date 2004-04-06
+    @author Gerardo Morales Cadoret (gmorales@galileo.edu)
 }
 
 namespace eval faq::apm_callback {}
@@ -124,7 +124,7 @@ ad_proc -public faq::apm_callback::enable_intervals_and_methods {type_id} {
 
 ad_proc -public faq::apm_callback::create_all_faq_qa_impl {} {
     Register the service contract implementation and return the impl_id
-    @retern impl_id of the created implementation 
+    @return impl_id of the created implementation 
 } {
     return \
 	[acs_sc::impl::new_from_spec -spec {

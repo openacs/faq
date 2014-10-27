@@ -15,7 +15,7 @@ ad_proc -private faq::fts::datasource { faq_id } {
     @param faq_id
 
     @author davis@xarg.net
-    @creation_date 2004-04-01
+    @creation-date 2004-04-01
 } {
     set title [db_string name {select faq_name from faqs where faq_id = :faq_id} -default "FAQ $faq_id"]
     set content {}
@@ -35,7 +35,7 @@ ad_proc -private faq::fts::url { faq_id } {
     returns a url for a faq to the search package
 
     @author davis@xarg.net
-    @creation_date 2004-04-01
+    @creation-date 2004-04-01
 } {
     set faq_package_id [db_string package_id {select package_id from acs_objects where object_id = :faq_id} -default {}]
 
@@ -52,7 +52,7 @@ ad_proc -private faq_qanda::fts::datasource { entry_id } {
     @param entry_id
 
     @author davis@xarg.net
-    @creation_date 2004-04-01
+    @creation-date 2004-04-01
 } {
     set title [db_string name {
         select f.faq_name from faqs f
@@ -78,7 +78,7 @@ ad_proc -private faq_qanda::fts::url { entry_id } {
     returns a url for a faq to the search package
 
     @author davis@xarg.net
-    @creation_date 2004-04-01
+    @creation-date 2004-04-01
 } {
     set faq_package_id [db_string package_id {select package_id from acs_objects where object_id = :entry_id} -default {}]
 

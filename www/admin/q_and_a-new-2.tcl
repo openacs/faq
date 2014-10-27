@@ -8,7 +8,7 @@ ad_page_contract {
     @creation-date 2000-10-25
 
 } {
-    faq_id:integer,notnull,trim
+    faq_id:naturalnum,notnull,trim
     question:html,notnull,trim
     answer:html,notnull,trim
     entry_id:naturalnum,optional
@@ -43,7 +43,7 @@ if {$insert_p == "t" } {
 
     db_dml faq_update $sql_update_q_and_as
     
-    set sort_key [expr $old_sort_key + 1]
+    set sort_key [expr {$old_sort_key + 1}]
     
     set entry_id [db_nextval acs_object_id_seq]
     }

@@ -1,5 +1,5 @@
 
-if { ![exists_and_not_null mode] } {
+if { (![info exists mode] || $mode eq "") } {
     set mode "edit"
 }
 
@@ -15,7 +15,7 @@ ad_form -name faq_add_edit -mode $mode -action "faq-add-edit" -form {
 } -edit_data {
     db_dml edit_faq {}
 } -after_submit {
-   if { ![exists_and_not_null return_url] } {
+   if { (![info exists return_url] || $return_url eq "") } {
        set return_url [export_vars -base one-faq { faq_id }] 
    }
    ad_returnredirect $return_url

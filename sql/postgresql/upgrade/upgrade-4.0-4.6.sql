@@ -1,13 +1,21 @@
-create or replace function faq__clone (integer,integer)
-returns integer as '
-declare
- p_new_package_id  	alias for $1;   --default null,
- p_old_package_id 	alias for $2;   --default null
+
+
+--
+-- procedure faq__clone/2
+--
+
+select define_function_args('faq__clone','new_package_id,old_package_id');
+
+CREATE OR REPLACE FUNCTION faq__clone(
+   p_new_package_id integer, --default null,
+   p_old_package_id integer  --default null
+
+) RETURNS integer AS $$
+DECLARE
  v_faq_id 		faqs.faq_id%TYPE;
  one_faq		record;
  entry			record;
-
-begin
+BEGIN
             -- get all the faqs belonging to the old package,
             -- and create new faqs for the new package
             for one_faq in select *
@@ -35,9 +43,9 @@ begin
                end loop;
            end loop;
  return 0;
- end;
-' language 'plpgsql';
+ END;
 
+$$ LANGUAGE plpgsql;
 
 alter table faqs add column disabled_p char(1);
 alter table faqs alter disabled_p set default 'f';
