@@ -13,7 +13,7 @@ ad_page_contract {
 } {
     faq_id:naturalnum,notnull
     faq_name:notnull,trim
-    separate_p:notnull
+    separate_p:boolean,notnull
 }
 set package_id [ad_conn package_id]
 

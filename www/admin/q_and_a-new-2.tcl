@@ -12,7 +12,7 @@ ad_page_contract {
     question:html,notnull,trim
     answer:html,notnull,trim
     entry_id:naturalnum,optional
-    insert_p:optional
+    insert_p:boolean,optional
  
 }
 
