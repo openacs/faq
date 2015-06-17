@@ -8,10 +8,10 @@
 
 <else>
 <table>
- <tr valign=top>
+ <tr valign="top">
  <td width="30%">
  <ol>
-  <multiple name=one_question>
+  <multiple name="one_question">
    <if @separate_p@ eq "t">
    
    <li>
@@ -32,9 +32,9 @@
 <if @separate_p@ eq "f">
 <td>
  <ol>
-  <multiple name=one_question>
+  <multiple name="one_question">
    <li>
-    <a name=@one_question.entry_id@></a>
+    <a name="@one_question.entry_id@"></a>
      <b>#faq.Q#</b> @one_question.question@
      <P>
      <b>#faq.A#</b> @one_question.answer@

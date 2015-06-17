@@ -39,7 +39,7 @@
   <ol>
 <multiple name="one_question">
     <li>
-      <a name=@one_question.entry_id@ title="#faq.View_QA#"></a>
+      <a name="@one_question.entry_id@" title="#faq.View_QA#"></a>
       <p>
       <b>#faq.Q#</b> <i>@one_question.question;noquote@</i>
       </p>
