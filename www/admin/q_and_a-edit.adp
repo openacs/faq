@@ -3,7 +3,7 @@
 <property name="doc(title)">#faq.One_Question#</property>
 
 <form action="@action@" method=post>
-<input type="hidden" name="entry_id" value=@entry_id@>
+<input type="hidden" name="entry_id" value="@entry_id@">
  <table>
   <tr>
    <th align="right">#faq.Question#</th>
