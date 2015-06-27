@@ -74,4 +74,4 @@ db_transaction {
     }
 }
 
-ad_returnredirect "one-faq?[export_vars -url {faq_id}]"
+ad_returnredirect [export_vars -base one-faq {faq_id}]

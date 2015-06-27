@@ -4,7 +4,7 @@ ad_page_contract {
     @cvs-id $Id$
 } {
     {cat:trim,integer {}}
-    {orderby "object_title"}
+    {orderby:token "object_title"}
 }
 
 set cat_name [category::get_names $cat]

@@ -30,6 +30,6 @@ db_1row q_and_a_info "select question, answer,faq_name,qa.faq_id
 
 set context [list [list "one-faq?faq_id=$faq_id" "$faq_name"] "One Q&A"]
 
-set delete_url "q_and_a-delete?[export_vars { entry_id faq_id }]"
+set delete_url [export_vars -base q_and_a-delete { entry_id faq_id }]
 
 ad_return_template

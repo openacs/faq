@@ -28,8 +28,8 @@ db_1row q_and_a_info "select question, answer, a.faq_id, f.faq_name
 
 set context [list [list "one-faq?faq_id=$faq_id" "$faq_name"] "[_ faq.One_Question]"]
 
-set edit_url "q-and-a-add-edit?[export_vars { entry_id faq_id }]"
-set delete_url "q_and_a-delete?[export_vars { entry_id faq_id }]"
-set create_url "q-and-a-add-edit?[export_vars { faq_id } ]"
+set edit_url [export_vars -base q-and-a-add-edit { entry_id faq_id }]
+set delete_url [export_vars -base q_and_a-delete { entry_id faq_id }]
+set create_url [export_vars -base q-and-a-add-edit { faq_id } ]
 
 ad_return_template

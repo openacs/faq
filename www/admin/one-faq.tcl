@@ -36,6 +36,6 @@ db_1row faq_name "select faq_name from faqs where faq_id=:faq_id"
 set title "#faq.faq_name_Admin#"
 set context [list $faq_name]
 
-set new_faq_url "q-and-a-add-edit?[export_vars { faq_id }]"
+set new_faq_url [export_vars -base q-and-a-add-edit { faq_id }]
 
 ad_return_template
