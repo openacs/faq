@@ -1,6 +1,6 @@
 <master src="master">
-<property name="context_bar">@context_bar;noquote@</property>
-<property name="doc(title)">@faq_name;noquote@</property>
+<property name="context_bar">@context_bar;literal@</property>
+<property name="doc(title)">@faq_name;literal@</property>
 
 <if @one_question:rowcount@ eq 0>
  <i>#faq.lt_no_questions#</i><p>

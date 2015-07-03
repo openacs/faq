@@ -1,5 +1,5 @@
 <master>
-<property name="context">@context;noquote@</property>
+<property name="context">@context;literal@</property>
 <property name="doc(title)">#faq.FAQs#</property>
 
 <h1>#faq.FAQs#</h1>

@@ -1,6 +1,6 @@
 <master>
-<property name="context">@context;noquote@</property>
-<property name="doc(title)">@title;noquote@</property>
+<property name="context">@context;literal@</property>
+<property name="doc(title)">@title;literal@</property>
 
 <form action="@action@">
  <div><input type="hidden" name="faq_id" value="@faq_id@"></div>

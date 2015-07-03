@@ -1,5 +1,5 @@
 <master>
-<property name="context">@context;noquote@</property>
+<property name="context">@context;literal@</property>
 <property name="doc(title)">#faq.FAQs#</property>
 
 <h1>@faq_info.faq_name;noquote@</h1>
@@ -7,8 +7,8 @@
 <p>
       @notification_chunk;noquote@ 
 </p>
-<property name="doc(title)">@faq_info.faq_name;noquote@</property>
-<property name="displayed_object_id">@faq_id;noquote@</property>
+<property name="doc(title)">@faq_info.faq_name;literal@</property>
+<property name="displayed_object_id">@faq_id;literal@</property>
 
 <table width="70%" border="0">
 <tr><td align="left" valign="top">
