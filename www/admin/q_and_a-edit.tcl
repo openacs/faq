@@ -33,3 +33,9 @@ set context [list [list "one-faq?faq_id=$faq_id" "$faq_name"] "One Q&A"]
 set delete_url [export_vars -base q_and_a-delete { entry_id faq_id }]
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

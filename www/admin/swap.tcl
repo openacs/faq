@@ -53,3 +53,9 @@ db_release_unused_handles
 
 ad_returnredirect [export_vars -base one-faq {faq_id}] 
 
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

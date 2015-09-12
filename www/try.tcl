@@ -12,3 +12,8 @@ Root Dir:$root_dir<p>
 Trimmed Stub: $file_name<p>
 Location: $template_location
 "
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

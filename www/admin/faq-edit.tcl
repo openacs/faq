@@ -27,3 +27,9 @@ set submit_label [_ faq.Update_FAQ]
 db_1row faq_get_name "select faq_name,separate_p from faqs where faq_id = :faq_id"
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

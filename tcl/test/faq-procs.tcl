@@ -329,3 +329,9 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_swap_with_ne
 	    twt::user::logout
        }
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

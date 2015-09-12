@@ -42,3 +42,9 @@ if {[permission::permission_p -party_id $user_id -object_id $package_id -privile
 db_multirow faqs faq_select "" {}
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

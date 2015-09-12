@@ -31,3 +31,9 @@ if { ![ad_form_new_p -key faq_id]} {
     permission::require_permission -object_id [ad_conn package_id] -privilege faq_create_faq 
 } 
 
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

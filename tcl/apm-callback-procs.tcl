@@ -149,3 +149,9 @@ ad_proc -public faq::apm_callback::create_all_faq_type {impl_id} {
 		     -pretty_name "FAQ Q&A" \
 		     -description "Notification of a new Q&A of any faq"]
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

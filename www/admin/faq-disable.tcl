@@ -19,3 +19,9 @@ if { ![info exists referer] } {
 }
 
 ad_returnredirect $referer
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

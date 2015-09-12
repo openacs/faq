@@ -70,3 +70,8 @@ ad_proc -callback application-track::getApplicationName -impl faqs {} {
 
         return "OK"
     }
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:
