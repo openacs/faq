@@ -41,8 +41,8 @@ if { [info exists entry_id]} {
     set insert_p "t"
 }
 
-set question_q [ad_quotehtml $question]
-set answer_q [ad_quotehtml $answer]
+set question_q [ns_quotehtml $question]
+set answer_q [ns_quotehtml $answer]
 
 ad_return_template 
 
