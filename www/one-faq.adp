@@ -1,15 +1,15 @@
 <master>
 <property name="context">@context;literal@</property>
-<property name="doc(title)">#faq.FAQs#</property>
-
-<h1>@faq_info.faq_name;noquote@</h1>
-
-<p>
-      @notification_chunk;noquote@ 
-</p>
 <property name="doc(title)">@faq_info.faq_name;literal@</property>
 <property name="displayed_object_id">@faq_id;literal@</property>
 
+<h1>@faq_info.faq_name@</h1>
+
+<p><include src="/packages/notifications/lib/notification-widget" type="one_faq_qa_notif"
+	 object_id="@faq_id;literal@"
+	 pretty_name="@faq_info.faq_name;literal@"
+	 url="@return_url;literal@" >
+	 
 <table width="70%" border="0">
 <tr><td align="left" valign="top">
 <if @one_question:rowcount@ eq 0>
