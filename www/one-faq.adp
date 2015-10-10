@@ -7,7 +7,7 @@
 
 <p><include src="/packages/notifications/lib/notification-widget" type="one_faq_qa_notif"
 	 object_id="@faq_id;literal@"
-	 pretty_name="@faq_info.faq_name;literal@"
+	 pretty_name="@faq_info.faq_name@"
 	 url="@return_url;literal@" >
 	 
 <table width="70%" border="0">
