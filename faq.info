@@ -19,9 +19,9 @@
         <package_instance_name>#faq.FAQs#</package_instance_name>
 
         <provides url="faq" version="5.9.0b2"/>
-        <requires url="acs-kernel" version="5.9.0b2"/>
+        <requires url="acs-kernel" version="5.9.0"/>
         <requires url="categories" version="1.1.2d3"/>
-        <requires url="notifications" version="5.9.0b2"/>
+        <requires url="notifications" version="5.9.0"/>
 
         <callbacks>
             <callback type="after-install"  proc="faq::install::package_install"/>
