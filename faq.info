@@ -7,18 +7,18 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
     
-    <version name="5.9.0" url="http://openacs.org/repository/download/apm/faq-5.9.0.apm">
+    <version name="5.9.1d1" url="http://openacs.org/repository/download/apm/faq-5.9.1d1.apm">
         <owner url="mailto:mazloumi@uni-mannheim.de">Nima Mazloumi</owner>
         <owner url="mailto:jennie@ybos.net">Jennie Kim Housman</owner>
         <owner url="mailto:wirth@ybos.net">Elizabeth Wirth</owner>
         <summary>Manage simple and categorized Question and Answer style FAQs with WYSIWYG and notification functionalities.</summary>
-        <release-date>2015-10-04</release-date>
+        <release-date>2016-05-14</release-date>
         <vendor url="http://ybos.net">Ybos Corporation</vendor>
         <description format="text/html">Handles frequently asked questions Q&amp;A presentation.  Can be one Q&amp;A per page or all presented flat.  Straightforward application with room for improvement. Support for notification as well as WYSIQYG Editor and Categories - both optional. Category trees are displayed flat. No multiple filters.</description>
         <maturity>2</maturity>
         <package_instance_name>#faq.FAQs#</package_instance_name>
 
-        <provides url="faq" version="5.9.0"/>
+        <provides url="faq" version="5.9.1d1"/>
         <requires url="acs-kernel" version="5.9.0"/>
         <requires url="categories" version="1.1.2d3"/>
         <requires url="notifications" version="5.9.0"/>
