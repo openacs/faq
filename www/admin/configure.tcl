@@ -6,7 +6,7 @@ ad_page_contract {
     @creation-date  2004-08-11
 
 } {
-    {return_url ""}
+    {return_url:localurl ""}
 }
 
 set title "#faq.Configure#"

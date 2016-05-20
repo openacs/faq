@@ -6,7 +6,7 @@ ad_page_contract {
     @creation-date 2003-11-26 
 } {  
     faq_id:naturalnum,optional 
-    return_url:optional
+    return_url:localurl,optional
 } -properties { 
     context:onevalue 
     faq_id:onevalue 
