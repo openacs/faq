@@ -34,7 +34,7 @@ create table faqs (
 			  primary key,
 		faq_name  varchar (250)
 		          constraint faqs_faq_name_nn   not null,
-		separate_p boolean
+		separate_p boolean,
 		disabled_p boolean default false
 );
 
