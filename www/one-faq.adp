@@ -13,7 +13,7 @@
 <table width="70%" border="0">
 <tr><td align="left" valign="top">
 <if @one_question:rowcount@ eq 0>
-  <i>#faq.lt_no_questions#</i>
+  <em>#faq.lt_no_questions#</em>
 </if>
 <else>
   <ol>
@@ -41,10 +41,10 @@
     <li>
       <a name="@one_question.entry_id@" title="#faq.View_QA#"></a>
       <p>
-      <b>#faq.Q#</b> <i>@one_question.question;noquote@</i>
+      <strong>#faq.Q#</strong> <em>@one_question.question;noquote@</em>
       </p>
       <p>
-      <b>#faq.A#</b> @one_question.answer;noquote@
+      <strong>#faq.A#</strong> @one_question.answer;noquote@
       </p>
     </li>
 </multiple>

@@ -13,7 +13,7 @@
 </if>
 
 <if @faqs:rowcount@ eq 0>
- <p><i>#faq.lt_no_FAQs#</i></p>
+ <p><em>#faq.lt_no_FAQs#</em></p>
 </if>
 <else>
  <ul>

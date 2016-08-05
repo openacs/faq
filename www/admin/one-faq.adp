@@ -6,7 +6,7 @@
 <include src="/packages/faq/lib/faq-add-edit" &="faq_id" mode="display">
 
 <if @faq_q_and_as:rowcount@ eq 0>
- <i>#faq.lt_no_questions#</i><p></p>
+ <em>#faq.lt_no_questions#</em><p></p>
 </if>
 
 <else>
