@@ -8,7 +8,7 @@
 	 object_id="@package_id;literal@"
 	 pretty_name="FAQs">
 
-<if @admin_p@ eq 1>
+<if @admin_p;literal@ true>
   <p><a href="./admin" class="button" title="#faq.administer#">#faq.administer#</a></p>
 </if>
 

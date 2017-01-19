@@ -18,15 +18,15 @@
 <else>
   <ol>
 <multiple name="one_question">
-<if @faq_info.separate_p@ true>
+<if @faq_info.separate_p;literal@ true>
     <li>
       <a href="one-question?entry_id=@one_question.entry_id@" title="#faq.View_QA#">@one_question.question;noquote@</a>
     </li>
 </if>
-<if @faq_info.separate_p@ false>
+<if @faq_info.separate_p;literal@ false>
     <li>
       <a href="#@one_question.entry_id@" title="#faq.Jump_to_Answer#">@one_question.question;noquote@</a>
-<if @use_categories_p@>
+<if @use_categories_p;literal@ true>
       <a href="categories/categorize?object_id=@one_question.entry_id@&amp;faq_id=@faq_id@" title="#faq.Categorize_Q#">Categorize</a>
 </if>
     </li>
@@ -34,7 +34,7 @@
 </multiple>
   </ol>
 
-<if @faq_info.separate_p@ false>
+<if @faq_info.separate_p;literal@ false>
   <hr>
   <ol>
 <multiple name="one_question">
@@ -52,7 +52,7 @@
 </if>
 </else>
 </td><td align="right" valign="top">
-<if @use_categories_p@>
+<if @use_categories_p;literal@ true>
   <multiple name="categories">
            <h2>@categories.tree_name@</h2>
            <group column="tree_id">

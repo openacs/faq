@@ -12,14 +12,14 @@
  <td width="30%">
  <ol>
   <multiple name="one_question">
-   <if @separate_p@ eq "t">
+   <if @separate_p;literal@ true>
    
    <li>
 	<a href="one-question?entry_id=@one_question.entry_id@">@one_question.question@</a>
 
     </li>
 	</if>
-    <if @separate_p@ eq "f">
+    <if @separate_p;literal@ false>
 
    <li>
       <a href="#@one_question.entry_id@">@one_question.question@</a>
@@ -29,7 +29,7 @@
   </multiple>
  </ol>
 </td>
-<if @separate_p@ eq "f">
+<if @separate_p;literal@ false>
 <td>
  <ol>
   <multiple name="one_question">
