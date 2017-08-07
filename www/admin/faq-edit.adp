@@ -12,7 +12,7 @@
    <tr>
     <th align="right">#faq.QA_On_Separate_Pages#</th>
     <td><select name="separate_p">
-	<if @separate_p@ eq "t">
+	<if @separate_p;literal@ true>
 	<option value="t" selected>#faq.Yes#</option>
 	<option value="f">#faq.No#</option>
 	</if>

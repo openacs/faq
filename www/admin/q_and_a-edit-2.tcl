@@ -27,3 +27,9 @@ set faq_id [db_string select_faq_id "select faq_id from
 
 ad_returnredirect "one-faq?faq_id=$faq_id"
 
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

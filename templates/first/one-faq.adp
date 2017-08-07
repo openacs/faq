@@ -3,7 +3,7 @@
 <property name="doc(title)">@faq_name;literal@</property>
 
 <if @one_question:rowcount@ eq 0>
- <i>#faq.lt_no_questions#</i><p>
+ <em>#faq.lt_no_questions#</em><p>
 </if>
 
 <else>
@@ -12,14 +12,14 @@
  <td width="30%">
  <ol>
   <multiple name="one_question">
-   <if @separate_p@ eq "t">
+   <if @separate_p;literal@ true>
    
    <li>
 	<a href="one-question?entry_id=@one_question.entry_id@">@one_question.question@</a>
 
     </li>
 	</if>
-    <if @separate_p@ eq "f">
+    <if @separate_p;literal@ false>
 
    <li>
       <a href="#@one_question.entry_id@">@one_question.question@</a>
@@ -29,15 +29,15 @@
   </multiple>
  </ol>
 </td>
-<if @separate_p@ eq "f">
+<if @separate_p;literal@ false>
 <td>
  <ol>
   <multiple name="one_question">
    <li>
     <a name="@one_question.entry_id@"></a>
-     <b>#faq.Q#</b> @one_question.question@
+     <strong>#faq.Q#</strong> @one_question.question@
      <P>
-     <b>#faq.A#</b> @one_question.answer@
+     <strong>#faq.A#</strong> @one_question.answer@
      <p>
 
    </li>

@@ -6,7 +6,7 @@ ad_page_contract {
     @creation-date  2004-08-11
 
 } {
-    {return_url ""}
+    {return_url:localurl ""}
 }
 
 set title "#faq.Configure#"
@@ -34,3 +34,9 @@ ad_form -name categories_mode -form {
         ad_returnredirect $return_url
     }
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

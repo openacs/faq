@@ -17,23 +17,11 @@ ad_page_contract {
 }
 
 set package_id [ad_conn package_id]
-
 set context {}
 
-
 set user_id [ad_conn user_id]
- 
 permission::require_permission -object_id $package_id -privilege faq_view_faq
-
 set admin_p 0
-
-
-set notification_chunk [notification::display::request_widget \
-                        -type all_faq_qa_notif \
-			-object_id [ad_conn package_id] \
-                        -pretty_name FAQs \
-                        -url [ad_conn url] \
-                        ]
 
 if {[permission::permission_p -party_id $user_id -object_id $package_id -privilege faq_admin_faq]} {
     set admin_p 1
@@ -42,3 +30,9 @@ if {[permission::permission_p -party_id $user_id -object_id $package_id -privile
 db_multirow faqs faq_select "" {}
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

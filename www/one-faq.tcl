@@ -14,7 +14,6 @@ ad_page_contract {
 #/faq/www/one-faq.tcl
 
 set package_id [ad_conn package_id]
-
 set user_id [ad_conn user_id]
 
 permission::require_permission -object_id $package_id -privilege faq_view_faq
@@ -59,14 +58,7 @@ if { $use_categories_p == 1} {
     }
 }
 
-set notification_chunk [notification::display::request_widget \
-                        -type one_faq_qa_notif \
-                        -object_id $faq_id \
-                        -pretty_name $faq_info(faq_name) \
-                        -url [ad_conn url]?faq_id=$faq_id \
-                        ]
-
-set return_url "[ad_conn url]?faq_id=$faq_id"
+set return_url [export_vars -base [ad_conn url] {faq_id}]
 
 if { [apm_package_installed_p "general-comments"] 
      && [parameter::get -package_id $package_id -parameter GeneralCommentsP -default 0] } {
@@ -78,3 +70,9 @@ if { [apm_package_installed_p "general-comments"]
 }
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

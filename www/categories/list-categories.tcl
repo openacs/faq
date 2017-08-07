@@ -10,3 +10,9 @@ ad_page_contract {
 set cat_name [category::get_names $cat]
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

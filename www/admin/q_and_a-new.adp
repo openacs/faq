@@ -9,7 +9,7 @@
  <input type="hidden" name="faq_id" value="@faq_id@">
   </div>
 
- <if @insert_p@ eq "t">
+ <if @insert_p;literal@ true>
  	<input type="hidden" name="entry_id" value="@entry_id@">
  </if>
 

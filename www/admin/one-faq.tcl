@@ -38,4 +38,12 @@ set context [list $faq_name]
 
 set new_faq_url [export_vars -base q-and-a-add-edit { faq_id }]
 
+template::add_confirm_handler -CSSclass acs-confirm-delete -message [_ faq.lt_Are_you_sure_you_want_1]
+
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

@@ -34,8 +34,8 @@ create table faqs (
 			  primary key,
 		faq_name  varchar (250)
 		          constraint faqs_faq_name_nn   not null,
-		separate_p boolean  check(separate_p in ('f','t')),
-		disabled_p char(1) default 'f' check(disabled_p in ('f','t'))
+		separate_p boolean,
+		disabled_p boolean default false
 );
 
 

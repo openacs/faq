@@ -6,10 +6,10 @@
 <h1>@faq_name;noquote@</h1>
 
 <p>
-<b>#faq.Q#</b> @question;noquote@
+<strong>#faq.Q#</strong> @question;noquote@
 </p>
 <p>
-<b>#faq.A#</b> @answer;noquote@
+<strong>#faq.A#</strong> @answer;noquote@
 </p>
 
 <p>

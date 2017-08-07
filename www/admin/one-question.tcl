@@ -33,3 +33,9 @@ set delete_url [export_vars -base q_and_a-delete { entry_id faq_id }]
 set create_url [export_vars -base q-and-a-add-edit { faq_id } ]
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

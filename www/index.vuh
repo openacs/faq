@@ -9,3 +9,9 @@ if {[regexp {^/+cat/+([^/]+)/*} $url \
           rp_form_put category_id $sw_category_id
 }
 rp_internal_redirect "/packages/faq/www/one-faq"
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

@@ -6,7 +6,7 @@ ad_page_contract {
     @creation-date 2003-11-26 
 } {  
     faq_id:naturalnum,optional 
-    return_url:optional
+    return_url:localurl,optional
 } -properties { 
     context:onevalue 
     faq_id:onevalue 
@@ -31,3 +31,9 @@ if { ![ad_form_new_p -key faq_id]} {
     permission::require_permission -object_id [ad_conn package_id] -privilege faq_create_faq 
 } 
 
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

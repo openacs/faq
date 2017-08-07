@@ -87,3 +87,9 @@ set category_map_url [export_vars -base "[site_node::get_package_url -package_ke
 set return_url [ns_conn url]
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

@@ -389,3 +389,8 @@ ad_proc swap_with_next_Q_A { faq_name } {
 }
 	
 }
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:
