@@ -8,7 +8,6 @@ ad_page_contract {
     @creation-date 2000-10-24
  
 } {
-
     entry_id:naturalnum,notnull
 }
 
@@ -16,14 +15,12 @@ set package_id [ad_conn package_id]
 
 permission::require_permission -object_id $package_id -privilege faq_view_faq
 
-set user_id [ad_conn user_id]
-
-db_1row question_info ""
+if {![db_0or1row question_info {}]} {
+    ad_return_complaint 1 [_ faq.lt_no_questions]
+    ad_script_abort
+}
 
 set context [list [list "one-faq?faq_id=$faq_id" $faq_name] [_ faq.One_Question]]
-
-
-ad_return_template
 
 # Local variables:
 #    mode: tcl
