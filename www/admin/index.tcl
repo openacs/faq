@@ -50,7 +50,7 @@ template::list::create \
         disabled_p {
             label "Enabled"
             display_template {
-                <if @faqs.disabled_p@ false>
+                <if @faqs.disabled_p;literal@ false>
                   <a href="@faqs.disable_url@" title="#faq.Disable_FAQ# @faqs.faq_name@">
 		  <img src="/resources/acs-subsite/checkboxchecked.gif" height="13" width="13" border="0" style="background-color: white;" alt="#faq.Disable#"></a>
                 </if>

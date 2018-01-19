@@ -39,6 +39,7 @@ db_transaction {
 # on error ...
 
 ad_returnredirect "."
+ad_script_abort
 
 # Local variables:
 #    mode: tcl

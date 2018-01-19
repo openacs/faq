@@ -20,7 +20,7 @@ db_dml faq_edit "update faqs
                   where faq_id = :faq_id"
 
 ad_returnredirect "."
-
+ad_script_abort
 
 # Local variables:
 #    mode: tcl

@@ -28,10 +28,13 @@ ad_form -name categories_mode -form {
     {return_url:text(hidden) {value $return_url}}
     {submit:text(submit) {label "[_ faq.Change_settings]"}}
 } -on_submit {
+
     parameter::set_value  -parameter "EnableCategoriesP" -value $cat_enabled_p
     parameter::set_value  -parameter "UseWysiwygP" -value $wysiwyg_enabled_p
+
     if {$return_url ne ""} {
         ad_returnredirect $return_url
+        ad_script_abort
     }
 }
 

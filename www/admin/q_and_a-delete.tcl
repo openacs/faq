@@ -28,6 +28,7 @@ db_transaction {
 }
 
 ad_returnredirect "one-faq?faq_id=$faq_id"
+ad_script_abort
 
 # Local variables:
 #    mode: tcl

@@ -28,6 +28,8 @@ db_transaction {
 }
 
 ad_returnredirect "index"
+ad_script_abort
+
 # Local variables:
 #    mode: tcl
 #    tcl-indent-level: 4

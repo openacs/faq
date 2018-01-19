@@ -26,7 +26,7 @@ set faq_id [db_string select_faq_id "select faq_id from
                          where entry_id = :entry_id"]
 
 ad_returnredirect "one-faq?faq_id=$faq_id"
-
+ad_script_abort
 
 # Local variables:
 #    mode: tcl

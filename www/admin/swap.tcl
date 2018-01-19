@@ -52,7 +52,7 @@ db_transaction {
 db_release_unused_handles
 
 ad_returnredirect [export_vars -base one-faq {faq_id}] 
-
+ad_script_abort
 
 # Local variables:
 #    mode: tcl
