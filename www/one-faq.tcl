@@ -43,9 +43,9 @@ if { $use_categories_p == 1} {
     if { $category_id ne "" } {
 	set category_name [category::get_name $category_id]
 	if { $category_name eq "" } {
-	    ad_return_exception_page 404 "No such category" "Site-wide \
-          Category with ID $category_id doesn't exist"
-            return
+	    ad_return_exception_page 404 "No such category" \
+                "Site-wide Category with ID $category_id doesn't exist"
+            ad_script_abort
 	}
 
 	# Replace last element of context (the FAQ name) with link to that FAQ and current category name
