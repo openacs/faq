@@ -26,7 +26,7 @@ Answer: $answer"
 	
 	append text_version "Faq: $faq_name
 Author: $name ($email)\n\n"
-         append text_version [wrap_string $q_a_text]
+         append text_version [ns_reflow_text -- $q_a_text]
      append text_version "\n\n-- 
 To view the entire FAQ go to: 
 $faq_url
