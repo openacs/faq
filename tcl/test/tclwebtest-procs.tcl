@@ -30,7 +30,7 @@ ad_proc new { faq_name } {
         aa_log "$response_url"
 	if {[string match "*admin/one-faq*" $response_url] } {
 		if { [catch {tclwebtest::form find ~n "faq_add_edit"} errmsg] || [catch {tclwebtest::field find ~v "$faq_name"} errmsg] } {
-			aa_error  "faq::twt::new failed $errmsg : Dont't create a New Faq"
+			aa_error  "faq::twt::new failed $errmsg : Don't create a New Faq"
 		} else {
 			aa_log "New faq Created !!"
 		        set response 1
@@ -59,7 +59,7 @@ ad_proc delete { faq_name} {
 	
 	if { [string match "*admin/*" $response_url] } {
 		if {![catch {tclwebtest::link find "$faq_name" } errmsg]} {
-			aa_error "faq::twt::delete failed $errmsg : Dont't delete $faq_name Faq"
+			aa_error "faq::twt::delete failed $errmsg : Don't delete $faq_name Faq"
 		} else {
 			aa_log "Faq Deleted"
 		        set response 1
@@ -95,7 +95,7 @@ ad_proc edit_one { faq_name faq_new_name} {
 	
 	if {[string match "*admin/one-faq*" $response_url] } {
 		if { [catch {tclwebtest::form find ~n "faq_add_edit"} errmsg] || [catch {tclwebtest::field find ~v "$faq_new_name"} errmsg] } {
-			aa_error  "faq::twt::edit_one failed $errmsg : Dont't Edit a Faq"
+			aa_error  "faq::twt::edit_one failed $errmsg : Don't Edit a Faq"
 		} else {
 			aa_log "Faq Edited" 
 		        set response 1
@@ -134,7 +134,7 @@ ad_proc edit_two { faq_name faq_new_name} {
 
 	if {[string match "*admin/one-faq*" $response_url] } {
 		if { [catch {tclwebtest::form find ~n "faq_add_edit"} errmsg] || [catch {tclwebtest::field find ~v "$faq_new_name"} errmsg] } {
-			aa_error  "faq::twt::edit_two failed $errmsg : Dont't Edit a Faq"
+			aa_error  "faq::twt::edit_two failed $errmsg : Don't Edit a Faq"
 		} else {
 			aa_log "Faq Edited"
 		        set response 1
@@ -167,7 +167,7 @@ ad_proc disable_enable {faq_name option} {
 
 	if { [string match "*$faq_page_url*" $response_url] } {
 		if {![catch {tclwebtest::link find ~u  $optionurl } errmsg]} {
-			aa_error "faq::twt::$option failed $errmsg : Dont't $option $faq_name Faq"
+			aa_error "faq::twt::$option failed $errmsg : Don't $option $faq_name Faq"
 		} else {
 			aa_log "Faq $option"
 		        set response 1
@@ -206,7 +206,7 @@ ad_proc new_Q_A { faq_name question answer} {
 
 	if { [string match "*admin/one-faq*" $response_url] } {
 		if { [catch {tclwebtest::assert text "$question"} errmsg] } { 
-			aa_error "faq::twt::new_Q_A :  failed $errmsg : Dont't Create New Question"
+			aa_error "faq::twt::new_Q_A :  failed $errmsg : Don't Create New Question"
 		} else {
 			aa_log "New Faq Question Created"
 		        set response 1
@@ -244,7 +244,7 @@ ad_proc edit_Q_A { faq_name new_question new_answer } {
 
 	if { [string match "*admin/one-faq*" $response_url] } {
 		if { [catch {tclwebtest::assert text "$new_question"} errmsg] } { 
-			aa_error "faq::twt::edit_Q_A :  failed $errmsg : Dont't Edit a Question"
+			aa_error "faq::twt::edit_Q_A :  failed $errmsg : Don't Edit a Question"
 		} else {
 			aa_log "Faq Question Edited"
 		        set response 1
@@ -276,7 +276,7 @@ ad_proc preview_Q_A { faq_name } {
 
 	if { [string match "*admin/one-question*" $response_url] } {
 		if { [catch {tclwebtest::assert text "$question_text"} errmsg] || [catch {tclwebtest::assert text "$answer_text"} errmsg] } { 
-			aa_error "faq::twt::preview_Q_A :  failed $errmsg : Dont't Preview a Question"
+			aa_error "faq::twt::preview_Q_A :  failed $errmsg : Don't Preview a Question"
 		} else {
 			aa_log "Faq Question Previewed"
 		        set response 1
@@ -307,7 +307,7 @@ ad_proc delete_Q_A { faq_name question } {
 	
 	if { [string match "*admin/one-faq*" $response_url] } {	
 		if { [catch {tclwebtest::assert text -fail "$question"} errmsg] } { 
-			aa_error "faq::twt::delete_Q_A :  failed $errmsg : Dont't  Delete a Question"
+			aa_error "faq::twt::delete_Q_A :  failed $errmsg : Don't  Delete a Question"
 		} else {
 			aa_log "Faq Question Deleted"
 		        set response 1
@@ -349,7 +349,7 @@ ad_proc insert_after_Q_A { faq_name } {
 	if { [string match "*admin/one-faq*" $response_url] } {
 		tclwebtest::link follow "delete"
 		if { [catch {tclwebtest::assert text "$question"} errmsg] } { 
-			aa_error "faq::twt::insert_after_Q_A :  failed $errmsg : Dont't Insert After a Question"
+			aa_error "faq::twt::insert_after_Q_A :  failed $errmsg : Don't Insert After a Question"
 		} else {
 			aa_log "Faq Question inserted after a nother"
 		        set response 1
@@ -378,7 +378,7 @@ ad_proc swap_with_next_Q_A { faq_name } {
 	set response_url [tclwebtest::response url]
 	
 	if { [string match "*admin/one-faq*" $response_url] } {
-		aa_log "Faq Question swaped with next question"
+		aa_log "Faq Question swapped with next question"
 	        set response 1
 
 	} else {

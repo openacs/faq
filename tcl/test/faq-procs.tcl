@@ -52,7 +52,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_delete_faq {
 
 aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_edit_one_faq {
 
-    A simple test case to faq package :  Test edit Faq - Fisrt Scenario. 
+    A simple test case to faq package :  Test edit Faq - First Scenario.
 
 } {
 	aa_run_with_teardown -test_code {
@@ -324,7 +324,7 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_swap_with_ne
 	   
 	    # Swap with next Question_Answer
 	    set response [faq::twt::swap_with_next_Q_A $faq_name]
-	    aa_display_result -response $response -explanation {Webtest for swaping a question with a next in a Faq}
+	    aa_display_result -response $response -explanation {Webtest for swapping a question with a next in a Faq}
 	   
 	    twt::user::logout
        }
