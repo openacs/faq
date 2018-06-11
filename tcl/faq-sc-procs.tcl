@@ -32,7 +32,7 @@ ad_proc -private faq::fts::datasource { faq_id } {
 }
 
 ad_proc -private faq::fts::url { faq_id } {
-    returns a url for a faq to the search package
+    returns a URL for a faq to the search package
 
     @author davis@xarg.net
     @creation-date 2004-04-01
@@ -75,7 +75,7 @@ ad_proc -private faq_qanda::fts::datasource { entry_id } {
 }
 
 ad_proc -private faq_qanda::fts::url { entry_id } {
-    returns a url for a faq to the search package
+    returns a URL for a faq to the search package
 
     @author davis@xarg.net
     @creation-date 2004-04-01
