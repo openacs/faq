@@ -8,14 +8,14 @@ ad_library {
 
 namespace eval faq::install {}
 
-ad_proc -private faq::install::package_install {} { 
+ad_proc -private faq::install::package_install {} {
     package install callback
 } {
     faq::sc::register_implementations
     faq::apm_callback::package_install
 }
 
-ad_proc -private faq::install::package_uninstall {} { 
+ad_proc -private faq::install::package_uninstall {} {
     package uninstall callback
 } {
     faq::sc::unregister_implementations
