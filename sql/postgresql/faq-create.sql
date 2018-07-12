@@ -11,8 +11,8 @@ BEGIN
 	'FAQ',			-- pretty_name
 	'FAQs',			-- pretty_plural
 	'acs_object',		-- supertype
-	'FAQS',			-- table_name
-	'FAQ_ID',		-- id_column
+	'faqs',			-- table_name
+	'faq_id',		-- id_column
 	null,				-- package_name
 	'f',				-- abstract_p
 	null,				-- type_extension_table
@@ -46,8 +46,8 @@ BEGIN
 	'FAQ_Q_and_A',			-- pretty_name
 	'FAQ_Q_and_As',			-- pretty_plural
 	'acs_object',		-- supertype
-	'FAQ_Q_AND_AS',			-- table_name
-	'ENTRY_ID',		-- id_column
+	'faq_q_and_as',			-- table_name
+	'entry_id',		-- id_column
 	null,				-- package_name
 	'f',				-- abstract_p
 	null,				-- type_extension_table
