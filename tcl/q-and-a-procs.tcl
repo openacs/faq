@@ -9,25 +9,25 @@ ad_library {
 namespace eval faq::notification_delivery {
 
     ad_proc -public do_notification {
-        question 
-        answer 
-        entry_id 
+        question
+        answer
+        entry_id
         faq_id
         user_id
     } {
         Issues notifications for a FAQ
-    } {        
-	set faq_name [db_string select_faq_name {
+    } {
+        set faq_name [db_string select_faq_name {
             select faq_name from faqs
             where faq_id = :faq_id
         }]
         set name [person::name -person_id $user_id]
         set email [party::email -party_id $user_id]
 
-	set faq_url [faq::notification::get_url $entry_id]
+        set faq_url [faq::notification::get_url $entry_id]
 
-	set q_a_text [ns_reflow_text -- "Question: $question\nAnswer: $answer"]
-	set text_version [subst {Faq: $faq_name\nAuthor: $name ($email)\n\n$q_a_text\n\n--To view the entire FAQ go to: $faq_url}]
+        set q_a_text [ns_reflow_text -- "Question: $question\nAnswer: $answer"]
+        set text_version [subst {Faq: $faq_name\nAuthor: $name ($email)\n\n$q_a_text\n\n--To view the entire FAQ go to: $faq_url}]
 
         set new_content $text_version
         set package_id [ad_conn package_id]
