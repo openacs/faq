@@ -24,7 +24,7 @@ namespace eval faq::twt {
         tclwebtest::field find ~n "faq_name"
         tclwebtest::field fill "$faq_name"
         tclwebtest::form submit
-        aa_log "Faq form submited"
+        aa_log "Faq form submitted"
 
         set response_url [tclwebtest::response url]
 
@@ -93,7 +93,7 @@ namespace eval faq::twt {
         tclwebtest::field find ~n "faq_name"
         tclwebtest::field fill "$faq_new_name"
         tclwebtest::form submit
-        aa_log " Faq form submited"
+        aa_log " Faq form submitted"
 
         set response_url [tclwebtest::response url]
 
@@ -127,13 +127,13 @@ namespace eval faq::twt {
         # Clic Edit Button
         tclwebtest::form find ~n faq_add_edit
         tclwebtest::form submit
-        aa_log " Edit form submited"
+        aa_log " Edit form submitted"
 
         tclwebtest::form find ~n "faq_add_edit"
         tclwebtest::field find ~n "faq_name"
         tclwebtest::field fill "$faq_new_name"
         tclwebtest::form submit
-        aa_log " Faq form submited"
+        aa_log " Faq form submitted"
 
         set response_url [tclwebtest::response url]
 
@@ -206,7 +206,7 @@ namespace eval faq::twt {
         tclwebtest::field find ~n "answer"
         tclwebtest::field fill "$answer"
         tclwebtest::form submit
-        aa_log " Faq Question Form submited"
+        aa_log " Faq Question Form submitted"
 
 
         set response_url [tclwebtest::response url]
@@ -246,7 +246,7 @@ namespace eval faq::twt {
         tclwebtest::field find ~n "answer"
         tclwebtest::field fill "$new_answer"
         tclwebtest::form submit
-        aa_log " Faq Question Form submited"
+        aa_log " Faq Question Form submitted"
 
         set response_url [tclwebtest::response url]
 
@@ -354,7 +354,7 @@ namespace eval faq::twt {
         tclwebtest::field find ~n "answer"
         tclwebtest::field fill "$answer"
         tclwebtest::form submit
-        aa_log " Faq Question Form submited"
+        aa_log " Faq Question Form submitted"
 
         set response_url [tclwebtest::response url]
 
