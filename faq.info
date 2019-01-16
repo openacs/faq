@@ -6,7 +6,7 @@
     <pretty-plural>FAQs</pretty-plural>
     <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
-    
+
     <version name="5.10.0d4" url="http://openacs.org/repository/download/apm/faq-5.10.0d4.apm">
         <owner url="mailto:mazloumi@uni-mannheim.de">Nima Mazloumi</owner>
         <owner url="mailto:jennie@ybos.net">Jennie Kim Housman</owner>
