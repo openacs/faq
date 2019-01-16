@@ -9,7 +9,7 @@ ad_page_contract {
     @author Elizabeth Wirth (wirth@ybos.net)
     @author Nima Mazloumi (nima.mazloumi@gmx.de)
     @creation-date 2000-10-24
-   
+
 } {
 } -properties {
     context:onevalue
@@ -31,17 +31,19 @@ template::list::create \
     -elements {
         edit {
             display_template {
-		<a href="@faqs.edit_url@" title="#faq.Edit_FAQ# @faqs.faq_name@">
-                <img src="/resources/acs-subsite/Edit16.gif" border="0" alt="#faq.Edit#"></a>
+                <a href="@faqs.edit_url@" title="#faq.Edit_FAQ# @faqs.faq_name@">
+                  <img src="/resources/acs-subsite/Edit16.gif" border="0" alt="#faq.Edit#">
+                </a>
             }
             sub_class narrow
         }
         faq_name {
             label "#faq.name#"
-	    display_template {
-		<a href="@faqs.manage_url@" title="#faq.Name# @faqs.faq_name;noquote@">
-		@faqs.faq_name;noquote@</a>
-	    }
+            display_template {
+                <a href="@faqs.manage_url@" title="#faq.Name# @faqs.faq_name;noquote@">
+                    @faqs.faq_name;noquote@
+                </a>
+            }
         }
         num_q_and_as {
             label "#faq.number_qa#"
@@ -52,19 +54,22 @@ template::list::create \
             display_template {
                 <if @faqs.disabled_p;literal@ false>
                   <a href="@faqs.disable_url@" title="#faq.Disable_FAQ# @faqs.faq_name@">
-		  <img src="/resources/acs-subsite/checkboxchecked.gif" height="13" width="13" border="0" style="background-color: white;" alt="#faq.Disable#"></a>
+                    <img src="/resources/acs-subsite/checkboxchecked.gif" height="13" width="13" border="0" style="background-color: white;" alt="#faq.Disable#">
+                  </a>
                 </if>
                 <else>
                   <a href="@faqs.enable_url@" title="#faq.Enable_FAQ# @faqs.faq_name@">
-		  <img src="/resources/acs-subsite/checkbox.gif" height="13" width="13" border="0" style="background-color: white;" alt="#faq.Enable#"></a>
+                    <img src="/resources/acs-subsite/checkbox.gif" height="13" width="13" border="0" style="background-color: white;" alt="#faq.Enable#">
+                  </a>
                 </else>
             }
             html { align center }
         }
         delete {
             display_template {
-		<a href="@faqs.delete_url@" title="#faq.Delete_FAQ# @faqs.faq_name@">
-                <img src="/resources/acs-subsite/Delete16.gif" border="0" alt="#faq.Delete#"></a>
+                <a href="@faqs.delete_url@" title="#faq.Delete_FAQ# @faqs.faq_name@">
+                  <img src="/resources/acs-subsite/Delete16.gif" border="0" alt="#faq.Delete#">
+                </a>
             }
             sub_class narrow
         }
