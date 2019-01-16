@@ -37,18 +37,18 @@ template::list::create \
             sub_class narrow
         }
         faq_name {
-            label "Name"
+            label "#faq.name#"
 	    display_template {
 		<a href="@faqs.manage_url@" title="#faq.Name# @faqs.faq_name;noquote@">
 		@faqs.faq_name;noquote@</a>
 	    }
         }
         num_q_and_as {
-            label "# Q&amp;A"
+            label "#faq.number_qa#"
             html { align center }
         }
         disabled_p {
-            label "Enabled"
+            label "#faq.enabled#"
             display_template {
                 <if @faqs.disabled_p;literal@ false>
                   <a href="@faqs.disable_url@" title="#faq.Disable_FAQ# @faqs.faq_name@">

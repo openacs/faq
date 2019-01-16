@@ -33,6 +33,7 @@
   <msg key="Enable_Categories">Enable Categories</msg>
   <msg key="Enable_FAQ">Enable FAQ:</msg>
   <msg key="Enable_WYSIWYG">Enable WYSIWYG</msg>
+  <msg key="enabled">Enabled</msg>
   <msg key="FAQ_Admin">FAQ Administration</msg>
   <msg key="faq_name_Admin">%faq_name% Admin</msg>
   <msg key="FAQs">FAQs</msg>
@@ -44,8 +45,10 @@
   <msg key="lt_no_FAQs">There are no FAQs available.</msg>
   <msg key="lt_no_questions">There are no questions available.</msg>
   <msg key="Name">Name:</msg>
+  <msg key="name">Name</msg>
   <msg key="New">New</msg>
   <msg key="No">No</msg>
+  <msg key="number_qa">Q&amp;A</msg>
   <msg key="One_Question">One Question</msg>
   <msg key="Plain">Plain</msg>
   <msg key="Preformatted">Preformatted</msg>
