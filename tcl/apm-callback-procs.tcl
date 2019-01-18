@@ -55,6 +55,19 @@ ad_proc -private faq::apm_callback::package_uninstall {
     }
 }
 
+ad_proc -private faq::apm_callback::before_uninstantiate {
+  -package_id
+} {
+    Callback to remove all FAQs before package uninstantiate
+
+    @author Héctor Romojaro <hector.romojaro@gmail.com>
+    @creation-date 2019-01-18
+} {
+    db_multirow faqs faq_list "" {}
+    template::multirow foreach faqs {
+        db_exec_plsql _ "select faq__delete_faq(:faq_id)"
+    }
+}
 
 ad_proc -public faq::apm_callback::delete_one_faq_impl {} {
     Unregister the NotificationType implementation for one_faq_qa_notif_type.
