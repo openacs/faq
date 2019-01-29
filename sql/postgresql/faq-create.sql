@@ -30,6 +30,7 @@ drop function inline_0 ();
 create table faqs (
 		faq_id    integer constraint faqs_faq_id_fk
 			  references acs_objects(object_id)
+                          on delete cascade
 			  constraint faqs_pk
 			  primary key,
 		faq_name  varchar (250)
@@ -66,6 +67,7 @@ drop function inline_1 ();
 create table faq_q_and_as (
 	entry_id  integer constraint faq_q_and_as_entry_id_fk
 		  references acs_objects (object_id)
+                  on delete cascade
 		  constraint faq_q_sand_a_pk
          	  primary key,
 	faq_id	  integer references faqs not null,
