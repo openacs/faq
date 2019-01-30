@@ -53,7 +53,7 @@ create table faq_q_and_as (
                   on delete cascade
 		  constraint faq_q_sand_a_pk
          	  primary key,
-	faq_id	  integer references faqs not null,
+	faq_id	  integer not null references faqs on delete cascade,
 	question  varchar (4000) not null,
 	answer    varchar (4000) not null,
 	-- determines the order of questions in a FAQ
