@@ -7,7 +7,7 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>f</singleton-p>
 
-    <version name="5.10.0d6" url="http://openacs.org/repository/download/apm/faq-5.10.0d6.apm">
+    <version name="5.10.0d7" url="http://openacs.org/repository/download/apm/faq-5.10.0d7.apm">
         <owner url="mailto:mazloumi@uni-mannheim.de">Nima Mazloumi</owner>
         <owner url="mailto:jennie@ybos.net">Jennie Kim Housman</owner>
         <owner url="mailto:wirth@ybos.net">Elizabeth Wirth</owner>
@@ -18,7 +18,7 @@
         <maturity>2</maturity>
         <package_instance_name>#faq.FAQs#</package_instance_name>
 
-        <provides url="faq" version="5.10.0d6"/>
+        <provides url="faq" version="5.10.0d7"/>
         <requires url="acs-kernel" version="5.9.1"/>
         <requires url="acs-tcl" version="5.10.0d6"/>
         <requires url="categories" version="1.1.3"/>
@@ -28,7 +28,6 @@
             <callback type="after-install"  proc="faq::install::package_install"/>
             <callback type="before-uninstall"  proc="faq::install::package_uninstall"/>
             <callback type="before-upgrade"  proc="faq::install::package_upgrade"/>
-            <callback type="before-uninstantiate"  proc="faq::apm_callback::before_uninstantiate"/>
         </callbacks>
         <parameters>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="CategoryContainer"  default="package_id" description="Should the category container for the faqs be &quot;subsite_id&quot; or &quot;package_id&quot;."/>
