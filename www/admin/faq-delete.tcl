@@ -16,16 +16,7 @@ set package_id [ad_conn package_id]
 
 permission::require_permission -object_id  $package_id -privilege faq_delete_faq
 
-db_transaction {
-    db_exec_plsql delete_faq {
-	begin
-	   faq.delete_faq (
-		    faq_id => :faq_id
-	        );
-	end;
-    }
-    db_dml delete_named_object "delete from acs_named_objects where object_id in (select entry_id from faq_q_and_as where faq_id = :faq_id)"
-}
+db_dml delete_faq {delete from faqs where faq_id = :faq_id}
 
 ad_returnredirect "index"
 ad_script_abort
