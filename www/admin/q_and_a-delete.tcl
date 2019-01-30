@@ -16,16 +16,7 @@ permission::require_permission -object_id [ad_conn package_id] -privilege faq_de
 
 db_1row get_faq_id "select faq_id from faq_q_and_as where entry_id=:entry_id"
 
-db_transaction {
-    db_exec_plsql delete_q_and_a {
-	begin
-	   faq.delete_q_and_a (
-		    entry_id => :entry_id
-	        );
-	end;
-    }
-    db_dml delete_named_object "delete from acs_named_objects where object_id = :entry_id"
-}
+db_dml delete_entry {delete from faq_q_and_as where entry_id = :entry_id}
 
 ad_returnredirect "one-faq?faq_id=$faq_id"
 ad_script_abort
