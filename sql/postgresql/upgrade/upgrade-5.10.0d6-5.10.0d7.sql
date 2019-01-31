@@ -19,6 +19,20 @@ begin;
 -- Oracle, making all this trigger daydream quite pointless. To make
 -- things worse, this trigger complicates removal of a faq instance,
 -- as long as faqs with entries are there.
-drop trigger faq_sc__dtrg on faq_q_and_as;
+-- drop trigger faq_sc__dtrg on faq_q_and_as;
+DO
+$body$
+DECLARE
+   v_trigger_name text := (
+      select trigger_name
+      from information_schema.triggers
+     where event_object_table = 'faq_q_and_as'
+       and event_manipulation = 'DELETE'
+       and action_timing = 'AFTER');
+BEGIN
+   EXECUTE '
+      DROP TRIGGER "' || v_trigger_name || '" on faq_q_and_as';
+END
+$body$;
 
 end;
