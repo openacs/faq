@@ -39,7 +39,7 @@ BEGIN
       ALTER TABLE faq_q_and_as DROP CONSTRAINT "' || v_constraint_name || '"';
    EXECUTE '
       ALTER TABLE faq_q_and_as
-      ADD CONSTRAINT ' || v_constraint_name || ' FOREIGN KEY (faq_id)
+      ADD CONSTRAINT "' || v_constraint_name || '" FOREIGN KEY (faq_id)
       REFERENCES faqs (faq_id) ON DELETE CASCADE';
 END
 $body$;
