@@ -55,7 +55,6 @@ ad_proc -private faq::apm_callback::package_uninstall {
     }
 }
 
-
 ad_proc -public faq::apm_callback::delete_one_faq_impl {} {
     Unregister the NotificationType implementation for one_faq_qa_notif_type.
 } {

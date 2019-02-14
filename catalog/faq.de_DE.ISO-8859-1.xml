@@ -8,7 +8,7 @@
   <msg key="Answer">Antwort</msg>
   <msg key="Answer_text_in_html">Antwort im HTML-Format</msg>
   <msg key="Back_to_FAQs">Zurück zu FAQs</msg>
-  <msg key="Change_settings">&amp;Auml;nderungen &amp;uuml;bernehmen</msg>
+  <msg key="Change_settings">Änderungen übernehmen</msg>
   <msg key="Configure">Konfigurieren</msg>
   <msg key="Create_a_new_FAQ">Neues FAQ erstellen</msg>
   <msg key="Create_an_FAQ">Neues FAQ erstellen</msg>
@@ -24,6 +24,7 @@
   <msg key="Edit_an_FAQ">Ein FAQ bearbeiten</msg>
   <msg key="Enable_Categories">Kategorien aktivieren </msg>
   <msg key="Enable_WYSIWYG">WYSIWYG aktivieren</msg>
+  <msg key="enabled">Aktiviert</msg>
   <msg key="FAQ_Admin">FAQs verwalten</msg>
   <msg key="faq_name_Admin">%faq_name% verwalten</msg>
   <msg key="FAQs">FAQs</msg>
@@ -34,8 +35,10 @@
   <msg key="lt_no_FAQs">Keine FAQs vorhanden</msg>
   <msg key="lt_no_questions">Keine Fragen vorhanden</msg>
   <msg key="Name">Titel:</msg>
+  <msg key="name">Titel</msg>
   <msg key="New">Neuen F&amp;A-Eintrag hinzufügen</msg>
   <msg key="No">Nein</msg>
+  <msg key="number_qa">Anzahl von Fragen</msg>
   <msg key="One_Question">Eine Frage</msg>
   <msg key="Plain">Einfacher Text</msg>
   <msg key="Preformatted">Vorformatierter Text</msg>
