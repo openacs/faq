@@ -68,7 +68,7 @@ if { $use_categories_p == 1 } {
     set category_map_url [export_vars -base "[site_node::get_package_url -package_key categories]cadmin/one-object" { { object_id $package_id } }]
 
     #extend the form to support categories
-    category::ad_form::add_widgets -form_name new_quest_answ -container_object_id $package_id -categorized_object_id [value_if_exists entry_id]
+    category::ad_form::add_widgets -form_name new_quest_answ -container_object_id $package_id -categorized_object_id [expr {[info exists entry_id] ? $entry_id : ""}]
 
     ad_form -extend -name new_quest_answ -edit_request {
         db_1row q $select_sql_query
