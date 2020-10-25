@@ -7,7 +7,7 @@
 --
 
 create function faq_sc__itrg ()
-returns opaque as $$
+returns trigger as $$
 begin
     perform search_observer__enqueue(new.entry_id,'INSERT'); 
     return new;
@@ -15,7 +15,7 @@ end;
 $$ language plpgsql;
 
 create function faq_sc__dtrg ()
-returns opaque as $$
+returns trigger as $$
 begin
     perform search_observer__enqueue(old.entry_id,'DELETE'); 
     return old;
@@ -23,7 +23,7 @@ end;
 $$ language plpgsql;
 
 create function faq_sc__utrg ()
-returns opaque as $$
+returns trigger as $$
 begin
     perform search_observer__enqueue(old.entry_id,'UPDATE'); 
     return old;
