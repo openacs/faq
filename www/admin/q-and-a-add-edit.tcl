@@ -100,11 +100,9 @@ if { $use_categories_p == 1 } {
 	db_transaction {
 	    db_exec_plsql create_q_and_a { *SQL* }
 	    category::map_object -remove_old -object_id $entry_id $category_ids
-	    db_dml insert_asc_named_object "insert into acs_named_objects (object_id, object_name, package_id) values ( :entry_id, 'FAQ', :package_id)"
 	}
     } -edit_data {
 	db_dml q_and_a_edit "update faq_q_and_as set question = :question, answer = :answer where entry_id = :entry_id"
-	db_dml insert_asc_named_object "update acs_named_objects set object_name = 'FAQ', package_id = :package_id where object_id = :entry_id"
 	category::map_object -remove_old -object_id $entry_id $category_ids
     } -after_submit {
         ad_returnredirect "one-faq?faq_id=$faq_id"

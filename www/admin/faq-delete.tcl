@@ -1,8 +1,6 @@
-#/faq/admin/faq-delete.tcl
-
 ad_page_contract {
-    
-    delete an FAQ, also deletes entries in acs_named_objects for categories
+
+    Delete a FAQ
     @author Elizabeth Wirth (wirth@ybos.net)
     @author Jennie Housman (jennie@ybos.net)
     @creation-date 2000-10-24
