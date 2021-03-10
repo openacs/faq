@@ -1,22 +1,22 @@
-ad_page_contract { 
-    
+ad_page_contract {
+
     Adds or Edit a new Q&A to a FAQ and Categories if Parameter EnableCategoriesP is Enabled
-    @author Rocael Hernandez (roc@viaro.net) 
-    @author Gerardo Morales Cadoret (gmorales@galileo.edu) 
+    @author Rocael Hernandez (roc@viaro.net)
+    @author Gerardo Morales Cadoret (gmorales@galileo.edu)
     @author Nima Mazloumi (nima.mazloumi@gmx.de)
-    @creation-date 2003-11-26 
+    @creation-date 2003-11-26
 
 } {
     faq_id:naturalnum,notnull
     entry_id:naturalnum,optional
     {prev_entry_id:naturalnum,notnull 0}
-}  -properties { 
-    context:onevalue 
-    title:onevalue 
-    question:onevalue 
-    question_q:onevalue 
-    answer:onevalue 
-    answer_q:onevalue 
+}  -properties {
+    context:onevalue
+    title:onevalue
+    question:onevalue
+    question_q:onevalue
+    answer:onevalue
+    answer_q:onevalue
 }
 
 db_1row get_name "select faq_name from faqs where faq_id=:faq_id"
@@ -53,7 +53,7 @@ ad_form -name new_quest_answ -method GET -export {faq_id creation_ip} -form {
     {prev_entry_id:text(hidden) {value $prev_entry_id}}
     {question:richtext
         {html {rows 15 cols 50} }
-        {label "[_ faq.Question]"} 
+        {label "[_ faq.Question]"}
         {help_text {[_ faq.Question_text_in_html]}}}
     {answer:richtext
         {html {rows 15 cols 50} }
