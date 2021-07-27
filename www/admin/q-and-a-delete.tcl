@@ -1,4 +1,4 @@
-#faq/www/admin/q_and_a-delete.tcl
+#faq/www/admin/q-and-a-delete.tcl
 
 ad_page_contract {
     

@@ -17,7 +17,7 @@
     (  
      <a href="q-and-a-add-edit?entry_id=@faq_q_and_as.entry_id@&amp;faq_id=@faq_id@" title="Edit Question">#faq.edit#</a> |
      <a href="one-question?entry_id=@faq_q_and_as.entry_id@" title="Preview Question">#faq.preview#</a> |
-     <a href="q_and_a-delete?entry_id=@faq_q_and_as.entry_id@" class="acs-confirm-delete" title="Delete Question">#faq.delete#</a> |
+     <a href="q-and-a-delete?entry_id=@faq_q_and_as.entry_id@" class="acs-confirm-delete" title="Delete Question">#faq.delete#</a> |
      <if @faq_q_and_as.sort_key@ ne @highest_sort_key_in_list@>
        <a href="q-and-a-add-edit?prev_entry_id=@faq_q_and_as.entry_id@&amp;faq_id=@faq_id@" title="Insert new question after this one">#faq.insert_after#</a> |
        <a href="swap?faq_id=@faq_id@&amp;entry_id=@faq_q_and_as.entry_id@" title="Swap question with next one">#faq.swap_with_next#</a>

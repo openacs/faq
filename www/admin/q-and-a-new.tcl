@@ -1,4 +1,4 @@
-#faq/www/admin/q_and_a-new.tcl
+#faq/www/admin/q-and-a-new.tcl
 
 ad_page_contract {
 
@@ -31,7 +31,7 @@ db_1row get_name "select faq_name from faqs where faq_id=:faq_id"
 set page_title [_ faq.Add_QA_for_faq_name]
 set context [list [list "one-faq?faq_id=$faq_id" "$faq_name"] [_ faq.Create_new_QA]]
 set title [_ faq.Create_new_QA]
-set target "q_and_a-new-2"
+set target "q-and-a-new-2"
 set submit_label [_ faq.Create_QA]
 set question ""
 set answer ""

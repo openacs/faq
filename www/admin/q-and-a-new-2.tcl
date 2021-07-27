@@ -1,4 +1,4 @@
-#faq/www/admin/q_and_a-new-2.tcl
+#faq/www/admin/q-and-a-new-2.tcl
 
 ad_page_contract {
     
