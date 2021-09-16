@@ -12,7 +12,7 @@
         <owner url="mailto:jennie@ybos.net">Jennie Kim Housman</owner>
         <owner url="mailto:wirth@ybos.net">Elizabeth Wirth</owner>
         <summary>Manage simple and categorized Question and Answer style FAQs with WYSIWYG and notification functionalities.</summary>
-        <release-date>2019-01-18</release-date>
+        <release-date>2021-09-15</release-date>
         <vendor url="http://ybos.net">Ybos Corporation</vendor>
         <description format="text/html">Handles frequently asked questions Q&amp;A presentation.  Can be one Q&amp;A per page or all presented flat.  Straightforward application with room for improvement. Support for notification as well as WYSIQYG Editor and Categories - both optional. Category trees are displayed flat. No multiple filters.</description>
         <maturity>2</maturity>
