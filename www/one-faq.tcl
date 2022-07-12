@@ -5,7 +5,7 @@ ad_page_contract {
     @author Jennie Housman (jennie@ybos.net)
     @author Nima Mazloumi (nima.mazloumi@gmx.de)
     @creation-date 2000-10-24
- 
+
 } {
     {category_id:naturalnum,optional {}}
     faq_id:naturalnum,notnull
@@ -39,7 +39,7 @@ if { $use_categories_p == 1 && $category_id ne "" } {
 
 # Site-Wide Categories
 if { $use_categories_p == 1} {
-    set package_url [ad_conn package_url]      
+    set package_url [ad_conn package_url]
     if { $category_id ne "" } {
 	set category_name [category::get_name $category_id]
 	if { $category_name eq "" } {
@@ -50,7 +50,7 @@ if { $use_categories_p == 1} {
 
 	# Replace last element of context (the FAQ name) with link to that FAQ and current category name
 	set context [lreplace $context end end [list "one-faq?faq_id=$faq_id" $faq_info(faq_name)] $category_name]
-    }    
+    }
 
     db_multirow -unclobber -extend { category_name tree_name } categories faq_categories "" {
 	set category_name [category::get_name $category_id]
@@ -60,7 +60,7 @@ if { $use_categories_p == 1} {
 
 set return_url [export_vars -base [ad_conn url] {faq_id}]
 
-if { [apm_package_installed_p "general-comments"] 
+if { [apm_package_installed_p "general-comments"]
      && [parameter::get -package_id $package_id -parameter GeneralCommentsP -default 0] } {
     set gc_link [general_comments_create_link -link_attributes { title="#general-comments.Add_comment#" } $faq_id $return_url]
     set gc_comments [general_comments_get_comments $faq_id $return_url]
