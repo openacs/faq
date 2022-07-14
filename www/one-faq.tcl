@@ -41,20 +41,20 @@ if { $use_categories_p == 1 && $category_id ne "" } {
 if { $use_categories_p == 1} {
     set package_url [ad_conn package_url]
     if { $category_id ne "" } {
-	set category_name [category::get_name $category_id]
-	if { $category_name eq "" } {
-	    ad_return_exception_page 404 "No such category" \
+        set category_name [category::get_name $category_id]
+        if { $category_name eq "" } {
+            ad_return_exception_page 404 "No such category" \
                 "Site-wide Category with ID $category_id doesn't exist"
             ad_script_abort
-	}
+        }
 
-	# Replace last element of context (the FAQ name) with link to that FAQ and current category name
-	set context [lreplace $context end end [list "one-faq?faq_id=$faq_id" $faq_info(faq_name)] $category_name]
+        # Replace last element of context (the FAQ name) with link to that FAQ and current category name
+        set context [lreplace $context end end [list "one-faq?faq_id=$faq_id" $faq_info(faq_name)] $category_name]
     }
 
     db_multirow -unclobber -extend { category_name tree_name } categories faq_categories "" {
-	set category_name [category::get_name $category_id]
-	set tree_name [category_tree::get_name $tree_id]
+        set category_name [category::get_name $category_id]
+        set tree_name [category_tree::get_name $tree_id]
     }
 }
 
