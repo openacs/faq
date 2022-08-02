@@ -9,7 +9,7 @@ ad_page_contract {
 } {
     faq_id:naturalnum
     faq_name:notnull
-    separate_p:
+    separate_p:oneof(t|f)
 } 
 
 permission::require_permission -object_id [ad_conn package_id] -privilege faq_modify_faq
