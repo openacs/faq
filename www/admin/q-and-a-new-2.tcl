@@ -8,10 +8,10 @@ ad_page_contract {
     @creation-date 2000-10-25
 
 } {
-    faq_id:naturalnum,notnull,trim
+    faq_id:object_type(faq)
     question:html,notnull,trim
     answer:html,notnull,trim
-    entry_id:naturalnum,optional
+    entry_id:object_id,optional
     insert_p:boolean,optional
  
 }

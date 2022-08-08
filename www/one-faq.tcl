@@ -7,8 +7,8 @@ ad_page_contract {
     @creation-date 2000-10-24
 
 } {
-    {category_id:naturalnum,optional {}}
-    faq_id:naturalnum,notnull
+    {category_id:object_type(category) {}}
+    faq_id:object_type(faq)
 }
 
 #/faq/www/one-faq.tcl

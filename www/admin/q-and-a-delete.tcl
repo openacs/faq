@@ -7,7 +7,7 @@ ad_page_contract {
     @creation-date 2000-10-25
 
 } {
-    entry_id:naturalnum,notnull
+    entry_id:object_type(faq_q_and_a)
 }
 
 # We need to rethink the q-and-a permissioning.

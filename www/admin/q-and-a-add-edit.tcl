@@ -9,9 +9,9 @@ ad_page_contract {
     @creation-date 2003-11-26
 
 } {
-    faq_id:naturalnum,notnull
-    entry_id:naturalnum,optional
-    {prev_entry_id:naturalnum,notnull 0}
+    faq_id:object_type(faq)
+    entry_id:object_id,optional
+    {prev_entry_id:object_id,notnull 0}
 }  -properties {
     context:onevalue
     title:onevalue

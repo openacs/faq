@@ -9,7 +9,7 @@ ad_page_contract {
     @creation-date 2000-10-24
  
 } {
-    entry_id:naturalnum,notnull
+    entry_id:object_type(faq_q_and_a)
 } -properties {
     entry_id:onevalue
 }

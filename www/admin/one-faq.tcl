@@ -8,8 +8,7 @@ ad_page_contract {
     @creation-date 2000-10-24
  
 } {
-
-    faq_id:naturalnum,notnull
+    faq_id:object_type(faq)
 } -properties {
     faq_name:onevalue
 }

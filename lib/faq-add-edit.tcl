@@ -1,12 +1,8 @@
 ad_include_contract {
     FAQ add/edit UI
 } {
-    {mode ""}
-    {return_url ""}
-}
-
-if { $mode eq "" } {
-    set mode "edit"
+    {mode:oneof(display|edit) "edit"}
+    {return_url:localurl ""}
 }
 
 ad_form -name faq_add_edit -mode $mode -action "faq-add-edit" -form {
