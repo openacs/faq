@@ -32,7 +32,7 @@ set highest_sort_key_in_list [db_string faq_maxkey_get "select max(sort_key)
 
 db_1row faq_name "select faq_name from faqs where faq_id=:faq_id"
 
-set title "#faq.faq_name_Admin#"
+set title [_ faq.faq_name_Admin]
 set context [list $faq_name]
 
 set new_faq_url [export_vars -base q-and-a-add-edit { faq_id }]
