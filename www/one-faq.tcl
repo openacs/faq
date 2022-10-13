@@ -60,7 +60,7 @@ if { $use_categories_p == 1} {
 
 set return_url [export_vars -base [ad_conn url] {faq_id}]
 
-if { [apm_package_installed_p "general-comments"]
+if { [namespace which ::general_comments_create_link] ne ""
      && [parameter::get -package_id $package_id -parameter GeneralCommentsP -default 0] } {
     set gc_link [general_comments_create_link -link_attributes { title="#general-comments.Add_comment#" } $faq_id $return_url]
     set gc_comments [general_comments_get_comments $faq_id $return_url]
