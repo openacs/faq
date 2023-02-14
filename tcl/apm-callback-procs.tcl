@@ -55,7 +55,7 @@ ad_proc -private faq::apm_callback::package_uninstall {
     }
 }
 
-ad_proc -public faq::apm_callback::delete_one_faq_impl {} {
+ad_proc -private faq::apm_callback::delete_one_faq_impl {} {
     Unregister the NotificationType implementation for one_faq_qa_notif_type.
 } {
     acs_sc::impl::delete \
@@ -64,7 +64,7 @@ ad_proc -public faq::apm_callback::delete_one_faq_impl {} {
 }
 
 
-ad_proc -public faq::apm_callback::delete_all_faq_impl {} {
+ad_proc -private faq::apm_callback::delete_all_faq_impl {} {
     Unregister the NotificationType implementation for one_faq_qa_notif_type.
 } {
     acs_sc::impl::delete \
@@ -72,7 +72,7 @@ ad_proc -public faq::apm_callback::delete_all_faq_impl {} {
         -impl_name all_faq_qa_notif_type
 }
 
-ad_proc -public faq::apm_callback::create_one_faq_qa_impl {} {
+ad_proc -private faq::apm_callback::create_one_faq_qa_impl {} {
     Register the service contract implementation and return the impl_id
     @return impl_id of the created implementation
 } {
@@ -87,7 +87,7 @@ ad_proc -public faq::apm_callback::create_one_faq_qa_impl {} {
     }]
 }
 
-ad_proc -public faq::apm_callback::create_one_faq_type {impl_id} {
+ad_proc -private faq::apm_callback::create_one_faq_type {impl_id} {
     Create the notification type for one specific FAQ Q&A
     @return the type_id of the created type
 } {
@@ -98,7 +98,7 @@ ad_proc -public faq::apm_callback::create_one_faq_type {impl_id} {
         -description "Notification of a new Q&A of one specific faq"]
 }
 
-ad_proc -public faq::apm_callback::enable_intervals_and_methods {type_id} {
+ad_proc -private faq::apm_callback::enable_intervals_and_methods {type_id} {
     Enable the intervals and delivery methods of a specific type
 } {
     # Enable the various intervals and delivery method
@@ -121,7 +121,7 @@ ad_proc -public faq::apm_callback::enable_intervals_and_methods {type_id} {
 }
 
 
-ad_proc -public faq::apm_callback::create_all_faq_qa_impl {} {
+ad_proc -private faq::apm_callback::create_all_faq_qa_impl {} {
     Register the service contract implementation and return the impl_id
     @return impl_id of the created implementation
 } {
@@ -138,7 +138,7 @@ ad_proc -public faq::apm_callback::create_all_faq_qa_impl {} {
 
 }
 
-ad_proc -public faq::apm_callback::create_all_faq_type {impl_id} {
+ad_proc -private faq::apm_callback::create_all_faq_type {impl_id} {
     Create the notification type for one specific FAQ Q&A
     @return the type_id of the created type
 } {
