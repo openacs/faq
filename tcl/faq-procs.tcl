@@ -25,11 +25,14 @@ namespace eval faq {
 
 namespace eval faq::notification {
 
-    ad_proc -public get_url {
+    ad_proc -private get_url {
         object_id
     } {
-        returns a full url to the object_id.
-        handles messages and forums.
+        This proc implements the GetURL operation of the
+        NotificationType Service Contract and should not be invoked
+        directly.
+
+        @return a full URL to the object_id (an FAQ entry)
     } {
 
         set q_and_a_id $object_id
