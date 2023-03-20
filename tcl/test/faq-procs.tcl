@@ -330,6 +330,29 @@ aa_register_case -cats {web smoke} -libraries tclwebtest tclwebtest_swap_with_ne
     }
 }
 
+aa_register_case \
+    -cats {api smoke} \
+    -procs {
+        faq::new
+        faq::get_instance_info
+    } \
+    faq_create_and_retrieve {
+
+        Create and retrieve an FAQ object via the api
+
+    } {
+        aa_run_with_teardown -rollback -test_code {
+            set faq_id [faq::new -faq_name "__test_faq" -separate]
+
+            faq::get_instance_info -arrayname __test_array -faq_id $faq_id
+
+            aa_equals "FAQ name is expected" \
+                $__test_array(faq_name) __test_faq
+            aa_true "FAQ separate_p is expected" \
+                $__test_array(separate_p)
+        }
+    }
+
 # Local variables:
 #    mode: tcl
 #    tcl-indent-level: 4

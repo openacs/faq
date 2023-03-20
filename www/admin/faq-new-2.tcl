@@ -15,28 +15,13 @@ ad_page_contract {
     faq_name:notnull,trim
     separate_p:boolean,notnull
 }
-set package_id [ad_conn package_id]
-
-set user_id [ad_conn user_id]
-set creation_ip [ad_conn host]
 
 permission::require_permission -object_id $package_id -privilege faq_create_faq
 
-db_transaction {
-    db_exec_plsql create_faq {
-	begin
-	  :1 := faq.new_faq (
-		    faq_id => :faq_id,
-	            faq_name => :faq_name,
-		    separate_p => :separate_p,
-		    creation_user => :user_id,
-                    creation_ip => :creation_ip,
-	            context_id => :package_id
-	        );
-	end;
-    }
-}
-# on error ...
+faq::new \
+    -faq_id $faq_id \
+    -faq_name $faq_name \
+    -separate=$separate_p
 
 ad_returnredirect "."
 ad_script_abort
