@@ -1,9 +1,17 @@
--- Package create for faq
---
--- @author @jennie.ybos.net,@wirth.ybos.net,openacs port @samir.symphinity.com
--- 
--- @cvs-id $Id$
---
+begin;
+
+-- Swith to type text for questions and answers
+ALTER TABLE faq_q_and_as ALTER column question TYPE text;
+ALTER TABLE faq_q_and_as ALTER column answer TYPE text;
+
+
+-- redefine FAQ functions using table-dependent argument types
+
+drop function if exists faq__new_q_and_a (integer,integer,varchar,varchar,integer,varchar,timestamptz,integer,varchar,integer);
+drop function if exists faq__delete_q_and_a (integer);
+drop function if exists faq__new_faq (integer, varchar, boolean,varchar,timestamptz,integer,varchar,integer);
+drop function if exists faq__delete_faq (integer);
+drop function if exists faq__name (integer);
 
 select define_function_args('faq__new_q_and_a','entry_id;null,faq_id,question,answer,sort_key,object_type,creation_date;current_timestamp,creation_user;null,creation_ip;null,context_id;null');
 
@@ -27,7 +35,7 @@ BEGIN
 
 	v_entry_id := acs_object__new (
 		p_entry_id,
-		p_object_type,		
+		p_object_type,
 		p_creation_date,
 		p_creation_user,
 		p_creation_ip,
@@ -45,11 +53,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-
-
--- added
-select define_function_args('faq__delete_q_and_a','entry_id');
-
 --
 -- procedure faq__delete_q_and_a/1
 --
@@ -65,12 +68,6 @@ BEGIN
 	return 0;
 END;
 $$ LANGUAGE plpgsql;
-
-
-
-
--- added
-select define_function_args('faq__new_faq','faq_id,faq_name,separate_p,object_type,creation_date,creation_user,creation_ip,context_id');
 
 --
 -- procedure faq__new_faq/8
@@ -110,12 +107,6 @@ return v_faq_id;
 END;
 $$ LANGUAGE plpgsql;
 
-
-
-
--- added
-select define_function_args('faq__delete_faq','faq_id');
-
 --
 -- procedure faq__delete_faq/1
 --
@@ -144,18 +135,13 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-
-
--- added
-select define_function_args('faq__name','faq_id');
-
 --
 -- procedure faq__name/1
 --
 CREATE OR REPLACE FUNCTION faq__name(
    p_faq_id faqs.faq_id%TYPE
 ) RETURNS faqs.faq_name%TYPE AS $$
-DECLARE 
+DECLARE
     v_faq_name    faqs.faq_name%TYPE;
 BEGIN
 	select faq_name  into v_faq_name
@@ -167,55 +153,4 @@ END;
 
 $$ LANGUAGE plpgsql;
 
-
--- apisano 2020-03-20: not sure what is going on with this function,
--- as it calls for faq__new_faq with 3 arguments signature... in
--- current codebase we do not define such function...
--- added
-select define_function_args('faq__clone','new_package_id,old_package_id');
-
---
--- procedure faq__clone/2
---
-CREATE OR REPLACE FUNCTION faq__clone(
-   p_new_package_id integer, --default null,
-   p_old_package_id integer  --default null
-
-) RETURNS integer AS $$
-DECLARE
- v_faq_id 		faqs.faq_id%TYPE;
- one_faq		record;
- entry			record;
-
-BEGIN
-            -- get all the faqs belonging to the old package,
-            -- and create new faqs for the new package
-            for one_faq in select *
-                            from acs_objects o, faqs f
-                            where o.object_id = f.faq_id
-                            and o.context_id = p_old_package_id
-            loop
-               v_faq_id := faq__new_faq (
-                    			one_faq.faq_name,
-                    			one_faq.separate_p,
-                    			p_new_package_id
-               	);
-
-           	for entry in select * from faq_q_and_as
-                                   where faq_id = one_faq.faq_id
-           	loop
-
-           		perform  faq__new_q_and_a (
-                       		entry.faq_id,
-                       		v_faq_id,
-                       		entry.question,
-                       		entry.answer,
-                       		entry.sort_key
-           	);
-               end loop;
-           end loop;
- return 0;
- END;
-
-$$ LANGUAGE plpgsql;
-
+end;

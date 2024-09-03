@@ -1,4 +1,4 @@
-#faq/www/admin/q_and_a-edit.tcl
+#faq/www/admin/q-and-a-edit.tcl
 
 ad_page_contract {
 
@@ -8,8 +8,7 @@ ad_page_contract {
     @creation-date 2000-10-24
  
 } {
-
-    entry_id:naturalnum,notnull
+    entry_id:object_type(faq_q_and_a)
 } -properties {
     entry_id:onevalue
 }
@@ -18,7 +17,7 @@ set package_id [ad_conn package_id]
 
 permission::require_permission -object_id $package_id -privilege faq_modify_faq
 
-set action "q_and_a-edit-2"
+set action "q-and-a-edit-2"
 set submit_label [_ faq.Update_This_QA]
 
 set user_id [ad_conn user_id]
@@ -30,7 +29,7 @@ db_1row q_and_a_info "select question, answer,faq_name,qa.faq_id
 
 set context [list [list "one-faq?faq_id=$faq_id" "$faq_name"] "One Q&A"]
 
-set delete_url [export_vars -base q_and_a-delete { entry_id faq_id }]
+set delete_url [export_vars -base q-and-a-delete { entry_id faq_id }]
 
 ad_return_template
 

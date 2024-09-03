@@ -1,8 +1,8 @@
 ad_page_contract {
 
 } {
-    object_id:naturalnum,notnull
-    faq_id:naturalnum,notnull
+    object_id:object_type(acs_object)
+    faq_id:object_type(faq)
 }
 
 set container_id [ad_conn [parameter::get -parameter CategoryContainer -default package_id]]

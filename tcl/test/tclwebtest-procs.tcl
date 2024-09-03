@@ -8,7 +8,7 @@ ad_library {
 
 namespace eval faq::twt {
 
-    ad_proc new { faq_name } {
+    ad_proc -private new { faq_name } {
         Adds a FAQ from the UI.
     } {
         set response 0
@@ -43,7 +43,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc delete { faq_name } {
+    ad_proc -private delete { faq_name } {
         Deletes a FAQ from the UI.
     } {
         set response 0
@@ -73,7 +73,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc edit_one { faq_name faq_new_name } {
+    ad_proc -private edit_one { faq_name faq_new_name } {
         Edits a FAQ from the UI by decoding faq_name and retrieving
         directly edit URL by faq_id.
     } {
@@ -111,7 +111,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc edit_two { faq_name faq_new_name } {
+    ad_proc -private edit_two { faq_name faq_new_name } {
         Edits a FAQ from the UI by simulating clicks to the edit page.
     } {
         set response 0
@@ -151,7 +151,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc disable_enable {faq_name option} {
+    ad_proc -private disable_enable {faq_name option} {
         Toggle enable/disable for a FAQ from the UI.
     } {
     # Option : disable or enable
@@ -185,7 +185,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc new_Q_A { faq_name question answer} {
+    ad_proc -private new_Q_A { faq_name question answer} {
         Creates a new Question/Answer from the UI.
     } {
         set response 0
@@ -225,7 +225,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc edit_Q_A { faq_name new_question new_answer } {
+    ad_proc -private edit_Q_A { faq_name new_question new_answer } {
         Edits a Question/Answer from the UI.
     } {
         set response 0
@@ -264,7 +264,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc preview_Q_A { faq_name } {
+    ad_proc -private preview_Q_A { faq_name } {
         Gets preview of a Question/Answer from the UI.
     } {
         set response 0
@@ -298,7 +298,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc delete_Q_A { faq_name question } {
+    ad_proc -private delete_Q_A { faq_name question } {
         Deletes a Question/Answer from the UI.
     } {
         set response 0
@@ -329,7 +329,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc insert_after_Q_A { faq_name } {
+    ad_proc -private insert_after_Q_A { faq_name } {
         Inserts a Question/Answer after another existing one from the
         UI.
     } {
@@ -373,7 +373,7 @@ namespace eval faq::twt {
         return $response
     }
 
-    ad_proc swap_with_next_Q_A { faq_name } {
+    ad_proc -private swap_with_next_Q_A { faq_name } {
         Swaps two adjacent questions in the FAQ from the UI.
     } {
         set response 0

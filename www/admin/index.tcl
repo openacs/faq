@@ -32,7 +32,7 @@ template::list::create \
         edit {
             display_template {
                 <a href="@faqs.edit_url@" title="#faq.Edit_FAQ# @faqs.faq_name@">
-                  <img src="/resources/acs-subsite/Edit16.gif" border="0" alt="#faq.Edit#">
+                  <adp:icon name="edit" text="#faq.Edit#">
                 </a>
             }
             sub_class narrow
@@ -54,12 +54,12 @@ template::list::create \
             display_template {
                 <if @faqs.disabled_p;literal@ false>
                   <a href="@faqs.disable_url@" title="#faq.Disable_FAQ# @faqs.faq_name@">
-                    <img src="/resources/acs-subsite/checkboxchecked.gif" height="13" width="13" border="0" style="background-color: white;" alt="#faq.Disable#">
+                    <adp:icon name="checkbox-checked" text="#faq.Disable#">
                   </a>
                 </if>
                 <else>
                   <a href="@faqs.enable_url@" title="#faq.Enable_FAQ# @faqs.faq_name@">
-                    <img src="/resources/acs-subsite/checkbox.gif" height="13" width="13" border="0" style="background-color: white;" alt="#faq.Enable#">
+                    <adp:icon name="checkbox-unchecked" text="#faq.Enable#">
                   </a>
                 </else>
             }
@@ -68,7 +68,7 @@ template::list::create \
         delete {
             display_template {
                 <a href="@faqs.delete_url@" title="#faq.Delete_FAQ# @faqs.faq_name@">
-                  <img src="/resources/acs-subsite/Delete16.gif" border="0" alt="#faq.Delete#">
+                  <adp:icon name="trash" text="#faq.Delete#">
                 </a>
             }
             sub_class narrow

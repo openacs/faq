@@ -1,3 +1,7 @@
+ad_page_contract {
+    Purpose of this page is unknown and is probably obsolete
+}
+
 set file_stub [file rootname [ad_conn file]]
 set file_stub_2 [template::util::url_to_file other_name [ad_conn file]]
 set key [ad_conn package_key]

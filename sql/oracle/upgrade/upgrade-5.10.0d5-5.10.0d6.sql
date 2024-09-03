@@ -47,12 +47,12 @@ alter table faq_q_and_as add constraint faq_q_and_as_entry_id_fk
 -- This is a solution for Oracle in plain SQL, which might sound a bit
 -- hamfisted...
 -- - create a temp column with the value of faq_id
-alter table faq_q_and_as add column tmp_faq_id integer;
+alter table faq_q_and_as add tmp_faq_id integer;
 update faq_q_and_as set tmp_faq_id = faq_id;
 -- - drop faq_id column
 alter table faq_q_and_as drop column faq_id;
 -- - re-create it with values stored in temp column
-alter table faq_q_and_as add column faq_id integer;
+alter table faq_q_and_as add faq_id integer;
 update faq_q_and_as set faq_id = tmp_faq_id;
 -- - update constraints
 alter table faq_q_and_as alter column faq_id set not null;

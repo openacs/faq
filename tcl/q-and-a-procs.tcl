@@ -8,7 +8,7 @@ ad_library {
 
 namespace eval faq::notification_delivery {
 
-    ad_proc -public do_notification {
+    ad_proc -private do_notification {
         question
         answer
         entry_id

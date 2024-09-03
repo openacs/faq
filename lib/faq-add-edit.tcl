@@ -1,6 +1,8 @@
-
-if { ![info exists mode] || $mode eq "" } {
-    set mode "edit"
+ad_include_contract {
+    FAQ add/edit UI
+} {
+    {mode:oneof(display|edit) "edit"}
+    {return_url:localurl ""}
 }
 
 ad_form -name faq_add_edit -mode $mode -action "faq-add-edit" -form {
@@ -15,7 +17,7 @@ ad_form -name faq_add_edit -mode $mode -action "faq-add-edit" -form {
 } -edit_data {
     db_dml edit_faq {}
 } -after_submit {
-   if { ![info exists return_url] || $return_url eq "" } {
+   if { $return_url eq "" } {
        set return_url [export_vars -base one-faq { faq_id }]
    }
    ad_returnredirect $return_url

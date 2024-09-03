@@ -7,9 +7,9 @@ ad_page_contract {
     @author Peter Vessenes peterv@ybos.net
     @creation-date 2000-10-25
 } {
-    faq_id:naturalnum
+    faq_id:object_type(faq)
     faq_name:notnull
-    separate_p:
+    separate_p:oneof(t|f)
 } 
 
 permission::require_permission -object_id [ad_conn package_id] -privilege faq_modify_faq

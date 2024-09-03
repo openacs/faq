@@ -1,7 +1,7 @@
 ad_page_contract {
 } {
-    object_id:naturalnum,notnull
-    container_id:naturalnum,notnull
+    object_id:object_type(acs_object)
+    container_id:object_type(acs_object)
 }
 
 ad_return_template
